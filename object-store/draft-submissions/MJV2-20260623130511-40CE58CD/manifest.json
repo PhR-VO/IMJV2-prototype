@@ -1,0 +1,27 @@
+{
+  "transactionId": "MJV2-20260623130511-40CE58CD",
+  "reportDraftId": "RPT-20260623130511-06C7DBFA",
+  "status": "Nog niet ingediend",
+  "displayName": "Toestand in opmaak",
+  "fileName": "structurele-gegevens-imjv2.ods",
+  "fileSize": 1232,
+  "contentHash": "ae8de95d020af527e30f5999ce31237ddca7f1709ef91cf8fb30604a85558ba2",
+  "exploitatie": "Tankstation",
+  "exploitatieId": "IUHY",
+  "naceBelCode": "",
+  "submittedBy": "Emiel Jeurens namens Demo Exploitatie NV",
+  "submitterName": "Emiel Jeurens",
+  "organizationName": "Demo Exploitatie NV",
+  "summary": "Structurele toestand met 0 objecten",
+  "createdAt": "2026-06-23T11:05:11.761636+00:00",
+  "submittedAt": null,
+  "receivedAt": null,
+  "receiptAvailable": false,
+  "storage": {
+    "original": "draft-submissions/MJV2-20260623130511-40CE58CD/original/structurele-gegevens-imjv2.ods",
+    "manifest": "draft-submissions/MJV2-20260623130511-40CE58CD/manifest.json",
+    "reportDraft": "draft-reports/RPT-20260623130511-06C7DBFA/report.json",
+    "schema": "draft-submissions/MJV2-20260623130511-40CE58CD/original/exploitatieschema.svg"
+  },
+  "reportUpdatedAt": "2026-06-24T12:07:52.897376+00:00"
+}

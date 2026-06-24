@@ -1,0 +1,32 @@
+ONTVANGSTBEWIJS IMJV2
+
+Transactie-ID: MJV2-20260618162358-8D58B739
+Status: Ontvangen
+Bestand: Exploitatietoestand d.d. 6-9-2027
+Content hash: sha256:46d1d138bc8a040b7703872f4915293f23eed8d14e48c58c202ab8ec28c571c8
+Exploitatie: Demo Exploitatie NV
+Ingediend door: Miel Jeuker-den-Aeter namens Demo Exploitatie NV
+Tijdstip indiening: 2027-09-06T09:15:00+01:00
+Tijdstip ontvangst: 2027-09-06T09:15:01+01:00
+Kanaal: IMJV2 loket prototype
+
+Inhoud:
+- Naam exploitatie: Demo Exploitatie NV
+- Exploitatie-ID: DEMO-EXP-001
+- Ingangsdatum: 2027-09-06
+- NACE-BEL-code: 23.990
+- Adres: Zaha Hadidplein 1, 2030 Antwerpen
+- Lambert 2008 X-Y: 652224 - 717046
+- Aantal rapporteringsplichtige onderdelen: 10
+  - Productielijn: Productielijn keramische granulaten (PL-01) · In gebruik · Capaciteit: 120000 ton/jaar
+  - Stookinstallatie: Stoomketel lijn 1 (STK-01) · In gebruik · Thermisch vermogen: 48 MW; brandstof: aardgas
+  - Waterzuivering: Fysico-chemische waterzuivering (WZI-01) · In gebruik · Neutralisatie + sedimentatie + zandfilter + membraanfiltratie; capaciteit: 52 m3/u
+  - Grondwaterwinning: Winning productieput noord (GW-01) · In gebruik · Putdiepte: 82 m; vergund debiet: 180000 m3/jaar; watervoerende laag: HCOV 0600
+  - Emissiepunt lucht: Schoorsteen stoomketel (EP-L-01) · In gebruik · Hoogte: 32 m; diameter: 1.2 m; Lambert 2008: 156420, 207880
+  - Emissiepunt water: Lozingspunt effluent WZI (EP-W-01) · In gebruik · Lozend naar oppervlaktewater; Lambert 2008: 156385, 207842
+  - Stookinstallatie: Droogoven lijn 2 (STK-02) · In gebruik · Thermisch vermogen: 22 MW; brandstof: aardgas; ingebruikname: 20-03-2027
+  - Emissiepunt lucht: Schoorsteen droogoven lijn 2 (EP-L-02) · In gebruik · Hoogte: 28 m; diameter: 0.9 m; Lambert 2008: 156448, 207862
+  - Productielijn: Productielijn recyclaat (PL-02) · In gebruik · Capaciteit: 45000 ton/jaar; verwerking van keramisch recyclaat
+  - Grondwaterwinning: Winning productieput zuid (GW-02) · In gebruik · Putdiepte: 76 m; vergund debiet: 90000 m3/jaar; watervoerende laag: HCOV 0600
+
+Dit ontvangstbewijs bevestigt dat het hierboven genoemde geheel werd ontvangen.

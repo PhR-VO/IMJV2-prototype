@@ -1,0 +1,27 @@
+{
+  "transactionId": "MJV2-20260618162358-8D58B739",
+  "status": "Ontvangen",
+  "displayName": "Exploitatietoestand d.d. 6-9-2027",
+  "fileName": "structurele-gegevens-imjv2.ods",
+  "fileSize": 1920,
+  "contentHash": "46d1d138bc8a040b7703872f4915293f23eed8d14e48c58c202ab8ec28c571c8",
+  "exploitatie": "Demo Exploitatie NV",
+  "submittedBy": "Miel Jeuker-den-Aeter namens Demo Exploitatie NV",
+  "summary": "De waterzuivering is uitgebreid en productieput zuid is in gebruik genomen.",
+  "createdAt": "2027-09-06T08:45:00+01:00",
+  "submittedAt": "2027-09-06T09:15:00+01:00",
+  "receivedAt": "2027-09-06T09:15:01+01:00",
+  "receiptAvailable": true,
+  "storage": {
+    "original": "submissions/MJV2-20260618162358-8D58B739/original/structurele-gegevens-imjv2.ods",
+    "manifest": "submissions/MJV2-20260618162358-8D58B739/manifest.json",
+    "receipt": "submissions/MJV2-20260618162358-8D58B739/receipt.txt",
+    "reportSnapshot": "submissions/MJV2-20260618162358-8D58B739/payload/exploitatietoestand.json",
+    "schema": "submissions/MJV2-20260618162358-8D58B739/original/exploitatieschema.svg"
+  },
+  "reportHistoryVisible": true,
+  "reportSequence": 4,
+  "naceBelCode": "23.990",
+  "exploitatieId": "DEMO-EXP-001",
+  "reportUpdatedAt": null
+}

@@ -1,0 +1,23 @@
+ONTVANGSTBEWIJS IMJV2
+
+Transactie-ID: MJV2-20260622011848-09538D4A
+Status: Ontvangen
+Bestand: Exploitatietoestand d.d. 17-6-2026
+Content hash: sha256:b50c55d68cff5d4aa2719d0e0b135de4b1d72f5638d4f2ea8d12f873258b288d
+Exploitatie: Glasfariek
+Ingediend door: Miel Jeuker-den-Aeter namens Demo Exploitatie NV
+Tijdstip indiening: 2026-06-21T23:23:32.488958+00:00
+Tijdstip ontvangst: 2026-06-21T23:23:32.489000+00:00
+Kanaal: IMJV2 loket prototype
+
+Inhoud:
+- Naam exploitatie: Glasfariek
+- Exploitatie-ID: GLA1
+- Ingangsdatum: 2026-06-17
+- NACE-BEL-code: 9209
+- Adres: Kanaalkade 1, 1000 Genk
+- Lambert 2008 X-Y: 987 - 987
+- Aantal rapporteringsplichtige onderdelen: 0
+  - Geen rapporteringsplichtige onderdelen
+
+Dit ontvangstbewijs bevestigt dat het hierboven genoemde geheel werd ontvangen.

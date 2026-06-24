@@ -1,0 +1,27 @@
+ONTVANGSTBEWIJS IMJV2
+
+Transactie-ID: MJV2-20260624135523-C188968D
+Status: Ontvangen
+Bestand: Toestand in opmaak
+Content hash: sha256:97ba944ba77b78686aa401410f8b6c47e7821fa497b525803f7476c0c53504a5
+Exploitatie: Pizzeria
+Ingediend door: Emiel Jeurens namens Demo Exploitatie NV
+Tijdstip indiening: 2026-06-24T11:55:25.904419+00:00
+Tijdstip ontvangst: 2026-06-24T11:55:25.904426+00:00
+Kanaal: IMJV2 loket prototype
+
+Inhoud:
+- Naam exploitatie: Pizzeria
+- Exploitatie-ID: 9876
+- Ingangsdatum: 2027-08-25
+- NACE-BEL-code: —
+- Adres: Straat 1, 1000 Brussel
+- Lambert 2008 X-Y: — - —
+- Aantal rapporteringsplichtige onderdelen: 5
+  - Emissiepunt lucht: Uitlaat pizza oven (OBJ-01) · In gebruik
+  - Productielijn: Nieuw Pizza oven (OBJ-02) · In gebruik
+  - Productielijn: 2e oven (OBJ-03) · In gebruik
+  - Productielijn: Nieuw object 1 (OBJ-04) · In gebruik
+  - Productielijn: Nieuw object 2 (OBJ-05) · In gebruik
+
+Dit ontvangstbewijs bevestigt dat het hierboven genoemde geheel werd ontvangen.

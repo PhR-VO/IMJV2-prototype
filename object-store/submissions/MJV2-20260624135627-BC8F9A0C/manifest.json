@@ -1,0 +1,28 @@
+{
+  "transactionId": "MJV2-20260624135627-BC8F9A0C",
+  "reportDraftId": "RPT-20260624135600-ADB2BA52",
+  "status": "Ontvangen",
+  "displayName": "Toestand in opmaak",
+  "fileName": "structurele-gegevens-imjv2.ods",
+  "fileSize": 1359,
+  "contentHash": "24e61fc4a00b6ecc8316af6e3c0db51f7f93631da5dff2218709f9d088ea4cd7",
+  "exploitatie": "Pizzeria",
+  "exploitatieId": "9876",
+  "naceBelCode": "",
+  "submittedBy": "Emiel Jeurens namens Demo Exploitatie NV",
+  "submitterName": "Emiel Jeurens",
+  "organizationName": "Demo Exploitatie NV",
+  "summary": "Structurele toestand met 4 objecten",
+  "createdAt": "2026-06-24T11:56:27.195199+00:00",
+  "submittedAt": "2026-06-24T11:56:29.063527+00:00",
+  "receivedAt": "2026-06-24T11:56:29.063535+00:00",
+  "receiptAvailable": true,
+  "storage": {
+    "original": "submissions/MJV2-20260624135627-BC8F9A0C/original/structurele-gegevens-imjv2.ods",
+    "manifest": "submissions/MJV2-20260624135627-BC8F9A0C/manifest.json",
+    "receipt": "submissions/MJV2-20260624135627-BC8F9A0C/receipt.txt",
+    "reportSnapshot": "submissions/MJV2-20260624135627-BC8F9A0C/payload/exploitatietoestand.json",
+    "schema": "submissions/MJV2-20260624135627-BC8F9A0C/original/exploitatieschema.svg"
+  },
+  "reportUpdatedAt": "2026-06-24T11:56:27.202513+00:00"
+}

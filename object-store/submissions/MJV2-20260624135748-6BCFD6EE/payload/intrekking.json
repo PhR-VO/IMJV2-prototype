@@ -1,0 +1,79 @@
+{
+  "submissionType": "withdrawal",
+  "targetReportId": "REPORT-MJV2-20260624135627-BC8F9A0C",
+  "targetTransactionId": "MJV2-20260624135627-BC8F9A0C",
+  "exploitatie": "Pizzeria",
+  "exploitatieId": "9876",
+  "effectiveFrom": "2027-07-07",
+  "reason": "opsplitsing niet nodig.",
+  "submittedAt": "2026-06-24T11:57:48.420098+00:00",
+  "targetSnapshot": {
+    "reportId": "REPORT-MJV2-20260624135627-BC8F9A0C",
+    "title": "Toestand in opmaak",
+    "exploitatie": "Pizzeria",
+    "exploitatieId": "9876",
+    "naceBelCode": "",
+    "location": {
+      "address": {
+        "street": "Straat",
+        "houseNumber": "1",
+        "postalCode": "1000",
+        "municipality": "Brussel",
+        "country": "België"
+      },
+      "lambert2008": {
+        "x": null,
+        "y": null
+      }
+    },
+    "objects": [
+      {
+        "type": "Emissiepunt lucht",
+        "code": "OBJ-01",
+        "name": "Uitlaat pizza oven",
+        "status": "In gebruik",
+        "properties": "",
+        "relations": []
+      },
+      {
+        "type": "Productielijn",
+        "code": "OBJ-02",
+        "name": "Nieuw Pizza oven",
+        "status": "In gebruik",
+        "properties": "",
+        "relations": [
+          "OBJ-01"
+        ]
+      },
+      {
+        "type": "Productielijn",
+        "code": "OBJ-03",
+        "name": "2e oven",
+        "status": "In gebruik",
+        "properties": "",
+        "relations": []
+      },
+      {
+        "type": "Productielijn",
+        "code": "OBJ-04",
+        "name": "Nieuw object 1",
+        "status": "In gebruik",
+        "properties": "",
+        "relations": []
+      }
+    ],
+    "objectCount": 4,
+    "effectiveFrom": "2027-07-07",
+    "submittedAt": "2026-06-24T11:56:29.063527+00:00",
+    "receivedAt": "2026-06-24T11:56:29.063535+00:00",
+    "transactionId": "MJV2-20260624135627-BC8F9A0C",
+    "contentHash": "24e61fc4a00b6ecc8316af6e3c0db51f7f93631da5dff2218709f9d088ea4cd7",
+    "changeSummary": null,
+    "replacesReportId": null,
+    "replacesTransactionId": null,
+    "basedOnReportId": "REPORT-MJV2-20260624135523-C188968D",
+    "basedOnTransactionId": "MJV2-20260624135523-C188968D",
+    "changeType": "new-state",
+    "source": "snapshot"
+  }
+}

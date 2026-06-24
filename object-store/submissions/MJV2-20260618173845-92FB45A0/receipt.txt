@@ -1,0 +1,30 @@
+ONTVANGSTBEWIJS IMJV2
+
+Transactie-ID: MJV2-20260618173845-92FB45A0
+Status: Ontvangen
+Bestand: Exploitatietoestand d.d. 1-1-2027
+Content hash: sha256:ea1aa2a97953079c5df3d2b641dbbc56cf83f376092608ce4fd6f97a9086c571
+Exploitatie: Demo Exploitatie NV
+Ingediend door: Miel Jeuker-den-Aeter namens Demo Exploitatie NV
+Tijdstip indiening: 2026-06-19T20:34:27.022710+00:00
+Tijdstip ontvangst: 2026-06-19T20:34:27.022764+00:00
+Kanaal: IMJV2 loket prototype
+
+Inhoud:
+- Naam exploitatie: Demo Exploitatie NV
+- Exploitatie-ID: DEMO-EXP-001
+- Ingangsdatum: 2027-01-01
+- NACE-BEL-code: 23.990
+- Adres: Zaha Hadidplein 1, 2030 Antwerpen
+- Lambert 2008 X-Y: 652224 - 717046
+- Aantal rapporteringsplichtige onderdelen: 8
+  - Productielijn: Productielijn keramische granulaten (PL-01) · In gebruik · Capaciteit: 120000 ton/jaar
+  - Stookinstallatie: Stoomketel lijn 1 (STK-01) · In gebruik · Thermisch vermogen: 48 MW; brandstof: aardgas
+  - Waterzuivering: Fysico-chemische waterzuivering (WZI-01) · In gebruik · Neutralisatie + sedimentatie + zandfilter; capaciteit: 35 m3/u
+  - Grondwaterwinning: Winning productieput noord (GW-01) · In gebruik · Putdiepte: 82 m; debietmeter: DM-4451; watervoerende laag: HCOV 0600
+  - Emissiepunt lucht: Schoorsteen stoomketel (EP-L-01) · In gebruik · Hoogte: 32 m; diameter: 1.2 m; Lambert 2008: 156420, 207880
+  - Emissiepunt water: Lozingspunt effluent WZI (EP-W-01) · In gebruik · Lozend naar oppervlaktewater; Lambert 2008: 156385, 207842
+  - Stookinstallatie: Grote smurf (PHR-01) · In gebruik
+  - Stookinstallatie: Kabouter Plop (OBJ-08) · In gebruik
+
+Dit ontvangstbewijs bevestigt dat het hierboven genoemde geheel werd ontvangen.

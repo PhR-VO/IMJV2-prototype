@@ -1,0 +1,22 @@
+ONTVANGSTBEWIJS IMJV2
+
+Transactie-ID: MJV2-20260623233451-87469433
+Status: Ontvangen
+Bestand: Intrekking registratie Academisch Ziekenhuis
+Content hash: sha256:809867c57b69cbdd403f9a81671c92657e493fa5f58c3ce8de43bbbdd01e65c8
+Exploitatie: Academisch Ziekenhuis
+Ingediend door: Emiel Jeurens namens Demo Exploitatie NV
+Tijdstip indiening: 2026-06-23T21:34:51.877447+00:00
+Tijdstip ontvangst: 2026-06-23T21:34:51.877458+00:00
+Kanaal: IMJV2 loket prototype
+
+Inhoud:
+- Type indiening: Intrekking van een geregistreerde toestand
+- Naam exploitatie: Academisch Ziekenhuis
+- Exploitatie-ID: IUHS
+- Ingetrokken toestand sinds: 2027-11-12
+- Referentie oorspronkelijke indiening: MJV2-20260623151313-F8A1170C
+- Referentie toestand: REPORT-MJV2-20260623151313-F8A1170C
+- Motivatie: Verkeerd
+
+Dit ontvangstbewijs bevestigt dat de hierboven genoemde intrekking werd ontvangen.

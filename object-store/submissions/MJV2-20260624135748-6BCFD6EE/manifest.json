@@ -1,0 +1,25 @@
+{
+  "transactionId": "MJV2-20260624135748-6BCFD6EE",
+  "submissionType": "withdrawal",
+  "displayName": "Intrekking registratie Pizzeria",
+  "summary": "Intrekking van geregistreerde toestand sinds 2027-07-07",
+  "status": "Ontvangen",
+  "exploitatie": "Pizzeria",
+  "exploitatieId": "9876",
+  "naceBelCode": "",
+  "targetReportId": "REPORT-MJV2-20260624135627-BC8F9A0C",
+  "targetTransactionId": "MJV2-20260624135627-BC8F9A0C",
+  "withdrawalReason": "opsplitsing niet nodig.",
+  "contentHash": "b3427adae9479781a40f6606e3238b98d28a8f621d42cd073b682919e48d35c8",
+  "submittedBy": "Emiel Jeurens namens Demo Exploitatie NV",
+  "submitterName": "Emiel Jeurens",
+  "organizationName": "Demo Exploitatie NV",
+  "submittedAt": "2026-06-24T11:57:48.420098+00:00",
+  "receivedAt": "2026-06-24T11:57:48.420113+00:00",
+  "receiptAvailable": true,
+  "storage": {
+    "manifest": "submissions/MJV2-20260624135748-6BCFD6EE/manifest.json",
+    "receipt": "submissions/MJV2-20260624135748-6BCFD6EE/receipt.txt",
+    "withdrawalPayload": "submissions/MJV2-20260624135748-6BCFD6EE/payload/intrekking.json"
+  }
+}

@@ -1,0 +1,23 @@
+ONTVANGSTBEWIJS IMJV2
+
+Transactie-ID: MJV2-20260623124811-DC1A996B
+Status: Ontvangen
+Bestand: Toestand in opmaak
+Content hash: sha256:304086fe2a931c1d10685be7d1578c6cb3d6cfc9d2dc6e1128d75a0840df8f8c
+Exploitatie: Academisch Ziekenhuis
+Ingediend door: Emiel Jeurens namens Demo Exploitatie NV
+Tijdstip indiening: 2026-06-23T10:48:30.995221+00:00
+Tijdstip ontvangst: 2026-06-23T10:48:30.995260+00:00
+Kanaal: IMJV2 loket prototype
+
+Inhoud:
+- Naam exploitatie: Academisch Ziekenhuis
+- Exploitatie-ID: IUHS
+- Ingangsdatum: 2027-01-01
+- NACE-BEL-code: —
+- Adres: —
+- Lambert 2008 X-Y: — - —
+- Aantal rapporteringsplichtige onderdelen: 1
+  - Productielijn: Nieuw object (OBJ-01) · Gepland
+
+Dit ontvangstbewijs bevestigt dat het hierboven genoemde geheel werd ontvangen.

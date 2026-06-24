@@ -1,0 +1,23 @@
+ONTVANGSTBEWIJS IMJV2
+
+Transactie-ID: MJV2-20260623150115-BB5E41D0
+Status: Ontvangen
+Bestand: Toestand in opmaak
+Content hash: sha256:e154eee9c62c05e82f48cbc946756405db82cb0a8958cfcc0bc5f951751636d0
+Exploitatie: Herman Terilinck
+Ingediend door: Emiel Jeurens namens Demo Exploitatie NV
+Tijdstip indiening: 2026-06-23T13:01:17.495317+00:00
+Tijdstip ontvangst: 2026-06-23T13:01:17.495346+00:00
+Kanaal: IMJV2 loket prototype
+
+Inhoud:
+- Naam exploitatie: Herman Terilinck
+- Exploitatie-ID: DFG
+- Ingangsdatum: 2027-01-30
+- NACE-BEL-code: —
+- Adres: Havenlaan 88, 1000 Brussel
+- Lambert 2008 X-Y: — - —
+- Aantal rapporteringsplichtige onderdelen: 1
+  - Stookinstallatie: Nieuw object (OBJ-01) · In gebruik · Veel vieze rook
+
+Dit ontvangstbewijs bevestigt dat het hierboven genoemde geheel werd ontvangen.

@@ -1,0 +1,28 @@
+{
+  "transactionId": "MJV2-20260623125721-2835F527",
+  "reportDraftId": "RPT-20260623125647-39D56942",
+  "status": "Ontvangen",
+  "displayName": "Exploitatietoestand d.d. 12-6-2026",
+  "fileName": "structurele-gegevens-imjv2.ods",
+  "fileSize": 1382,
+  "contentHash": "4bb2b664d9a3623ef34df2469fdfa28973600b02136dba04a89c08b8c383fe4a",
+  "exploitatie": "Windmolenpark 1",
+  "exploitatieId": "RTUI",
+  "naceBelCode": "567890",
+  "submittedBy": "Emiel Jeurens namens Demo Exploitatie NV",
+  "submitterName": "Emiel Jeurens",
+  "organizationName": "Demo Exploitatie NV",
+  "summary": "Structurele toestand met 3 objecten",
+  "createdAt": "2026-06-23T10:57:21.832552+00:00",
+  "submittedAt": "2026-06-23T10:58:59.745207+00:00",
+  "receivedAt": "2026-06-23T10:58:59.745256+00:00",
+  "receiptAvailable": true,
+  "storage": {
+    "original": "submissions/MJV2-20260623125721-2835F527/original/structurele-gegevens-imjv2.ods",
+    "manifest": "submissions/MJV2-20260623125721-2835F527/manifest.json",
+    "receipt": "submissions/MJV2-20260623125721-2835F527/receipt.txt",
+    "reportSnapshot": "submissions/MJV2-20260623125721-2835F527/payload/exploitatietoestand.json",
+    "schema": "submissions/MJV2-20260623125721-2835F527/original/exploitatieschema.svg"
+  },
+  "reportUpdatedAt": "2026-06-23T10:58:25.476096+00:00"
+}

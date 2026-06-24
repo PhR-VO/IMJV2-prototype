@@ -1,0 +1,27 @@
+{
+  "transactionId": "MJV2-20260621235126-3492B122",
+  "reportDraftId": "RPT-20260621235126-953AF7B8",
+  "status": "Nog niet ingediend",
+  "displayName": "Exploitatietoestand d.d. 1-1-2027",
+  "fileName": "structurele-gegevens-imjv2.ods",
+  "fileSize": 1754,
+  "contentHash": "0d455aea20cfbd155b93e089091b12e723f3c677cb8ec3767b2f2f2333009b99",
+  "exploitatie": "Demo Exploitatie NV",
+  "exploitatieId": "DEMO-EXP-001",
+  "naceBelCode": "23.990",
+  "submittedBy": "Miel Jeuker-den-Aeter namens Demo Exploitatie NV",
+  "submitterName": "Miel Jeuker-den-Aeter",
+  "organizationName": "Demo Exploitatie NV",
+  "summary": "Structurele toestand met 7 objecten",
+  "createdAt": "2026-06-21T21:51:26.832651+00:00",
+  "submittedAt": null,
+  "receivedAt": null,
+  "receiptAvailable": false,
+  "storage": {
+    "original": "draft-submissions/MJV2-20260621235126-3492B122/original/structurele-gegevens-imjv2.ods",
+    "manifest": "draft-submissions/MJV2-20260621235126-3492B122/manifest.json",
+    "reportDraft": "draft-reports/RPT-20260621235126-953AF7B8/report.json",
+    "schema": "draft-submissions/MJV2-20260621235126-3492B122/original/exploitatieschema.svg"
+  },
+  "reportUpdatedAt": "2026-06-24T12:01:59.475832+00:00"
+}

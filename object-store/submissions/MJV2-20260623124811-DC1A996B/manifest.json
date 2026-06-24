@@ -1,0 +1,28 @@
+{
+  "transactionId": "MJV2-20260623124811-DC1A996B",
+  "reportDraftId": "RPT-20260623124437-2C5E9792",
+  "status": "Ontvangen",
+  "displayName": "Toestand in opmaak",
+  "fileName": "structurele-gegevens-imjv2.ods",
+  "fileSize": 1328,
+  "contentHash": "304086fe2a931c1d10685be7d1578c6cb3d6cfc9d2dc6e1128d75a0840df8f8c",
+  "exploitatie": "Academisch Ziekenhuis",
+  "exploitatieId": "IUHS",
+  "naceBelCode": "",
+  "submittedBy": "Emiel Jeurens namens Demo Exploitatie NV",
+  "submitterName": "Emiel Jeurens",
+  "organizationName": "Demo Exploitatie NV",
+  "summary": "Structurele toestand met 1 objecten",
+  "createdAt": "2026-06-23T10:48:11.615868+00:00",
+  "submittedAt": "2026-06-23T10:48:30.995221+00:00",
+  "receivedAt": "2026-06-23T10:48:30.995260+00:00",
+  "receiptAvailable": true,
+  "storage": {
+    "original": "submissions/MJV2-20260623124811-DC1A996B/original/structurele-gegevens-imjv2.ods",
+    "manifest": "submissions/MJV2-20260623124811-DC1A996B/manifest.json",
+    "receipt": "submissions/MJV2-20260623124811-DC1A996B/receipt.txt",
+    "reportSnapshot": "submissions/MJV2-20260623124811-DC1A996B/payload/exploitatietoestand.json",
+    "schema": "submissions/MJV2-20260623124811-DC1A996B/original/exploitatieschema.svg"
+  },
+  "reportUpdatedAt": "2026-06-23T10:48:11.627568+00:00"
+}

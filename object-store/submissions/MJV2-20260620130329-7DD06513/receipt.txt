@@ -1,0 +1,24 @@
+ONTVANGSTBEWIJS IMJV2
+
+Transactie-ID: MJV2-20260620130329-7DD06513
+Status: Ontvangen
+Bestand: Exploitatietoestand d.d. 3-6-2026
+Content hash: sha256:1740beba6161006168dc02c9d0b701aefc4c4ef634a01a2e41aa009635c04f28
+Exploitatie: Eerste extra exploitatie
+Ingediend door: Miel Jeuker-den-Aeter namens Demo Exploitatie NV
+Tijdstip indiening: 2026-06-20T11:39:34.532985+00:00
+Tijdstip ontvangst: 2026-06-20T11:39:34.532994+00:00
+Kanaal: IMJV2 loket prototype
+
+Inhoud:
+- Naam exploitatie: Eerste extra exploitatie
+- Exploitatie-ID: EXP-PHR1
+- Ingangsdatum: 2026-06-03
+- NACE-BEL-code: 345
+- Adres: Havenweg 1, 1000 Gent
+- Lambert 2008 X-Y: 45678 - 5678
+- Aantal rapporteringsplichtige onderdelen: 2
+  - Productielijn: Nieuw object (OBJ-01) · Gepland
+  - Stookinstallatie: Nieuw object (OBJ-02) · Gepland
+
+Dit ontvangstbewijs bevestigt dat het hierboven genoemde geheel werd ontvangen.

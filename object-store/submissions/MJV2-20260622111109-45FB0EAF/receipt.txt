@@ -1,0 +1,23 @@
+ONTVANGSTBEWIJS IMJV2
+
+Transactie-ID: MJV2-20260622111109-45FB0EAF
+Status: Ontvangen
+Bestand: Exploitatietoestand d.d. 16-6-2026
+Content hash: sha256:d03faba1e417cc8acb68ae361a5351cbc3ed028e5fe75a5e637e72784aeae08b
+Exploitatie: Strandpaviljoen
+Ingediend door: Miel Jeuker-den-Aeter namens Demo Exploitatie NV
+Tijdstip indiening: 2026-06-22T12:53:49.181951+00:00
+Tijdstip ontvangst: 2026-06-22T12:53:49.181964+00:00
+Kanaal: IMJV2 loket prototype
+
+Inhoud:
+- Naam exploitatie: Strandpaviljoen
+- Exploitatie-ID: 789U
+- Ingangsdatum: 2026-06-16
+- NACE-BEL-code: 45678
+- Adres: Knokke
+- Lambert 2008 X-Y: 56789 - 6789
+- Aantal rapporteringsplichtige onderdelen: 1
+  - Grondwaterwinning: Nieuw object (OBJ-01) · Gepland
+
+Dit ontvangstbewijs bevestigt dat het hierboven genoemde geheel werd ontvangen.

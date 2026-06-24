@@ -1,0 +1,28 @@
+{
+  "transactionId": "MJV2-20260623140051-51F02BC7",
+  "reportDraftId": "RPT-20260623140025-3F9DC676",
+  "status": "Ontvangen",
+  "displayName": "Toestand in opmaak",
+  "fileName": "structurele-gegevens-imjv2.ods",
+  "fileSize": 1355,
+  "contentHash": "7c82c5d187420068fcfa47224f4fbed34c327602e92ec4080bfd7b10fe59e2ee",
+  "exploitatie": "Datacenter",
+  "exploitatieId": "TYU",
+  "naceBelCode": "",
+  "submittedBy": "Emiel Jeurens namens Demo Exploitatie NV",
+  "submitterName": "Emiel Jeurens",
+  "organizationName": "Demo Exploitatie NV",
+  "summary": "Structurele toestand met 2 objecten",
+  "createdAt": "2026-06-23T12:00:51.919264+00:00",
+  "submittedAt": "2026-06-23T12:00:54.334715+00:00",
+  "receivedAt": "2026-06-23T12:00:54.334724+00:00",
+  "receiptAvailable": true,
+  "storage": {
+    "original": "submissions/MJV2-20260623140051-51F02BC7/original/structurele-gegevens-imjv2.ods",
+    "manifest": "submissions/MJV2-20260623140051-51F02BC7/manifest.json",
+    "receipt": "submissions/MJV2-20260623140051-51F02BC7/receipt.txt",
+    "reportSnapshot": "submissions/MJV2-20260623140051-51F02BC7/payload/exploitatietoestand.json",
+    "schema": "submissions/MJV2-20260623140051-51F02BC7/original/exploitatieschema.svg"
+  },
+  "reportUpdatedAt": "2026-06-23T12:00:51.929539+00:00"
+}

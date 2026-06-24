@@ -1,0 +1,30 @@
+ONTVANGSTBEWIJS IMJV2
+
+Transactie-ID: MJV2-20260618085238-8562181D
+Status: Ontvangen
+Bestand: Exploitatietoestand d.d. 20-3-2027
+Content hash: sha256:96bb0819e447580b87f32d73cca959c50d957e90d9c72b4c20b4daec3c6de083
+Exploitatie: Demo Exploitatie NV
+Ingediend door: Emiel Jeurens namens Demo Exploitatie NV
+Tijdstip indiening: 2027-03-20T09:15:00+01:00
+Tijdstip ontvangst: 2027-03-20T09:15:01+01:00
+Kanaal: IMJV2 loket prototype
+
+Inhoud:
+- Naam exploitatie: Demo Exploitatie NV
+- Exploitatie-ID: DEMO-EXP-001
+- Ingangsdatum: 2027-03-20
+- NACE-BEL-code: 23.990
+- Adres: Zaha Hadidplein 1, 2030 Antwerpen
+- Lambert 2008 X-Y: 652224 - 717046
+- Aantal rapporteringsplichtige onderdelen: 8
+  - Productielijn: Productielijn keramische granulaten (PL-01) · In gebruik · Capaciteit: 120000 ton/jaar
+  - Stookinstallatie: Stoomketel lijn 1 (STK-01) · In gebruik · Thermisch vermogen: 48 MW; brandstof: aardgas
+  - Waterzuivering: Fysico-chemische waterzuivering (WZI-01) · In gebruik · Neutralisatie + sedimentatie + zandfilter; capaciteit: 35 m3/u
+  - Grondwaterwinning: Winning productieput noord (GW-01) · In gebruik · Putdiepte: 82 m; vergund debiet: 180000 m3/jaar; watervoerende laag: HCOV 0600
+  - Emissiepunt lucht: Schoorsteen stoomketel (EP-L-01) · In gebruik · Hoogte: 32 m; diameter: 1.2 m; Lambert 2008: 156420, 207880
+  - Emissiepunt water: Lozingspunt effluent WZI (EP-W-01) · In gebruik · Lozend naar oppervlaktewater; Lambert 2008: 156385, 207842
+  - Stookinstallatie: Droogoven lijn 2 (STK-02) · In gebruik · Thermisch vermogen: 22 MW; brandstof: aardgas; ingebruikname: 20-03-2027
+  - Emissiepunt lucht: Schoorsteen droogoven lijn 2 (EP-L-02) · In gebruik · Hoogte: 28 m; diameter: 0.9 m; Lambert 2008: 156448, 207862
+
+Dit ontvangstbewijs bevestigt dat het hierboven genoemde geheel werd ontvangen.

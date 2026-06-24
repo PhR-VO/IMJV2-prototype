@@ -1,0 +1,26 @@
+{
+  "transactionId": "MJV2-20260618085238-8562181D",
+  "status": "Ontvangen",
+  "displayName": "Exploitatietoestand d.d. 20-3-2027",
+  "fileName": "structurele-gegevens-imjv2.ods",
+  "fileSize": 1819,
+  "contentHash": "96bb0819e447580b87f32d73cca959c50d957e90d9c72b4c20b4daec3c6de083",
+  "exploitatie": "Demo Exploitatie NV",
+  "summary": "Droogoven lijn 2 en een bijbehorend luchtemissiepunt zijn in gebruik genomen.",
+  "createdAt": "2027-03-20T08:45:00+01:00",
+  "submittedAt": "2027-03-20T09:15:00+01:00",
+  "receivedAt": "2027-03-20T09:15:01+01:00",
+  "receiptAvailable": true,
+  "storage": {
+    "original": "submissions/MJV2-20260618085238-8562181D/original/structurele-gegevens-imjv2.ods",
+    "manifest": "submissions/MJV2-20260618085238-8562181D/manifest.json",
+    "receipt": "submissions/MJV2-20260618085238-8562181D/receipt.txt",
+    "reportSnapshot": "submissions/MJV2-20260618085238-8562181D/payload/exploitatietoestand.json",
+    "schema": "submissions/MJV2-20260618085238-8562181D/original/exploitatieschema.svg"
+  },
+  "reportHistoryVisible": true,
+  "reportSequence": 2,
+  "naceBelCode": "23.990",
+  "exploitatieId": "DEMO-EXP-001",
+  "reportUpdatedAt": null
+}

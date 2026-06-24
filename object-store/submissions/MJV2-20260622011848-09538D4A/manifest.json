@@ -1,0 +1,28 @@
+{
+  "transactionId": "MJV2-20260622011848-09538D4A",
+  "reportDraftId": "RPT-20260622011848-6F805FA7",
+  "status": "Ontvangen",
+  "displayName": "Exploitatietoestand d.d. 17-6-2026",
+  "fileName": "structurele-gegevens-imjv2.ods",
+  "fileSize": 1249,
+  "contentHash": "b50c55d68cff5d4aa2719d0e0b135de4b1d72f5638d4f2ea8d12f873258b288d",
+  "exploitatie": "Glasfariek",
+  "exploitatieId": "GLA1",
+  "naceBelCode": "9209",
+  "submittedBy": "Miel Jeuker-den-Aeter namens Demo Exploitatie NV",
+  "submitterName": "Miel Jeuker-den-Aeter",
+  "organizationName": "Demo Exploitatie NV",
+  "summary": "Structurele toestand met 0 objecten",
+  "createdAt": "2026-06-21T23:18:48.310330+00:00",
+  "submittedAt": "2026-06-21T23:23:32.488958+00:00",
+  "receivedAt": "2026-06-21T23:23:32.489000+00:00",
+  "receiptAvailable": true,
+  "storage": {
+    "original": "submissions/MJV2-20260622011848-09538D4A/original/structurele-gegevens-imjv2.ods",
+    "manifest": "submissions/MJV2-20260622011848-09538D4A/manifest.json",
+    "receipt": "submissions/MJV2-20260622011848-09538D4A/receipt.txt",
+    "reportSnapshot": "submissions/MJV2-20260622011848-09538D4A/payload/exploitatietoestand.json",
+    "schema": "submissions/MJV2-20260622011848-09538D4A/original/exploitatieschema.svg"
+  },
+  "reportUpdatedAt": "2026-06-21T23:23:30.856439+00:00"
+}

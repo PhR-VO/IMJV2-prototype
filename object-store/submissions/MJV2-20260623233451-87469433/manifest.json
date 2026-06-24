@@ -1,0 +1,25 @@
+{
+  "transactionId": "MJV2-20260623233451-87469433",
+  "submissionType": "withdrawal",
+  "displayName": "Intrekking registratie Academisch Ziekenhuis",
+  "summary": "Intrekking van geregistreerde toestand sinds 2027-11-12",
+  "status": "Ontvangen",
+  "exploitatie": "Academisch Ziekenhuis",
+  "exploitatieId": "IUHS",
+  "naceBelCode": "",
+  "targetReportId": "REPORT-MJV2-20260623151313-F8A1170C",
+  "targetTransactionId": "MJV2-20260623151313-F8A1170C",
+  "withdrawalReason": "Verkeerd",
+  "contentHash": "809867c57b69cbdd403f9a81671c92657e493fa5f58c3ce8de43bbbdd01e65c8",
+  "submittedBy": "Emiel Jeurens namens Demo Exploitatie NV",
+  "submitterName": "Emiel Jeurens",
+  "organizationName": "Demo Exploitatie NV",
+  "submittedAt": "2026-06-23T21:34:51.877447+00:00",
+  "receivedAt": "2026-06-23T21:34:51.877458+00:00",
+  "receiptAvailable": true,
+  "storage": {
+    "manifest": "submissions/MJV2-20260623233451-87469433/manifest.json",
+    "receipt": "submissions/MJV2-20260623233451-87469433/receipt.txt",
+    "withdrawalPayload": "submissions/MJV2-20260623233451-87469433/payload/intrekking.json"
+  }
+}

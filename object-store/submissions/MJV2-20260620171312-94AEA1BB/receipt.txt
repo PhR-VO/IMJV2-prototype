@@ -1,0 +1,23 @@
+ONTVANGSTBEWIJS IMJV2
+
+Transactie-ID: MJV2-20260620171312-94AEA1BB
+Status: Ontvangen
+Bestand: Exploitatietoestand d.d. 24-6-2026
+Content hash: sha256:81242e8d21d339f6de6f3bb460b9b1170c8257b007f59b58fee14cf29d639d24
+Exploitatie: hjko
+Ingediend door: Miel Jeuker-den-Aeter namens Demo Exploitatie NV
+Tijdstip indiening: 2026-06-21T21:51:20.027453+00:00
+Tijdstip ontvangst: 2026-06-21T21:51:20.027483+00:00
+Kanaal: IMJV2 loket prototype
+
+Inhoud:
+- Naam exploitatie: hjko
+- Exploitatie-ID: OIJDKJH
+- Ingangsdatum: 2026-06-24
+- NACE-BEL-code: oiuhgf
+- Adres: —
+- Lambert 2008 X-Y: 1 - 1
+- Aantal rapporteringsplichtige onderdelen: 0
+  - Geen rapporteringsplichtige onderdelen
+
+Dit ontvangstbewijs bevestigt dat het hierboven genoemde geheel werd ontvangen.

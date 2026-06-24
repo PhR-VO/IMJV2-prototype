@@ -1,0 +1,51 @@
+{
+  "reportDraftId": "RPT-20260623140135-EC07CF7E",
+  "title": "Toestand in opmaak",
+  "exploitatie": "Datacenter",
+  "exploitatieId": "TYU",
+  "effectiveFrom": "",
+  "naceBelCode": "",
+  "location": {
+    "address": {
+      "street": "",
+      "houseNumber": "",
+      "postalCode": "",
+      "municipality": "Hasselt",
+      "country": "België"
+    },
+    "lambert2008": {
+      "x": null,
+      "y": null
+    }
+  },
+  "objects": [
+    {
+      "type": "Grondwaterwinning",
+      "code": "OBJ-01",
+      "name": "Nieuw object",
+      "status": "In gebruik",
+      "properties": "",
+      "relations": []
+    },
+    {
+      "type": "Waterzuivering",
+      "code": "OBJ-02",
+      "name": "Waterzuivering",
+      "status": "In gebruik",
+      "properties": "",
+      "relations": []
+    },
+    {
+      "type": "Grondwaterwinning",
+      "code": "OBJ-03",
+      "name": "Nieuw object",
+      "status": "In gebruik",
+      "properties": "",
+      "relations": []
+    }
+  ],
+  "updatedAt": "2026-06-24T12:03:55.597784+00:00",
+  "basedOnReportId": "REPORT-MJV2-20260623140051-51F02BC7",
+  "basedOnTransactionId": "MJV2-20260623140051-51F02BC7",
+  "changeType": "new-state"
+}

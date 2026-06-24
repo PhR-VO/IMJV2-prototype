@@ -1,0 +1,24 @@
+ONTVANGSTBEWIJS IMJV2
+
+Transactie-ID: MJV2-20260622013402-45DED532
+Status: Ontvangen
+Bestand: Exploitatietoestand d.d. 24-6-2026
+Content hash: sha256:ee1a5aa23f69bc5e56a72a083d61fb41a57a17aa1f8597fcc324e5d8729e254a
+Exploitatie: Steenfabriek
+Ingediend door: Miel Jeuker-den-Aeter namens Demo Exploitatie NV
+Tijdstip indiening: 2026-06-21T23:34:04.020231+00:00
+Tijdstip ontvangst: 2026-06-21T23:34:04.020273+00:00
+Kanaal: IMJV2 loket prototype
+
+Inhoud:
+- Naam exploitatie: Steenfabriek
+- Exploitatie-ID: OIJDKJH
+- Ingangsdatum: 2027-01-01
+- NACE-BEL-code: 567
+- Adres: Groenweg 2, 1000 Hasselt
+- Lambert 2008 X-Y: 1 - 1
+- Aantal rapporteringsplichtige onderdelen: 2
+  - Waterzuivering: chemische waterzuivering (OBJ-01) · In gebruik
+  - Productielijn: Nieuw object (OBJ-02) · In gebruik
+
+Dit ontvangstbewijs bevestigt dat het hierboven genoemde geheel werd ontvangen.

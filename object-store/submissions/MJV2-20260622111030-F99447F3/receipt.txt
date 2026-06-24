@@ -1,0 +1,23 @@
+ONTVANGSTBEWIJS IMJV2
+
+Transactie-ID: MJV2-20260622111030-F99447F3
+Status: Ontvangen
+Bestand: Exploitatietoestand d.d. 12-6-2026
+Content hash: sha256:ea37fbe619a85554ce1f13e6af8a19d709ab07049d995861a8c56f09c36d3705
+Exploitatie: Windmolenpark
+Ingediend door: Miel Jeuker-den-Aeter namens Demo Exploitatie NV
+Tijdstip indiening: 2026-06-23T10:38:28.499465+00:00
+Tijdstip ontvangst: 2026-06-23T10:38:28.499488+00:00
+Kanaal: IMJV2 loket prototype
+
+Inhoud:
+- Naam exploitatie: Windmolenpark
+- Exploitatie-ID: RTUI
+- Ingangsdatum: 2026-06-12
+- NACE-BEL-code: 567890
+- Adres: —
+- Lambert 2008 X-Y: 6789 - 6789
+- Aantal rapporteringsplichtige onderdelen: 1
+  - Emissiepunt water: Nieuw object (OBJ-01) · In gebruik
+
+Dit ontvangstbewijs bevestigt dat het hierboven genoemde geheel werd ontvangen.

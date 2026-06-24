@@ -1,0 +1,28 @@
+{
+  "transactionId": "MJV2-20260622111109-45FB0EAF",
+  "reportDraftId": "RPT-20260622111109-0B117A12",
+  "status": "Ontvangen",
+  "displayName": "Exploitatietoestand d.d. 16-6-2026",
+  "fileName": "structurele-gegevens-imjv2.ods",
+  "fileSize": 1292,
+  "contentHash": "d03faba1e417cc8acb68ae361a5351cbc3ed028e5fe75a5e637e72784aeae08b",
+  "exploitatie": "Strandpaviljoen",
+  "exploitatieId": "789U",
+  "naceBelCode": "45678",
+  "submittedBy": "Miel Jeuker-den-Aeter namens Demo Exploitatie NV",
+  "submitterName": "Miel Jeuker-den-Aeter",
+  "organizationName": "Demo Exploitatie NV",
+  "summary": "Structurele toestand met 1 objecten",
+  "createdAt": "2026-06-22T09:11:09.820838+00:00",
+  "submittedAt": "2026-06-22T12:53:49.181951+00:00",
+  "receivedAt": "2026-06-22T12:53:49.181964+00:00",
+  "receiptAvailable": true,
+  "storage": {
+    "original": "submissions/MJV2-20260622111109-45FB0EAF/original/structurele-gegevens-imjv2.ods",
+    "manifest": "submissions/MJV2-20260622111109-45FB0EAF/manifest.json",
+    "receipt": "submissions/MJV2-20260622111109-45FB0EAF/receipt.txt",
+    "reportSnapshot": "submissions/MJV2-20260622111109-45FB0EAF/payload/exploitatietoestand.json",
+    "schema": "submissions/MJV2-20260622111109-45FB0EAF/original/exploitatieschema.svg"
+  },
+  "reportUpdatedAt": "2026-06-22T12:53:21.135071+00:00"
+}

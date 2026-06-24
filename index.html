@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IMJV2 Prototype - Indienen</title>
+    <link rel="stylesheet" href="styles.css?v=20260623-withdrawal-1" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand-lockup" aria-label="Departement Omgeving">
+        <span class="brand-mark">Vlaanderen</span>
+        <span class="brand-department">Departement Omgeving</span>
+      </div>
+      <div class="page-title">
+        <h1>IMJV2 prototype</h1>
+      </div>
+      <div class="actor">
+        <span>Aangemeld als</span>
+        <strong>Emiel Jeurens</strong>
+        <span class="actor-context">namens Demo Exploitant NV</span>
+      </div>
+    </header>
+
+    <main class="shell">
+      <nav class="tabs" aria-label="Loketnavigatie">
+        <button class="tab active" id="tab-exploitations" type="button" aria-controls="exploitations-view">Mijn exploitaties</button>
+        <button class="tab tab-actions-start" id="tab-submit" type="button" aria-controls="submit-view">Indienbalie</button>
+        <button class="tab" id="tab-submissions" type="button" aria-controls="submissions-view">Mijn indieningen</button>
+      </nav>
+
+      <section id="exploitations-view">
+        <aside class="info-panel exploitation-info" role="note">
+          <span class="info-panel-icon" aria-hidden="true">i</span>
+          <p>Kies hieronder de exploitatie waarvoor u gegevens wenst te rapporteren of in te zien. Staat uw exploitatie niet op deze pagina, dan is deze nog niet gekend bij de Vlaamse milieuadministratie, en kunt u deze hier registreren zodat u erover kunt rapporteren.</p>
+        </aside>
+        <section class="exploitation-layout">
+          <article class="panel">
+            <section id="draft-exploitations-section" hidden>
+              <h2>Exploitaties in opmaak</h2>
+              <div class="exploitation-items" id="draft-exploitation-items"></div>
+            </section>
+            <button class="secondary new-exploitation-action" id="new-exploitation-button" type="button">Nieuwe exploitatie</button>
+            <section class="registered-exploitations-section">
+              <h2>Geregistreerde exploitaties</h2>
+              <div class="exploitation-items" id="exploitation-items"></div>
+            </section>
+          </article>
+        </section>
+      </section>
+
+      <div class="modal-backdrop" id="exploitation-registration" hidden>
+        <section class="modal registration-modal" role="dialog" aria-modal="true" aria-labelledby="exploitation-registration-title">
+          <div class="modal-head">
+            <div>
+              <p class="eyebrow">Nieuwe exploitatie</p>
+              <h2 id="exploitation-registration-title">Registratie nieuwe exploitatie</h2>
+            </div>
+            <button class="icon-button" id="cancel-exploitation-button" type="button" aria-label="Sluiten">x</button>
+          </div>
+          <div class="registration-modal-body">
+            <aside class="info-panel registration-info" role="note">
+              <span class="info-panel-icon" aria-hidden="true">i</span>
+              <p>Een nieuwe exploitatie moet nog worden ingediend. Met “Bewaren” maakt u alleen een registratie in opmaak aan. Indienen gebeurt daarna als een aparte stap.</p>
+            </aside>
+            <form id="exploitation-form" class="editor-form-panel">
+              <div class="editor-form-grid">
+                <label>Naam van de exploitatie<input name="name" required></label>
+                <label>Exploitatie-ID<input name="exploitatieId" required placeholder="EXP-001"></label>
+              </div>
+              <div class="editor-form-grid">
+                <label>NACE-BEL-code <small>Optioneel</small><input name="naceBelCode" placeholder="23.990"></label>
+                <label>Ingangsdatum <small>Optioneel</small><input name="effectiveFrom" type="date"></label>
+              </div>
+              <div class="editor-form-grid">
+                <label>Straat <small>Optioneel</small><input name="street"></label>
+                <label>Huisnummer <small>Optioneel</small><input name="houseNumber"></label>
+              </div>
+              <div class="editor-form-grid">
+                <label>Postcode <small>Optioneel</small><input name="postalCode"></label>
+                <label>Gemeente <small>Optioneel</small><input name="municipality"></label>
+              </div>
+              <div class="editor-form-grid">
+                <label>Lambert 2008 X <small>Optioneel</small><input name="lambertX" type="number"></label>
+                <label>Lambert 2008 Y <small>Optioneel</small><input name="lambertY" type="number"></label>
+              </div>
+              <div class="validation-summary" id="exploitation-validation" hidden></div>
+              <div class="editor-form-actions">
+                <button class="ghost" id="cancel-exploitation-form-button" type="button">Annuleren</button>
+                <button class="primary" type="submit">Bewaren</button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+
+      <section id="editor-view" hidden>
+        <div class="editor-heading">
+          <div>
+            <h2 id="editor-heading-title">Exploitatietoestand opmaken</h2>
+            <p id="editor-heading-description">Beheer de onderdelen van de exploitatie en hun onderlinge relaties.</p>
+          </div>
+        </div>
+        <section class="editor-layout">
+          <article class="panel editor-list-panel">
+            <div class="validation-summary" id="editor-validation" hidden></div>
+            <div class="editor-structure" id="editor-structure">
+              <section class="editor-structure-section">
+                <h2>1. Ingangsdatum</h2>
+                <div id="editor-date-entry"></div>
+              </section>
+              <section class="editor-structure-section">
+                <h2>2. Exploitatiegegevens</h2>
+                <div id="editor-exploitation-entry"></div>
+              </section>
+              <section class="editor-structure-section">
+                <div class="panel-head">
+                  <h2>3. Rapporteringsplichtige onderdelen</h2>
+                  <button class="secondary" id="add-object-button" type="button">Nieuw onderdeel</button>
+                </div>
+                <div class="editor-object-list" id="editor-object-list"></div>
+              </section>
+            </div>
+          </article>
+          <aside class="panel editor-form-panel">
+            <form id="editor-date-form">
+              <p class="eyebrow">Geselecteerd onderdeel</p>
+              <h2 id="editor-date-form-title">Ingangsdatum van de toestand</h2>
+              <label>Ingangsdatum<input name="effectiveFrom" type="date" required></label>
+              <div class="editor-exploitation-actions">
+                <button class="ghost" id="cancel-date-changes" type="button" disabled>Annuleren</button>
+                <button class="secondary" id="apply-date-changes" type="submit" disabled>Bewaren</button>
+              </div>
+            </form>
+            <form class="editor-exploitation-data" id="editor-exploitation-form">
+              <p class="eyebrow">Geselecteerd onderdeel</p>
+              <h2>Exploitatiegegevens</h2>
+              <div class="editor-form-grid">
+                <label>Naam van de exploitatie<input name="exploitatie" required></label>
+                <label>Exploitatie-ID <small>Kan niet worden gewijzigd</small><input name="exploitatieId" required readonly></label>
+              </div>
+              <div class="editor-form-grid">
+                <label>NACE-BEL-code <small>Optioneel</small><input name="naceBelCode"></label>
+              </div>
+              <div class="editor-form-grid">
+                <label>Straat <small>Optioneel</small><input name="street"></label>
+                <label>Huisnummer <small>Optioneel</small><input name="houseNumber"></label>
+              </div>
+              <div class="editor-form-grid">
+                <label>Postcode <small>Optioneel</small><input name="postalCode"></label>
+                <label>Gemeente <small>Optioneel</small><input name="municipality"></label>
+              </div>
+              <div class="editor-form-grid">
+                <label>Lambert 2008 X <small>Optioneel</small><input name="lambertX" type="number"></label>
+                <label>Lambert 2008 Y <small>Optioneel</small><input name="lambertY" type="number"></label>
+              </div>
+              <div class="editor-exploitation-actions">
+                <button class="ghost" id="cancel-exploitation-changes" type="button" disabled>Annuleren</button>
+                <button class="secondary" id="apply-exploitation-changes" type="submit" disabled>Bewaren</button>
+              </div>
+            </form>
+            <div id="editor-object-detail">
+              <p class="eyebrow">Geselecteerd onderdeel</p>
+              <h2 id="editor-form-title">Object bewerken</h2>
+              <form id="editor-form">
+              <label>Type<select name="type" required>
+                <option>Productielijn</option><option>Stookinstallatie</option>
+                <option>Waterzuivering</option><option>Grondwaterwinning</option>
+                <option>Emissiepunt lucht</option><option>Emissiepunt water</option>
+              </select></label>
+              <div class="editor-form-grid">
+                <label>Code<input name="code" required maxlength="30"></label>
+                <label>Status<select name="status"><option>In gebruik</option><option>Gepland</option><option>Buiten gebruik</option></select></label>
+              </div>
+              <label>Naam<input name="name" required maxlength="120"></label>
+              <label>Eigenschappen<textarea name="properties" rows="5"></textarea></label>
+              <label>Verbonden met <small>Codes, gescheiden door komma’s</small><input name="relations" placeholder="PL-01, EP-L-01"></label>
+              <div class="editor-form-actions">
+                <button class="danger-link" id="delete-object-button" type="button">Verwijderen</button>
+                <span class="editor-form-confirm-actions">
+                  <button class="ghost" id="cancel-object-changes" type="button" disabled>Annuleren</button>
+                  <button class="primary" id="apply-object-changes" type="submit" disabled>Bewaren</button>
+                </span>
+              </div>
+              </form>
+            </div>
+          </aside>
+        </section>
+        <div class="editor-footer" hidden>
+          <span id="editor-object-count"></span>
+          <button class="primary" id="prepare-submit-button" type="button">Klaarzetten voor indiening</button>
+        </div>
+      </section>
+
+      <section id="submit-view" hidden>
+      <section class="flow" aria-label="Indienproces">
+        <div class="step active">
+          <span>1</span>
+          <strong>Nakijken</strong>
+        </div>
+        <div class="connector"></div>
+        <div class="step" id="step-submit">
+          <span>2</span>
+          <strong>Indienen</strong>
+        </div>
+        <div class="connector"></div>
+        <div class="step" id="step-receipt">
+          <span>3</span>
+          <strong>Ontvangstbewijs</strong>
+        </div>
+      </section>
+
+      <section class="submit-panel-wrap">
+        <article class="panel submit-panel">
+          <div class="panel-head">
+            <h2 id="basket-title">Klaar om in te dienen</h2>
+            <span class="status" id="basket-status" hidden></span>
+          </div>
+          <p class="basket-empty-message" id="basket-empty-message" hidden>
+            Er is nog niets klaargezet voor indiening.
+          </p>
+
+          <dl class="properties submit-metadata" id="basket-transaction-section">
+            <div class="property">
+              <dt>Transactie-ID</dt>
+              <dd id="transaction-id">wordt geladen...</dd>
+            </div>
+            <div class="property">
+              <dt>Indiener</dt>
+              <dd>Emiel Jeurens</dd>
+            </div>
+          </dl>
+
+          <div class="detail-section" id="basket-content-section">
+            <h3>Inhoud</h3>
+            <dl class="properties">
+              <div class="property">
+                <dt>Exploitatie</dt>
+                <dd id="basket-exploitation">wordt geladen...</dd>
+              </div>
+              <div class="property">
+                <dt>NACE-BEL-code</dt>
+                <dd id="basket-nace-bel-code">—</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="detail-section" id="basket-files-section">
+            <h3>Stukken</h3>
+            <dl class="properties">
+              <div class="property">
+                <dt>Content hash</dt>
+                <dd class="hash" id="content-hash">wordt berekend...</dd>
+              </div>
+            </dl>
+            <div class="file-row compact">
+              <div class="file-icon" aria-label="ODS-spreadsheet">
+                <span></span>
+              </div>
+              <div class="file-meta">
+                <strong>Exploitatietoestand d.d. 1-1-2027</strong>
+                <span>ODS-spreadsheet</span>
+              </div>
+              <div class="file-actions">
+                <button class="secondary" id="preview-button" type="button">Preview</button>
+                <a class="ghost" id="draft-download" href="assets/structurele-gegevens-imjv2.ods" download>Download</a>
+              </div>
+            </div>
+            <div class="file-row compact">
+              <div class="schema-icon" aria-label="SVG-afbeelding"></div>
+              <div class="file-meta">
+                <strong>Exploitatieschema d.d. 1-1-2027</strong>
+                <span>SVG-afbeelding · visuele weergave van de exploitatiestructuur</span>
+              </div>
+              <div class="file-actions">
+                <button class="secondary schema-preview-button" id="draft-schema-preview" type="button">Preview</button>
+                <a class="ghost" id="draft-schema-download" href="#" download>Download</a>
+              </div>
+            </div>
+          </div>
+
+          <button class="primary full" id="submit-button" type="button">Indienen</button>
+
+          <div class="detail-section submit-receipt-section">
+            <h3>Ontvangstbewijs</h3>
+            <p id="receipt-empty">Nog niet ingediend. Na indiening verschijnt hier het ontvangstbewijs.</p>
+            <dl class="properties" id="receipt-body" hidden></dl>
+            <div class="receipt-document" id="receipt-actions" hidden>
+              <div class="file-row compact">
+                <div class="document-icon" aria-hidden="true"></div>
+                <div class="file-meta">
+                  <strong>Ontvangstbewijs IMJV2</strong>
+                  <span>Tekstdocument · bevestiging van ontvangst</span>
+                </div>
+                <div class="file-actions">
+                  <button class="secondary" id="preview-receipt-result-button" type="button">Preview</button>
+                  <a class="ghost" id="receipt-download" href="#" download>Download</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+      </section>
+
+      <section id="submissions-view" hidden>
+        <section class="submissions-layout">
+          <article class="panel submissions-list">
+            <div class="submission-items" id="submission-items"></div>
+          </article>
+
+          <aside class="panel submission-detail">
+            <h3 class="detail-heading">Transactiegegevens</h3>
+            <dl class="properties" id="submission-detail"></dl>
+
+            <div class="detail-section submitted-content-section">
+              <h3>Ingediende inhoud</h3>
+              <dl class="properties section-data" id="submission-payload"></dl>
+            </div>
+
+            <div class="detail-section" id="submission-files-section">
+              <h3>Stukken</h3>
+              <div class="file-row compact" id="submission-ods-row">
+                <div class="file-icon" aria-label="ODS-spreadsheet">
+                  <span></span>
+                </div>
+                <div class="file-meta">
+                  <strong>Exploitatietoestand d.d. 1-1-2027</strong>
+                  <span>ODS-spreadsheet</span>
+                </div>
+                <div class="file-actions">
+                  <button class="secondary" id="preview-button-detail" type="button">Preview</button>
+                  <a class="ghost" href="assets/structurele-gegevens-imjv2.ods" download>Download</a>
+                </div>
+              </div>
+              <div class="file-row compact" id="submission-schema-row">
+                <div class="schema-icon" aria-label="SVG-afbeelding"></div>
+                <div class="file-meta">
+                  <strong>Exploitatieschema d.d. 1-1-2027</strong>
+                  <span>SVG-afbeelding · visuele weergave van de exploitatiestructuur</span>
+                </div>
+                <div class="file-actions">
+                  <button class="secondary schema-preview-button" id="detail-schema-preview" type="button">Preview</button>
+                  <a class="ghost" id="detail-schema-download" href="#" download>Download</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="draft-submission-actions">
+              <button class="danger-link" id="delete-draft-submission" type="button">Winkelmandje leegmaken</button>
+              <button class="primary" id="detail-submit-button" type="button">Indienen voltooien...</button>
+            </div>
+            <div class="detail-section" id="receipt-document-section" hidden>
+              <h3>Ontvangstbewijs</h3>
+              <div class="file-row compact">
+                <div class="document-icon" aria-hidden="true"></div>
+                <div class="file-meta">
+                  <strong>Ontvangstbewijs IMJV2</strong>
+                  <span id="receipt-document-description">Tekstdocument · bevestiging van ontvangst</span>
+                </div>
+                <div class="file-actions">
+                  <button class="secondary" id="preview-receipt-button" type="button">Preview</button>
+                  <a class="ghost" id="detail-receipt-download" href="#" download>Download</a>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </section>
+      </section>
+
+      <section id="reports-view" hidden>
+        <div class="reports-context-toolbar" id="reports-context-toolbar">
+          <article class="exploitation-card reports-exploitation-context" id="reports-exploitation-context">
+            <div class="exploitation-card-main">
+              <span>
+                <strong id="reports-exploitation-name">Exploitatie</strong>
+                <span id="reports-exploitation-location"></span>
+                <small id="reports-exploitation-id"></small>
+                <span class="unsaved-changes-label" id="reports-exploitation-status" hidden></span>
+              </span>
+            </div>
+          </article>
+          <article class="panel reports-contact-context">
+            <h2>Contactgegevens</h2>
+            <p>Contactgegevens voor deze exploitatie zijn nog niet beschikbaar.</p>
+          </article>
+        </div>
+        <h2 class="reports-section-title" id="reports-section-title">Toestand op het terrein</h2>
+        <div class="reports-view-switch" id="reports-view-switch">
+          <div class="view-switch" id="reports-mode-toggle" role="group" aria-label="Weergave exploitatietoestanden">
+            <button class="secondary active" id="show-report-timeline" type="button">Tijdslijn</button>
+            <button class="ghost" id="show-report-diff" type="button">Vergelijken</button>
+          </div>
+          <div class="reports-edit-mode" id="reports-edit-mode" hidden>
+            <span class="status">Bewerkmodus</span>
+            <button class="text-link" id="close-edit-mode" type="button">Sluiten en terug naar overzicht</button>
+          </div>
+        </div>
+        <section class="reports-layout" id="reports-timeline-view">
+          <article class="panel reports-list" id="reports-list">
+            <button class="draft-report-entry" id="draft-report-entry" type="button">
+              <strong>Toestand in opmaak</strong>
+            </button>
+            <div class="reported-states-heading">
+              <h2>Geregistreerde toestanden</h2>
+              <label class="replaced-reports-toggle" id="replaced-reports-toggle" hidden>
+                <input id="show-replaced-reports" type="checkbox" />
+                <span>Vervangen of ingetrokken toestanden tonen</span>
+              </label>
+            </div>
+            <ol class="report-items" id="report-items"></ol>
+          </article>
+          <aside class="panel report-detail">
+            <div class="report-navigation">
+              <button class="ghost report-navigation-button" id="previous-report" type="button">← Vorige</button>
+              <h2 id="report-detail-title">Toestand van de exploitatie</h2>
+              <button class="ghost report-navigation-button" id="newer-report" type="button">Recentere →</button>
+            </div>
+            <div class="draft-warning" id="draft-warning" role="status" hidden>
+              <strong id="draft-warning-text">Deze toestand is nog niet ingediend.</strong>
+            </div>
+            <div class="submission-reference">
+              <span id="report-submitted-date"></span>
+              <button class="text-link" id="open-source-submission" type="button">Indiening bekijken</button>
+            </div>
+            <div class="report-replacement-notices" id="report-replacement-notices" hidden></div>
+            <div class="draft-report-actions" id="draft-report-actions" hidden>
+              <button class="secondary" id="edit-draft-report" type="button">Verder bewerken</button>
+              <button class="ghost" id="review-draft-submission" type="button">Indienen...</button>
+              <button class="danger-link" id="delete-draft-report" type="button">Toestand verwijderen</button>
+            </div>
+            <div class="registered-report-actions" id="registered-report-actions">
+              <p>Corrigeer de registratie of rapporteer een latere wijziging op het terrein.</p>
+              <div>
+                <button class="secondary" id="correct-report" type="button">Registratie corrigeren</button>
+                <button class="ghost" id="new-state-from-report" type="button">Nieuwe toestand registreren</button>
+                <button class="danger-link" id="withdraw-report" type="button">Registratie intrekken</button>
+              </div>
+            </div>
+            <div class="detail-section report-structure-section report-date-section">
+              <h3>1. Ingangsdatum</h3>
+              <dl class="properties section-data" id="report-effective-date"></dl>
+            </div>
+            <div class="detail-section report-structure-section report-metadata-section">
+              <h3>2. Exploitatiegegevens</h3>
+              <dl class="properties section-data" id="report-metadata"></dl>
+            </div>
+            <div class="detail-section report-structure-section">
+              <h3>3. Rapporteringsplichtige onderdelen</h3>
+              <div class="report-object-list" id="report-object-list"></div>
+            </div>
+          </aside>
+        </section>
+        <section class="panel report-diff-view" id="reports-diff-view" hidden>
+          <div class="panel-head">
+            <div>
+              <h2>Wijzigingen per toestand</h2>
+              <p>Elke kolom toont de wijziging tegenover de voorgaande geregistreerde toestand.</p>
+            </div>
+          </div>
+          <div class="diff-table-wrap">
+            <table class="diff-table" id="report-diff-table"></table>
+          </div>
+          <div class="diff-legend" aria-label="Legenda">
+            <span><i class="diff-dot added"></i>Toegevoegd</span>
+            <span><i class="diff-dot changed"></i>Gewijzigd</span>
+            <span><i class="diff-dot removed"></i>Verwijderd</span>
+            <span><i class="diff-dot unchanged"></i>Ongewijzigd</span>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <div class="modal-backdrop" id="modal" hidden>
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-head">
+          <div>
+            <p class="eyebrow" id="modal-eyebrow">Preview spreadsheet</p>
+            <h2 id="modal-title">Exploitatietoestand d.d. 1-1-2027</h2>
+          </div>
+          <button class="icon-button" id="close-modal" type="button" aria-label="Sluiten">x</button>
+        </div>
+        <div class="table-wrap">
+          <table id="preview-table"></table>
+          <pre class="receipt-preview" id="receipt-preview" hidden></pre>
+          <img class="schema-preview" id="schema-preview" src="assets/exploitatieschema-1-1-2027.svg" alt="Exploitatieschema d.d. 1-1-2027" hidden />
+          <div class="submission-modal-detail" id="submission-modal-detail" hidden></div>
+        </div>
+      </section>
+    </div>
+
+    <script src="app.js?v=20260623-withdrawal-1"></script>
+  </body>
+</html>

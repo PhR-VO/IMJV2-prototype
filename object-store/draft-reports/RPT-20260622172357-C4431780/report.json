@@ -1,0 +1,34 @@
+{
+  "reportDraftId": "RPT-20260622172357-C4431780",
+  "title": "Exploitatietoestand d.d. 16-6-2026",
+  "exploitatie": "Strandpaviljoen",
+  "exploitatieId": "789U",
+  "effectiveFrom": "2026-06-16",
+  "naceBelCode": "45678",
+  "location": {
+    "address": {
+      "street": "Pier",
+      "houseNumber": "2",
+      "postalCode": "",
+      "municipality": "Knokke",
+      "country": "België"
+    },
+    "lambert2008": {
+      "x": 56789,
+      "y": 6789
+    }
+  },
+  "objects": [
+    {
+      "type": "Grondwaterwinning",
+      "code": "OBJ-01",
+      "name": "Nieuw object",
+      "status": "Gepland",
+      "properties": "",
+      "relations": []
+    }
+  ],
+  "updatedAt": "2026-06-23T13:02:17.982540+00:00",
+  "replacesReportId": "REPORT-MJV2-20260622111109-45FB0EAF",
+  "replacesTransactionId": "MJV2-20260622111109-45FB0EAF"
+}

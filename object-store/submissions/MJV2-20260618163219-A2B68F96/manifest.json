@@ -1,0 +1,29 @@
+{
+  "transactionId": "MJV2-20260618163219-A2B68F96",
+  "status": "Ontvangen",
+  "displayName": "Exploitatietoestand d.d. 26-11-2027",
+  "fileName": "structurele-gegevens-imjv2.ods",
+  "fileSize": 1983,
+  "contentHash": "688379153204e1f2ec7a3baa766874ce2b996830a95ce672a0ea23b4e10b6026",
+  "exploitatie": "Demo Exploitatie NV",
+  "submittedBy": "Miel Jeuker-den-Aeter namens Demo Exploitatie NV",
+  "summary": "De oude aardgasgestookte stoomketel is buiten gebruik gesteld en vervangen door een elektrische stoomketel.",
+  "createdAt": "2027-11-26T08:45:00+01:00",
+  "submittedAt": "2027-11-26T09:15:00+01:00",
+  "receivedAt": "2027-11-26T09:15:01+01:00",
+  "receiptAvailable": true,
+  "storage": {
+    "original": "submissions/MJV2-20260618163219-A2B68F96/original/structurele-gegevens-imjv2.ods",
+    "manifest": "submissions/MJV2-20260618163219-A2B68F96/manifest.json",
+    "receipt": "submissions/MJV2-20260618163219-A2B68F96/receipt.txt",
+    "reportSnapshot": "submissions/MJV2-20260618163219-A2B68F96/payload/exploitatietoestand.json",
+    "schema": "submissions/MJV2-20260618163219-A2B68F96/original/exploitatieschema.svg"
+  },
+  "submitterName": "Miel Jeuker-den-Aeter",
+  "organizationName": "Demo Exploitatie NV",
+  "reportHistoryVisible": true,
+  "reportSequence": 5,
+  "naceBelCode": "23.990",
+  "exploitatieId": "DEMO-EXP-001",
+  "reportUpdatedAt": null
+}

@@ -1,0 +1,26 @@
+{
+  "transactionId": "MJV2-20260618085207-38C89C43",
+  "status": "Ontvangen",
+  "displayName": "Exploitatietoestand d.d. 1-1-2027",
+  "fileName": "structurele-gegevens-imjv2.ods",
+  "fileSize": 1731,
+  "contentHash": "73efc0affe0fad99f621735a3f6264676552d0655e800f2515880f66d941acfd",
+  "exploitatie": "Demo Exploitatie NV",
+  "summary": "Initiële toestand van de exploitatie.",
+  "createdAt": "2027-01-01T08:45:00+01:00",
+  "submittedAt": "2027-01-01T09:15:00+01:00",
+  "receivedAt": "2027-01-01T09:15:01+01:00",
+  "receiptAvailable": true,
+  "storage": {
+    "original": "submissions/MJV2-20260618085207-38C89C43/original/structurele-gegevens-imjv2.ods",
+    "manifest": "submissions/MJV2-20260618085207-38C89C43/manifest.json",
+    "receipt": "submissions/MJV2-20260618085207-38C89C43/receipt.txt",
+    "reportSnapshot": "submissions/MJV2-20260618085207-38C89C43/payload/exploitatietoestand.json",
+    "schema": "submissions/MJV2-20260618085207-38C89C43/original/exploitatieschema.svg"
+  },
+  "reportHistoryVisible": true,
+  "reportSequence": 1,
+  "naceBelCode": "23.990",
+  "exploitatieId": "DEMO-EXP-001",
+  "reportUpdatedAt": null
+}

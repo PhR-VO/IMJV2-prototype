@@ -1,0 +1,61 @@
+{
+  "submissionType": "withdrawal",
+  "targetReportId": "REPORT-MJV2-20260623151313-F8A1170C",
+  "targetTransactionId": "MJV2-20260623151313-F8A1170C",
+  "exploitatie": "Academisch Ziekenhuis",
+  "exploitatieId": "IUHS",
+  "effectiveFrom": "2027-11-12",
+  "reason": "Verkeerd",
+  "submittedAt": "2026-06-23T21:34:51.877447+00:00",
+  "targetSnapshot": {
+    "reportId": "REPORT-MJV2-20260623151313-F8A1170C",
+    "title": "Toestand in opmaak",
+    "exploitatie": "Academisch Ziekenhuis",
+    "exploitatieId": "IUHS",
+    "naceBelCode": "",
+    "location": {
+      "address": {
+        "street": "",
+        "houseNumber": "",
+        "postalCode": "",
+        "municipality": "",
+        "country": "België"
+      },
+      "lambert2008": {
+        "x": null,
+        "y": null
+      }
+    },
+    "objects": [
+      {
+        "type": "Productielijn",
+        "code": "OBJ-01",
+        "name": "Nieuw object",
+        "properties": "",
+        "relations": [],
+        "status": "Gepland"
+      },
+      {
+        "type": "Emissiepunt lucht",
+        "code": "OBJ-02",
+        "name": "Nieuw object",
+        "status": "In gebruik",
+        "properties": "",
+        "relations": []
+      }
+    ],
+    "objectCount": 2,
+    "effectiveFrom": "2027-11-12",
+    "submittedAt": "2026-06-23T13:13:16.016121+00:00",
+    "receivedAt": "2026-06-23T13:13:16.016137+00:00",
+    "transactionId": "MJV2-20260623151313-F8A1170C",
+    "contentHash": "2ef6a66baa3df9006f09c9d6abb63b6351c3c7071631cccea1fc005bc4653a5f",
+    "changeSummary": null,
+    "replacesReportId": "REPORT-MJV2-20260623151231-73C73DF4",
+    "replacesTransactionId": "MJV2-20260623151231-73C73DF4",
+    "basedOnReportId": null,
+    "basedOnTransactionId": null,
+    "changeType": "correction",
+    "source": "snapshot"
+  }
+}

@@ -1,0 +1,24 @@
+ONTVANGSTBEWIJS IMJV2
+
+Transactie-ID: MJV2-20260622164621-A99313AB
+Status: Ontvangen
+Bestand: Toestand in opmaak
+Content hash: sha256:3318878c0689731a698ef25e4f5d909bfa0e2c07f4237d09f0a1d93f7b037993
+Exploitatie: Datacenter
+Ingediend door: Emiel Jeurens namens Demo Exploitatie NV
+Tijdstip indiening: 2026-06-23T11:59:51.133641+00:00
+Tijdstip ontvangst: 2026-06-23T11:59:51.133665+00:00
+Kanaal: IMJV2 loket prototype
+
+Inhoud:
+- Naam exploitatie: Datacenter
+- Exploitatie-ID: TYU
+- Ingangsdatum: 2027-01-28
+- NACE-BEL-code: —
+- Adres: Hasselt
+- Lambert 2008 X-Y: — - —
+- Aantal rapporteringsplichtige onderdelen: 2
+  - Grondwaterwinning: Nieuw object (OBJ-01) · In gebruik
+  - Waterzuivering: Waterzuivering (OBJ-02) · In gebruik
+
+Dit ontvangstbewijs bevestigt dat het hierboven genoemde geheel werd ontvangen.

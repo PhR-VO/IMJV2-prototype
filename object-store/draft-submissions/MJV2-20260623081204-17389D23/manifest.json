@@ -1,0 +1,27 @@
+{
+  "transactionId": "MJV2-20260623081204-17389D23",
+  "reportDraftId": "RPT-20260622172357-C4431780",
+  "status": "Nog niet ingediend",
+  "displayName": "Exploitatietoestand d.d. 16-6-2026",
+  "fileName": "structurele-gegevens-imjv2.ods",
+  "fileSize": 1337,
+  "contentHash": "79a9849fc6395eca13d860c51f4abed9d9fc4e0f1f58b945cb2cf46103428b12",
+  "exploitatie": "Strandpaviljoen",
+  "exploitatieId": "789U",
+  "naceBelCode": "45678",
+  "submittedBy": "Emiel Jeurens namens Demo Exploitatie NV",
+  "submitterName": "Emiel Jeurens",
+  "organizationName": "Demo Exploitatie NV",
+  "summary": "Structurele toestand met 1 objecten",
+  "createdAt": "2026-06-23T06:12:04.279102+00:00",
+  "submittedAt": null,
+  "receivedAt": null,
+  "receiptAvailable": false,
+  "storage": {
+    "original": "draft-submissions/MJV2-20260623081204-17389D23/original/structurele-gegevens-imjv2.ods",
+    "manifest": "draft-submissions/MJV2-20260623081204-17389D23/manifest.json",
+    "reportDraft": "draft-reports/RPT-20260622172357-C4431780/report.json",
+    "schema": "draft-submissions/MJV2-20260623081204-17389D23/original/exploitatieschema.svg"
+  },
+  "reportUpdatedAt": "2026-06-23T13:02:17.982540+00:00"
+}

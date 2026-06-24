@@ -1,0 +1,28 @@
+{
+  "transactionId": "MJV2-20260620171312-94AEA1BB",
+  "reportDraftId": "RPT-20260620171312-7E73AB33",
+  "status": "Ontvangen",
+  "displayName": "Exploitatietoestand d.d. 24-6-2026",
+  "fileName": "structurele-gegevens-imjv2.ods",
+  "fileSize": 1230,
+  "contentHash": "81242e8d21d339f6de6f3bb460b9b1170c8257b007f59b58fee14cf29d639d24",
+  "exploitatie": "hjko",
+  "exploitatieId": "OIJDKJH",
+  "naceBelCode": "oiuhgf",
+  "submittedBy": "Miel Jeuker-den-Aeter namens Demo Exploitatie NV",
+  "submitterName": "Miel Jeuker-den-Aeter",
+  "organizationName": "Demo Exploitatie NV",
+  "summary": "Structurele toestand op het terrein",
+  "createdAt": "2026-06-20T15:13:12.597512+00:00",
+  "submittedAt": "2026-06-21T21:51:20.027453+00:00",
+  "receivedAt": "2026-06-21T21:51:20.027483+00:00",
+  "receiptAvailable": true,
+  "storage": {
+    "original": "submissions/MJV2-20260620171312-94AEA1BB/original/structurele-gegevens-imjv2.ods",
+    "manifest": "submissions/MJV2-20260620171312-94AEA1BB/manifest.json",
+    "receipt": "submissions/MJV2-20260620171312-94AEA1BB/receipt.txt",
+    "reportSnapshot": "submissions/MJV2-20260620171312-94AEA1BB/payload/exploitatietoestand.json",
+    "schema": "submissions/MJV2-20260620171312-94AEA1BB/original/exploitatieschema.svg"
+  },
+  "reportUpdatedAt": "2026-06-20T15:13:12.592378+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "reportDraftId": "RPT-20260623130511-06C7DBFA",
+  "title": "Toestand in opmaak",
+  "exploitatie": "Tankstation",
+  "exploitatieId": "IUHY",
+  "effectiveFrom": "2027-01-02",
+  "naceBelCode": "",
+  "location": {
+    "address": {
+      "street": "",
+      "houseNumber": "",
+      "postalCode": "",
+      "municipality": "",
+      "country": "België"
+    },
+    "lambert2008": {
+      "x": null,
+      "y": null
+    }
+  },
+  "objects": [],
+  "updatedAt": "2026-06-24T12:07:52.897376+00:00"
+}

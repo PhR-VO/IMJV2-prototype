@@ -1,0 +1,28 @@
+{
+  "transactionId": "MJV2-20260622013402-45DED532",
+  "reportDraftId": "RPT-20260622012728-38869A34",
+  "status": "Ontvangen",
+  "displayName": "Exploitatietoestand d.d. 24-6-2026",
+  "fileName": "structurele-gegevens-imjv2.ods",
+  "fileSize": 1376,
+  "contentHash": "ee1a5aa23f69bc5e56a72a083d61fb41a57a17aa1f8597fcc324e5d8729e254a",
+  "exploitatie": "Steenfabriek",
+  "exploitatieId": "OIJDKJH",
+  "naceBelCode": "567",
+  "submittedBy": "Miel Jeuker-den-Aeter namens Demo Exploitatie NV",
+  "submitterName": "Miel Jeuker-den-Aeter",
+  "organizationName": "Demo Exploitatie NV",
+  "summary": "Structurele toestand met 2 objecten",
+  "createdAt": "2026-06-21T23:34:02.289619+00:00",
+  "submittedAt": "2026-06-21T23:34:04.020231+00:00",
+  "receivedAt": "2026-06-21T23:34:04.020273+00:00",
+  "receiptAvailable": true,
+  "storage": {
+    "original": "submissions/MJV2-20260622013402-45DED532/original/structurele-gegevens-imjv2.ods",
+    "manifest": "submissions/MJV2-20260622013402-45DED532/manifest.json",
+    "receipt": "submissions/MJV2-20260622013402-45DED532/receipt.txt",
+    "reportSnapshot": "submissions/MJV2-20260622013402-45DED532/payload/exploitatietoestand.json",
+    "schema": "submissions/MJV2-20260622013402-45DED532/original/exploitatieschema.svg"
+  },
+  "reportUpdatedAt": "2026-06-21T23:34:02.298890+00:00"
+}

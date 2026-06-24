@@ -1,0 +1,43 @@
+{
+  "reportDraftId": "RPT-20260624132039-72A34287",
+  "title": "Exploitatietoestand d.d. 3-6-2026",
+  "exploitatie": "Eerste extra exploitatie",
+  "exploitatieId": "EXP-PHR1",
+  "effectiveFrom": "2026-06-03",
+  "naceBelCode": "345",
+  "location": {
+    "address": {
+      "street": "Havenweg",
+      "houseNumber": "1",
+      "postalCode": "1000",
+      "municipality": "Gent",
+      "country": "België"
+    },
+    "lambert2008": {
+      "x": 45678,
+      "y": 5678
+    }
+  },
+  "objects": [
+    {
+      "type": "Productielijn",
+      "code": "OBJ-01",
+      "name": "Nieuw object",
+      "properties": "",
+      "relations": [],
+      "status": "Gepland"
+    },
+    {
+      "type": "Stookinstallatie",
+      "code": "OBJ-02",
+      "name": "Nieuw object",
+      "status": "Gepland",
+      "properties": "",
+      "relations": []
+    }
+  ],
+  "updatedAt": "2026-06-24T11:20:51.238745+00:00",
+  "replacesReportId": "REPORT-MJV2-20260620130329-7DD06513",
+  "replacesTransactionId": "MJV2-20260620130329-7DD06513",
+  "changeType": "correction"
+}

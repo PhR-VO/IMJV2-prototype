@@ -1,0 +1,28 @@
+{
+  "transactionId": "MJV2-20260618173845-92FB45A0",
+  "status": "Ontvangen",
+  "displayName": "Exploitatietoestand d.d. 1-1-2027",
+  "fileName": "structurele-gegevens-imjv2.ods",
+  "fileSize": 1769,
+  "contentHash": "ea1aa2a97953079c5df3d2b641dbbc56cf83f376092608ce4fd6f97a9086c571",
+  "exploitatie": "Demo Exploitatie NV",
+  "submittedBy": "Miel Jeuker-den-Aeter namens Demo Exploitatie NV",
+  "submitterName": "Miel Jeuker-den-Aeter",
+  "organizationName": "Demo Exploitatie NV",
+  "summary": "Structurele toestand met 8 objecten",
+  "createdAt": "2026-06-18T15:38:45.344492+00:00",
+  "submittedAt": "2026-06-19T20:34:27.022710+00:00",
+  "receivedAt": "2026-06-19T20:34:27.022764+00:00",
+  "receiptAvailable": true,
+  "storage": {
+    "original": "submissions/MJV2-20260618173845-92FB45A0/original/structurele-gegevens-imjv2.ods",
+    "manifest": "submissions/MJV2-20260618173845-92FB45A0/manifest.json",
+    "receipt": "submissions/MJV2-20260618173845-92FB45A0/receipt.txt",
+    "reportSnapshot": "submissions/MJV2-20260618173845-92FB45A0/payload/exploitatietoestand.json",
+    "schema": "submissions/MJV2-20260618173845-92FB45A0/original/exploitatieschema.svg"
+  },
+  "reportDraftId": "RPT-MJV2-20260618173845-92FB45A0",
+  "reportUpdatedAt": "2026-06-19T20:33:58.498148+00:00",
+  "naceBelCode": "23.990",
+  "exploitatieId": "DEMO-EXP-001"
+}

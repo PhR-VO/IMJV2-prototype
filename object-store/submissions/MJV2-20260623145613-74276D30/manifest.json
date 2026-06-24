@@ -1,0 +1,28 @@
+{
+  "transactionId": "MJV2-20260623145613-74276D30",
+  "reportDraftId": "RPT-20260623145613-6248FC04",
+  "status": "Ontvangen",
+  "displayName": "Toestand in opmaak",
+  "fileName": "structurele-gegevens-imjv2.ods",
+  "fileSize": 1302,
+  "contentHash": "04a3605ba924e23a5f9b9b40cab6121f7ce057423d4bb0bd3f79f4e0343b0922",
+  "exploitatie": "Herman Terilinck",
+  "exploitatieId": "DFG",
+  "naceBelCode": "",
+  "submittedBy": "Emiel Jeurens namens Demo Exploitatie NV",
+  "submitterName": "Emiel Jeurens",
+  "organizationName": "Demo Exploitatie NV",
+  "summary": "Structurele toestand met 1 objecten",
+  "createdAt": "2026-06-23T12:56:13.822057+00:00",
+  "submittedAt": "2026-06-23T12:59:02.099729+00:00",
+  "receivedAt": "2026-06-23T12:59:02.099754+00:00",
+  "receiptAvailable": true,
+  "storage": {
+    "original": "submissions/MJV2-20260623145613-74276D30/original/structurele-gegevens-imjv2.ods",
+    "manifest": "submissions/MJV2-20260623145613-74276D30/manifest.json",
+    "receipt": "submissions/MJV2-20260623145613-74276D30/receipt.txt",
+    "reportSnapshot": "submissions/MJV2-20260623145613-74276D30/payload/exploitatietoestand.json",
+    "schema": "submissions/MJV2-20260623145613-74276D30/original/exploitatieschema.svg"
+  },
+  "reportUpdatedAt": "2026-06-23T12:57:18.494653+00:00"
+}

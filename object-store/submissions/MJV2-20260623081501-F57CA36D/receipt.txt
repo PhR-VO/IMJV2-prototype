@@ -1,0 +1,23 @@
+ONTVANGSTBEWIJS IMJV2
+
+Transactie-ID: MJV2-20260623081501-F57CA36D
+Status: Ontvangen
+Bestand: Toestand in opmaak
+Content hash: sha256:a77df7ae1a0c93cbb194d93789cd7f85e3377ef1a3afbfd0800defbfb61935f0
+Exploitatie: Ziekenhuis
+Ingediend door: Emiel Jeurens namens Demo Exploitatie NV
+Tijdstip indiening: 2026-06-23T08:40:47.710365+00:00
+Tijdstip ontvangst: 2026-06-23T08:40:47.710382+00:00
+Kanaal: IMJV2 loket prototype
+
+Inhoud:
+- Naam exploitatie: Ziekenhuis
+- Exploitatie-ID: IUHS
+- Ingangsdatum: 2027-01-01
+- NACE-BEL-code: —
+- Adres: —
+- Lambert 2008 X-Y: — - —
+- Aantal rapporteringsplichtige onderdelen: 1
+  - Productielijn: Nieuw object (OBJ-01) · Gepland
+
+Dit ontvangstbewijs bevestigt dat het hierboven genoemde geheel werd ontvangen.

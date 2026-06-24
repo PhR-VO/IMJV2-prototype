@@ -1,0 +1,26 @@
+{
+  "transactionId": "MJV2-20260618091616-BFC60993",
+  "status": "Ontvangen",
+  "displayName": "Exploitatietoestand d.d. 13-6-2027",
+  "fileName": "structurele-gegevens-imjv2.ods",
+  "fileSize": 1876,
+  "contentHash": "c7aa5dd23184408da6de22d205e593bba3046b3496b6c8feaa77c38c195a1056",
+  "exploitatie": "Demo Exploitatie NV",
+  "summary": "Een tweede productielijn voor keramisch recyclaat is toegevoegd.",
+  "createdAt": "2027-06-13T08:45:00+01:00",
+  "submittedAt": "2027-06-13T09:15:00+01:00",
+  "receivedAt": "2027-06-13T09:15:01+01:00",
+  "receiptAvailable": true,
+  "storage": {
+    "original": "submissions/MJV2-20260618091616-BFC60993/original/structurele-gegevens-imjv2.ods",
+    "manifest": "submissions/MJV2-20260618091616-BFC60993/manifest.json",
+    "receipt": "submissions/MJV2-20260618091616-BFC60993/receipt.txt",
+    "reportSnapshot": "submissions/MJV2-20260618091616-BFC60993/payload/exploitatietoestand.json",
+    "schema": "submissions/MJV2-20260618091616-BFC60993/original/exploitatieschema.svg"
+  },
+  "reportHistoryVisible": true,
+  "reportSequence": 3,
+  "naceBelCode": "23.990",
+  "exploitatieId": "DEMO-EXP-001",
+  "reportUpdatedAt": null
+}
