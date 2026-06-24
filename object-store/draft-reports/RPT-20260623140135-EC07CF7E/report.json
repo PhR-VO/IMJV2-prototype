@@ -7,15 +7,15 @@
   "naceBelCode": "",
   "location": {
     "address": {
-      "street": "",
-      "houseNumber": "",
-      "postalCode": "",
+      "street": "Kempische Steenweg",
+      "houseNumber": "293",
+      "postalCode": "3500",
       "municipality": "Hasselt",
       "country": "België"
     },
     "lambert2008": {
-      "x": null,
-      "y": null
+      "x": 708200,
+      "y": 704700
     }
   },
   "objects": [

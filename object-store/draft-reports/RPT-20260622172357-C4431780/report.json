@@ -7,15 +7,15 @@
   "naceBelCode": "45678",
   "location": {
     "address": {
-      "street": "Pier",
-      "houseNumber": "2",
-      "postalCode": "",
-      "municipality": "Knokke",
+      "street": "Zeedijk-Albertstrand",
+      "houseNumber": "509",
+      "postalCode": "8300",
+      "municipality": "Knokke-Heist",
       "country": "België"
     },
     "lambert2008": {
-      "x": 56789,
-      "y": 6789
+      "x": 565300,
+      "y": 733200
     }
   },
   "objects": [

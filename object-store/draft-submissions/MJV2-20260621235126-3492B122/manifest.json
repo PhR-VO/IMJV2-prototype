@@ -5,7 +5,7 @@
   "displayName": "Exploitatietoestand d.d. 1-1-2027",
   "fileName": "structurele-gegevens-imjv2.ods",
   "fileSize": 1754,
-  "contentHash": "0d455aea20cfbd155b93e089091b12e723f3c677cb8ec3767b2f2f2333009b99",
+  "contentHash": "043099824038d522ef241e93353899b0b1da4a5a4e0e1b7cc6a03637de04e231",
   "exploitatie": "Demo Exploitatie NV",
   "exploitatieId": "DEMO-EXP-001",
   "naceBelCode": "23.990",
@@ -23,5 +23,5 @@
     "reportDraft": "draft-reports/RPT-20260621235126-953AF7B8/report.json",
     "schema": "draft-submissions/MJV2-20260621235126-3492B122/original/exploitatieschema.svg"
   },
-  "reportUpdatedAt": "2026-06-24T12:01:59.475832+00:00"
+  "reportUpdatedAt": "2026-06-24T19:46:18.925245+00:00"
 }

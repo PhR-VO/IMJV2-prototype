@@ -26,6 +26,11 @@ let reportDisplayMode = "timeline";
 let showReplacedReports = false;
 let activeExploitationId = null;
 let currentView = "exploitations";
+const routedViews = new Set(["exploitations", "editor", "submit", "submissions", "reports"]);
+let applyingRoute = false;
+let exploitationMap = null;
+let exploitationMapMarkers = null;
+let exploitationMapBounds = null;
 
 const els = {
   mainNavigation: document.querySelector("nav.tabs"),
@@ -42,6 +47,8 @@ const els = {
   exploitationItems: document.querySelector("#exploitation-items"),
   draftExploitationItems: document.querySelector("#draft-exploitation-items"),
   draftExploitationsSection: document.querySelector("#draft-exploitations-section"),
+  exploitationMap: document.querySelector("#exploitation-map"),
+  exploitationMapEmpty: document.querySelector("#exploitation-map-empty"),
   exploitationRegistration: document.querySelector("#exploitation-registration"),
   exploitationForm: document.querySelector("#exploitation-form"),
   exploitationValidation: document.querySelector("#exploitation-validation"),
@@ -176,7 +183,7 @@ async function init() {
     selectedItem = submissions[0] || currentDraft;
     selectedReport = reports[0] || null;
     activeExploitationId = selectedReport?.exploitatieId || editor?.exploitatieId || null;
-    renderAll();
+    await applyRouteFromLocation({ replace: true, skipReload: true });
   } catch (error) {
     showServerError(error);
   }
@@ -206,6 +213,9 @@ function bindEvents() {
     if (event.key === "Escape" && !els.modal.hidden) closeModal();
     if (event.key === "Escape" && !els.exploitationRegistration.hidden) closeExploitationRegistration();
   });
+  window.addEventListener("popstate", () => {
+    applyRouteFromLocation();
+  });
   els.tabSubmit.addEventListener("click", () => showView("submit"));
   els.tabSubmissions.addEventListener("click", () => showView("submissions"));
   els.newExploitationButton.addEventListener("click", () => {
@@ -219,6 +229,7 @@ function bindEvents() {
   els.exploitationForm.addEventListener("submit", registerFirstState);
   els.exploitationItems.addEventListener("click", selectExploitation);
   els.draftExploitationItems.addEventListener("click", selectExploitation);
+  els.exploitationMap.addEventListener("click", selectExploitation);
   els.submitButton.addEventListener("click", submitCurrentDraft);
   els.detailSubmitButton.addEventListener("click", () => showView("submit"));
   els.deleteDraftSubmission.addEventListener("click", () => {
@@ -263,16 +274,19 @@ function bindEvents() {
     selectedItem = allListItems().find((item) => item.transactionId === button.dataset.transactionId);
     renderSubmissionList();
     renderSubmissionDetail();
+    updateRoute();
   });
   els.reportItems.addEventListener("click", (event) => {
     const button = event.target.closest("[data-report-id]");
     if (!button) return;
     selectedReport = reports.find((item) => item.reportId === button.dataset.reportId);
     renderReports();
+    updateRoute();
   });
   els.draftReportEntry.addEventListener("click", () => {
     selectedReport = draftReport();
     renderReports();
+    updateRoute();
   });
   els.editDraftReport.addEventListener("click", () => showView("editor"));
   els.reviewDraftSubmission.addEventListener("click", prepareForSubmission);
@@ -295,6 +309,7 @@ function bindEvents() {
   els.showReplacedReports.addEventListener("change", () => {
     showReplacedReports = els.showReplacedReports.checked;
     renderReports();
+    updateRoute();
   });
   els.closeEditMode.addEventListener("click", () => {
     selectedReport = draftReport();
@@ -392,18 +407,21 @@ function selectAdjacentReport(offset) {
   if (selectedReport?.isDraft) {
     if (offset === 1 && displayedReports[0]) selectedReport = displayedReports[0];
     renderReports();
+    updateRoute();
     return;
   }
   const currentIndex = displayedReports.findIndex((item) => item.reportId === selectedReport?.reportId);
   if (offset === -1 && currentIndex === 0 && editor) {
     if (editor.exploitatieId === activeExploitationId) selectedReport = draftReport();
     renderReports();
+    updateRoute();
     return;
   }
   const target = displayedReports[currentIndex + offset];
   if (!target) return;
   selectedReport = target;
   renderReports();
+  updateRoute();
 }
 
 async function request(url, options = {}) {
@@ -682,6 +700,7 @@ async function submitCurrentDraft() {
     currentDraft = null;
     editor = null;
     renderAll();
+    updateRoute();
   } catch (error) {
     els.submitButton.disabled = false;
     els.detailSubmitButton.disabled = false;
@@ -709,37 +728,120 @@ function renderExploitations() {
   els.draftExploitationItems.innerHTML = draftExploitations.map(exploitationCardMarkup).join("");
   els.exploitationItems.innerHTML = registeredExploitations.map(exploitationCardMarkup).join("")
     || "<p>Nog geen geregistreerde exploitaties.</p>";
+  renderExploitationMap([...draftExploitations, ...registeredExploitations]);
+}
+
+function renderExploitationMap(items) {
+  const mapItems = items
+    .map((item) => ({ item, coordinates: exploitationLatLng(item) }))
+    .filter((entry) => entry.coordinates);
+
+  els.exploitationMapEmpty.hidden = mapItems.length > 0;
+  if (!window.L || !els.exploitationMap) {
+    els.exploitationMapEmpty.hidden = false;
+    els.exploitationMapEmpty.textContent = "De kaartbibliotheek kon niet worden geladen.";
+    return;
+  }
+
+  if (!exploitationMap) {
+    exploitationMap = L.map(els.exploitationMap, {
+      scrollWheelZoom: false,
+    }).setView([50.9, 4.35], 8);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    }).addTo(exploitationMap);
+    exploitationMapMarkers = L.layerGroup().addTo(exploitationMap);
+  }
+
+  exploitationMapMarkers.clearLayers();
+  if (!mapItems.length) {
+    exploitationMapBounds = null;
+    exploitationMap.setView([50.9, 4.35], 8);
+    return;
+  }
+
+  const bounds = [];
+  mapItems.forEach(({ item, coordinates }) => {
+    const marker = L.marker(coordinates).bindPopup(exploitationPopupMarkup(item));
+    marker.addTo(exploitationMapMarkers);
+    bounds.push(coordinates);
+  });
+  exploitationMapBounds = bounds;
+  syncExploitationMapViewport();
+}
+
+function syncExploitationMapViewport() {
+  if (!exploitationMap || els.exploitationsView.hidden) return;
+  window.setTimeout(() => {
+    exploitationMap.invalidateSize();
+    if (exploitationMapBounds?.length) {
+      exploitationMap.fitBounds(exploitationMapBounds, { maxZoom: 13, padding: [26, 26] });
+    } else {
+      exploitationMap.setView([50.9, 4.35], 8);
+    }
+  }, 0);
+}
+
+function exploitationLatLng(item) {
+  const coordinates = item.location?.lambert2008 || {};
+  if (coordinates.x == null || coordinates.y == null) return null;
+  if (!window.proj4) return null;
+  proj4.defs("EPSG:3812", "+proj=lcc +lat_0=50.797815 +lon_0=4.35921583333333 +lat_1=49.8333339 +lat_2=51.1666672333333 +x_0=649328 +y_0=665262 +ellps=GRS80 +units=m +no_defs +type=crs");
+  const [lng, lat] = proj4("EPSG:3812", "EPSG:4326", [Number(coordinates.x), Number(coordinates.y)]);
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+  return [lat, lng];
+}
+
+function exploitationPopupMarkup(item) {
+  const address = exploitationLocationText(item);
+  return `
+    <div class="map-popup">
+      <strong>${escapeHtml(item.exploitatie)}</strong>
+      ${address ? `<span>${escapeHtml(address)}</span>` : ""}
+      <small>${escapeHtml(item.exploitatieId || "")}</small>
+      <button class="secondary map-popup-action" type="button"
+        data-exploitation-id="${escapeHtml(item.exploitatieId || "")}"
+        data-draft-transaction-id="${escapeHtml(item.draftTransactionId || "")}"
+        data-draft-report-id="${escapeHtml(item.draftReportId || "")}">
+        Openen
+      </button>
+    </div>`;
+}
+
+function exploitationLocationText(item) {
+  const address = item.location?.address || {};
+  const street = [address.street, address.houseNumber].filter(Boolean).join(" ");
+  const municipality = [address.postalCode, address.municipality].filter(Boolean).join(" ");
+  const formattedAddress = [street, municipality].filter(Boolean).join(", ");
+  const coordinates = item.location?.lambert2008 || {};
+  const formattedCoordinates = coordinates.x != null && coordinates.y != null
+    ? `Lambert 2008 X-Y: ${coordinates.x} - ${coordinates.y}`
+    : "";
+  return formattedAddress || formattedCoordinates;
 }
 
 function exploitationCardMarkup(item) {
-    const address = item.location?.address || {};
-    const street = [address.street, address.houseNumber].filter(Boolean).join(" ");
-    const municipality = [address.postalCode, address.municipality].filter(Boolean).join(" ");
-    const formattedAddress = [street, municipality].filter(Boolean).join(", ");
-    const coordinates = item.location?.lambert2008 || {};
-    const formattedCoordinates = coordinates.x != null && coordinates.y != null
-      ? `Lambert 2008 X-Y: ${coordinates.x} - ${coordinates.y}`
-      : "";
-    const locationText = formattedAddress || formattedCoordinates;
-    return `
-      <div class="exploitation-card">
-        <button class="exploitation-card-main" type="button"
-          data-exploitation-id="${escapeHtml(item.exploitatieId || "")}"
-          data-draft-transaction-id="${escapeHtml(item.draftTransactionId || "")}"
-          data-draft-report-id="${escapeHtml(item.draftReportId || "")}">
-        <span>
-          <strong>${escapeHtml(item.exploitatie)}</strong>
-          ${locationText ? `<span>${escapeHtml(locationText)}</span>` : ""}
-          <small>${escapeHtml(item.exploitatieId || "")}</small>
-          ${item.draftReportId && !item.latestEffectiveFrom
-            ? '<span class="unsaved-changes-label">Nog niet ingediend</span>'
-            : ""}
-          ${item.latestEffectiveFrom && item.draftReportId
-            ? '<span class="unsaved-changes-label">Niet-ingediende wijzigingen</span>'
-            : ""}
-        </span>
-        </button>
-      </div>`;
+  const locationText = exploitationLocationText(item);
+  return `
+    <div class="exploitation-card">
+      <button class="exploitation-card-main" type="button"
+        data-exploitation-id="${escapeHtml(item.exploitatieId || "")}"
+        data-draft-transaction-id="${escapeHtml(item.draftTransactionId || "")}"
+        data-draft-report-id="${escapeHtml(item.draftReportId || "")}">
+      <span>
+        <strong>${escapeHtml(item.exploitatie)}</strong>
+        ${locationText ? `<span>${escapeHtml(locationText)}</span>` : ""}
+        <small>${escapeHtml(item.exploitatieId || "")}</small>
+        ${item.draftReportId && !item.latestEffectiveFrom
+          ? '<span class="unsaved-changes-label">Nog niet ingediend</span>'
+          : ""}
+        ${item.latestEffectiveFrom && item.draftReportId
+          ? '<span class="unsaved-changes-label">Niet-ingediende wijzigingen</span>'
+          : ""}
+      </span>
+      </button>
+    </div>`;
 }
 
 function closeExploitationRegistration() {
@@ -1025,6 +1127,7 @@ async function openRelatedReport(event) {
     if (target.replacedByReportId || target.withdrawnByTransactionId) showReplacedReports = true;
     selectedReport = target;
     renderReports();
+    updateRoute();
     return;
   }
   if (button.dataset.relatedSubmissionId) {
@@ -1043,6 +1146,7 @@ async function openRelatedReport(event) {
     selectedReport = draftReport();
     syncPreviewRows();
     renderReports();
+    updateRoute();
   } catch (error) {
     showServerError(error);
   }
@@ -1068,6 +1172,7 @@ function setReportDisplayMode(mode) {
     return;
   }
   renderReportDisplayMode();
+  updateRoute();
 }
 
 function renderReportDisplayMode() {
@@ -1639,10 +1744,113 @@ function receiptUrl(item, download = true) {
   return `${API}/submissions/${encodeURIComponent(item.transactionId)}/receipt${suffix}`;
 }
 
-async function showView(view) {
+function routeFromLocation() {
+  const params = new URLSearchParams(window.location.search);
+  const view = routedViews.has(params.get("view")) ? params.get("view") : "exploitations";
+  return {
+    view,
+    exploitatieId: params.get("exploitatie") || "",
+    reportId: params.get("report") || "",
+    transactionId: params.get("transaction") || "",
+    mode: params.get("mode") === "diff" ? "diff" : "timeline",
+    showReplaced: params.get("replaced") === "1",
+  };
+}
+
+function routeUrl() {
+  const url = new URL(window.location.href);
+  const params = new URLSearchParams();
+  params.set("view", currentView);
+  if ((currentView === "reports" || currentView === "editor") && activeExploitationId) {
+    params.set("exploitatie", activeExploitationId);
+  }
+  if (currentView === "reports") {
+    if (selectedReport?.isDraft) {
+      params.set("report", "draft");
+    } else if (selectedReport?.reportId) {
+      params.set("report", selectedReport.reportId);
+    }
+    if (reportDisplayMode === "diff") params.set("mode", "diff");
+    if (showReplacedReports) params.set("replaced", "1");
+  }
+  if (currentView === "submissions" && selectedItem?.transactionId) {
+    params.set("transaction", selectedItem.transactionId);
+  }
+  url.search = params.toString();
+  return url;
+}
+
+function updateRoute({ replace = false } = {}) {
+  if (applyingRoute) return;
+  const url = routeUrl();
+  const next = `${url.pathname}${url.search}${url.hash}`;
+  const current = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+  if (next === current && !replace) return;
+  const method = replace || next === current ? "replaceState" : "pushState";
+  window.history[method]({ view: currentView }, "", url);
+}
+
+async function applyRouteFromLocation({ replace = false, skipReload = false } = {}) {
+  const route = routeFromLocation();
+  applyingRoute = true;
+  try {
+    reportDisplayMode = route.mode;
+    showReplacedReports = route.showReplaced;
+    if (route.exploitatieId && (route.view === "reports" || route.view === "editor")) {
+      await activateExploitationRoute(route.exploitatieId);
+    }
+    if (route.view === "submissions" && route.transactionId) {
+      selectedItem = allListItems().find((item) => item.transactionId === route.transactionId) || selectedItem;
+    }
+    if ((route.view === "reports" || route.view === "editor") && route.reportId) {
+      selectRoutedReport(route.reportId);
+    }
+    await showView(route.view, { replaceRoute: true, skipReload });
+  } finally {
+    applyingRoute = false;
+  }
+  updateRoute({ replace });
+}
+
+async function activateExploitationRoute(exploitatieId) {
+  activeExploitationId = exploitatieId;
+  const exploitation = exploitations.find((item) => item.exploitatieId === exploitatieId);
+  if (exploitation?.draftTransactionId) {
+    [currentDraft, editor] = await Promise.all([
+      request(`${API}/draft-submissions/${encodeURIComponent(exploitation.draftTransactionId)}`),
+      request(`${API}/draft-submissions/${encodeURIComponent(exploitation.draftTransactionId)}/editor`),
+    ]);
+    selectedItem = currentDraft;
+    syncPreviewRows();
+    return;
+  }
+  if (exploitation?.draftReportId) {
+    editor = await request(`${API}/draft-reports/${encodeURIComponent(exploitation.draftReportId)}`);
+    currentDraft = null;
+    syncPreviewRows();
+    return;
+  }
+  currentDraft = null;
+  editor = null;
+}
+
+function selectRoutedReport(reportId) {
+  const hasActiveDraft = editor?.exploitatieId === activeExploitationId;
+  if (reportId === "draft" && hasActiveDraft) {
+    selectedReport = draftReport();
+    return;
+  }
+  const report = reports.find((item) => item.reportId === reportId);
+  if (!report) return;
+  activeExploitationId = report.exploitatieId || activeExploitationId;
+  if (report.replacedByReportId || report.withdrawnByTransactionId) showReplacedReports = true;
+  selectedReport = report;
+}
+
+async function showView(view, { replaceRoute = false, skipReload = false } = {}) {
   try {
     await persistEditorSource();
-    await reloadSourceData(view);
+    if (!skipReload) await reloadSourceData(view);
   } catch (error) {
     showServerError(error);
   }
@@ -1669,6 +1877,9 @@ async function showView(view) {
   els.tabSubmissions.classList.toggle("active", showSubmissions);
   els.tabReports?.classList.toggle("active", showReports);
   renderAll();
+  if (showExploitations && exploitationMap) {
+    syncExploitationMapViewport();
+  }
   els.reportsEditMode.hidden = !showEditor;
   els.reportsContactContext.hidden = showEditor;
   els.reportsContextToolbar.classList.toggle("edit-mode", showEditor);
@@ -1682,6 +1893,7 @@ async function showView(view) {
     els.reportsModeToggle.hidden = false;
     renderReportDisplayMode();
   }
+  updateRoute({ replace: replaceRoute });
 }
 
 async function reloadSourceData(view) {

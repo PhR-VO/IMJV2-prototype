@@ -1,0 +1,28 @@
+{
+  "transactionId": "MJV2-20260624223817-388F793B",
+  "reportDraftId": "RPT-20260624132039-72A34287",
+  "status": "Ontvangen",
+  "displayName": "Exploitatietoestand d.d. 3-6-2026",
+  "fileName": "structurele-gegevens-imjv2.ods",
+  "fileSize": 1375,
+  "contentHash": "d70c3af63cafb7e74814a80a55ccee0fc1cd08524d5ed1fdd6a9938a8916a1b2",
+  "exploitatie": "Boterfabriek",
+  "exploitatieId": "EXP-PHR1",
+  "naceBelCode": "345",
+  "submittedBy": "Emiel Jeurens namens Demo Exploitatie NV",
+  "submitterName": "Emiel Jeurens",
+  "organizationName": "Demo Exploitatie NV",
+  "summary": "Structurele toestand met 2 objecten",
+  "createdAt": "2026-06-24T20:38:17.060501+00:00",
+  "submittedAt": "2026-06-24T20:40:00.615811+00:00",
+  "receivedAt": "2026-06-24T20:40:00.615849+00:00",
+  "receiptAvailable": true,
+  "storage": {
+    "original": "submissions/MJV2-20260624223817-388F793B/original/structurele-gegevens-imjv2.ods",
+    "manifest": "submissions/MJV2-20260624223817-388F793B/manifest.json",
+    "receipt": "submissions/MJV2-20260624223817-388F793B/receipt.txt",
+    "reportSnapshot": "submissions/MJV2-20260624223817-388F793B/payload/exploitatietoestand.json",
+    "schema": "submissions/MJV2-20260624223817-388F793B/original/exploitatieschema.svg"
+  },
+  "reportUpdatedAt": "2026-06-24T20:39:59.134229+00:00"
+}

@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>IMJV2 Prototype - Indienen</title>
-    <link rel="stylesheet" href="styles.css?v=20260623-withdrawal-1" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css?v=20260624-map-1" />
   </head>
   <body>
     <header class="topbar">
@@ -35,7 +36,7 @@
           <p>Kies hieronder de exploitatie waarvoor u gegevens wenst te rapporteren of in te zien. Staat uw exploitatie niet op deze pagina, dan is deze nog niet gekend bij de Vlaamse milieuadministratie, en kunt u deze hier registreren zodat u erover kunt rapporteren.</p>
         </aside>
         <section class="exploitation-layout">
-          <article class="panel">
+          <article class="panel exploitation-list-panel">
             <section id="draft-exploitations-section" hidden>
               <h2>Exploitaties in opmaak</h2>
               <div class="exploitation-items" id="draft-exploitation-items"></div>
@@ -46,6 +47,10 @@
               <div class="exploitation-items" id="exploitation-items"></div>
             </section>
           </article>
+          <aside class="panel exploitation-map-panel" aria-label="Kaart met exploitaties">
+            <div class="exploitation-map" id="exploitation-map" aria-label="Kaart met exploitaties"></div>
+            <p class="map-empty-message" id="exploitation-map-empty" hidden>Geen exploitaties met kaartcoördinaten gevonden.</p>
+          </aside>
         </section>
       </section>
 
@@ -489,6 +494,8 @@
       </section>
     </div>
 
-    <script src="app.js?v=20260623-withdrawal-1"></script>
+    <script src="https://unpkg.com/proj4@2.11.0/dist/proj4.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js?v=20260624-map-1"></script>
   </body>
 </html>

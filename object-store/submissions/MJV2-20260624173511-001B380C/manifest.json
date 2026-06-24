@@ -1,0 +1,28 @@
+{
+  "transactionId": "MJV2-20260624173511-001B380C",
+  "reportDraftId": "RPT-20260624173456-A7E0769C",
+  "status": "Ontvangen",
+  "displayName": "Toestand in opmaak",
+  "fileName": "structurele-gegevens-imjv2.ods",
+  "fileSize": 1260,
+  "contentHash": "d05a9011e873e705404502273ec623461968ddbdeaaf1121758f9009433816f2",
+  "exploitatie": "Cementfabriek",
+  "exploitatieId": "TYUG",
+  "naceBelCode": "",
+  "submittedBy": "Emiel Jeurens namens Demo Exploitatie NV",
+  "submitterName": "Emiel Jeurens",
+  "organizationName": "Demo Exploitatie NV",
+  "summary": "Structurele toestand met 0 objecten",
+  "createdAt": "2026-06-24T15:35:11.057816+00:00",
+  "submittedAt": "2026-06-24T15:35:15.418273+00:00",
+  "receivedAt": "2026-06-24T15:35:15.418288+00:00",
+  "receiptAvailable": true,
+  "storage": {
+    "original": "submissions/MJV2-20260624173511-001B380C/original/structurele-gegevens-imjv2.ods",
+    "manifest": "submissions/MJV2-20260624173511-001B380C/manifest.json",
+    "receipt": "submissions/MJV2-20260624173511-001B380C/receipt.txt",
+    "reportSnapshot": "submissions/MJV2-20260624173511-001B380C/payload/exploitatietoestand.json",
+    "schema": "submissions/MJV2-20260624173511-001B380C/original/exploitatieschema.svg"
+  },
+  "reportUpdatedAt": "2026-06-24T15:35:11.069216+00:00"
+}

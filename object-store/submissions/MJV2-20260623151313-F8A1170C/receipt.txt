@@ -3,7 +3,7 @@ ONTVANGSTBEWIJS IMJV2
 Transactie-ID: MJV2-20260623151313-F8A1170C
 Status: Ontvangen
 Bestand: Toestand in opmaak
-Content hash: sha256:2ef6a66baa3df9006f09c9d6abb63b6351c3c7071631cccea1fc005bc4653a5f
+Content hash: sha256:d04cd6b7170cff1fd193aa096fd1d35c04d1b40369e6d2d71f2ad607b80a3c96
 Exploitatie: Academisch Ziekenhuis
 Ingediend door: Emiel Jeurens namens Demo Exploitatie NV
 Tijdstip indiening: 2026-06-23T13:13:16.016121+00:00
@@ -15,8 +15,8 @@ Inhoud:
 - Exploitatie-ID: IUHS
 - Ingangsdatum: 2027-11-12
 - NACE-BEL-code: —
-- Adres: —
-- Lambert 2008 X-Y: — - —
+- Adres: Herestraat 49, 3000 Leuven
+- Lambert 2008 X-Y: 673500 - 681900
 - Aantal rapporteringsplichtige onderdelen: 2
   - Productielijn: Nieuw object (OBJ-01) · Gepland
   - Emissiepunt lucht: Nieuw object (OBJ-02) · In gebruik

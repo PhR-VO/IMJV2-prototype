@@ -1,0 +1,24 @@
+ONTVANGSTBEWIJS IMJV2
+
+Transactie-ID: MJV2-20260624223817-388F793B
+Status: Ontvangen
+Bestand: Exploitatietoestand d.d. 3-6-2026
+Content hash: sha256:d70c3af63cafb7e74814a80a55ccee0fc1cd08524d5ed1fdd6a9938a8916a1b2
+Exploitatie: Boterfabriek
+Ingediend door: Emiel Jeurens namens Demo Exploitatie NV
+Tijdstip indiening: 2026-06-24T20:40:00.615811+00:00
+Tijdstip ontvangst: 2026-06-24T20:40:00.615849+00:00
+Kanaal: IMJV2 loket prototype
+
+Inhoud:
+- Naam exploitatie: Boterfabriek
+- Exploitatie-ID: EXP-PHR1
+- Ingangsdatum: 2026-06-03
+- NACE-BEL-code: 345
+- Adres: Botermarkt 1, 9000 Gent
+- Lambert 2008 X-Y: 593600 - 681900
+- Aantal rapporteringsplichtige onderdelen: 2
+  - Productielijn: Botervat (OBJ-01) · In gebruik
+  - Stookinstallatie: Heater (OBJ-02) · Gepland
+
+Dit ontvangstbewijs bevestigt dat het hierboven genoemde geheel werd ontvangen.

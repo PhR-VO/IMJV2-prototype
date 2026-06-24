@@ -9,13 +9,13 @@
     "address": {
       "street": "Zaha Hadidplein",
       "houseNumber": "1",
-      "postalCode": "2031",
+      "postalCode": "2030",
       "municipality": "Antwerpen",
       "country": "België"
     },
     "lambert2008": {
       "x": 652224,
-      "y": 717045
+      "y": 717046
     }
   },
   "objects": [
@@ -91,5 +91,5 @@
       "status": "Gepland"
     }
   ],
-  "updatedAt": "2026-06-24T12:01:59.475832+00:00"
+  "updatedAt": "2026-06-24T19:56:50.300549+00:00"
 }

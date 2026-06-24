@@ -3,7 +3,7 @@ ONTVANGSTBEWIJS IMJV2
 Transactie-ID: MJV2-20260623130322-EB65CD3F
 Status: Ontvangen
 Bestand: Exploitatietoestand d.d. 12-6-2026
-Content hash: sha256:31cbacfc79c9270d28816f4e77bd909bfcd4ead32e102b6d1e15b3b7b22d1817
+Content hash: sha256:721e9214b6e9d55dc4908a8b2418f955ad72205ffb17f4b7ee26f32bdc7f78ca
 Exploitatie: Windmolenpark 12
 Ingediend door: Emiel Jeurens namens Demo Exploitatie NV
 Tijdstip indiening: 2026-06-23T11:03:30.992989+00:00
@@ -15,8 +15,8 @@ Inhoud:
 - Exploitatie-ID: RTUI
 - Ingangsdatum: 2026-06-18
 - NACE-BEL-code: 567890
-- Adres: —
-- Lambert 2008 X-Y: 6789 - 6789
+- Adres: Ketenislaan 1, 9130 Beveren
+- Lambert 2008 X-Y: 635300 - 718100
 - Aantal rapporteringsplichtige onderdelen: 4
   - Emissiepunt water: Nieuw object (OBJ-01) · In gebruik
   - Productielijn: Nieuw object (OBJ-02) · Gepland

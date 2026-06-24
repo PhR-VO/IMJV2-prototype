@@ -717,7 +717,7 @@ table {
 
 .exploitation-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.8fr);
+  grid-template-columns: minmax(240px, 1fr) minmax(0, 3fr);
   gap: 20px;
   align-items: start;
 }
@@ -725,6 +725,53 @@ table {
 .exploitation-items {
   display: grid;
   gap: 12px;
+}
+
+.exploitation-list-panel,
+.exploitation-map-panel {
+  min-width: 0;
+}
+
+.exploitation-map {
+  width: 100%;
+  height: clamp(420px, 58vh, 620px);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--vl-color--background-subtle);
+  overflow: hidden;
+}
+
+.map-empty-message {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-top: 0;
+  color: var(--muted);
+  background: var(--vl-color--background-subtle);
+}
+
+.map-popup {
+  min-width: 190px;
+  display: grid;
+  gap: 5px;
+  color: var(--text);
+}
+
+.map-popup strong,
+.map-popup span,
+.map-popup small {
+  display: block;
+}
+
+.map-popup span,
+.map-popup small {
+  color: var(--muted);
+}
+
+.map-popup-action {
+  width: 100%;
+  min-height: 34px;
+  margin-top: 6px;
+  padding-inline: 10px;
 }
 
 .registered-exploitations-section {

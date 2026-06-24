@@ -1,0 +1,23 @@
+ONTVANGSTBEWIJS IMJV2
+
+Transactie-ID: MJV2-20260624173511-001B380C
+Status: Ontvangen
+Bestand: Toestand in opmaak
+Content hash: sha256:d05a9011e873e705404502273ec623461968ddbdeaaf1121758f9009433816f2
+Exploitatie: Cementfabriek
+Ingediend door: Emiel Jeurens namens Demo Exploitatie NV
+Tijdstip indiening: 2026-06-24T15:35:15.418273+00:00
+Tijdstip ontvangst: 2026-06-24T15:35:15.418288+00:00
+Kanaal: IMJV2 loket prototype
+
+Inhoud:
+- Naam exploitatie: Cementfabriek
+- Exploitatie-ID: TYUG
+- Ingangsdatum: 2027-01-01
+- NACE-BEL-code: —
+- Adres: Scheldelaan 420, 2040 Antwerpen
+- Lambert 2008 X-Y: 647800 - 724300
+- Aantal rapporteringsplichtige onderdelen: 0
+  - Geen rapporteringsplichtige onderdelen
+
+Dit ontvangstbewijs bevestigt dat het hierboven genoemde geheel werd ontvangen.
