@@ -15,6 +15,8 @@ from urllib.parse import unquote, urlparse
 from xml.sax.saxutils import escape
 from zipfile import ZIP_DEFLATED, ZIP_STORED, ZipFile
 
+from lod import service as lod_service
+
 
 ROOT = Path(__file__).resolve().parent
 STORE = ROOT / "object-store"
@@ -417,6 +419,7 @@ def ensure_store():
     DRAFT_SUBMISSIONS.mkdir(parents=True, exist_ok=True)
     DRAFT_REPORTS.mkdir(parents=True, exist_ok=True)
     SUBMISSIONS.mkdir(parents=True, exist_ok=True)
+    lod_service.ensure_lod_store(STORE)
     migrate_legacy_drafts()
     migrate_display_names()
     ensure_schemas()
@@ -969,6 +972,7 @@ def submit_withdrawal(report_id, payload):
     }
     write_json(submission_dir / "manifest.json", manifest)
     (submission_dir / "receipt.txt").write_text(receipt_text(manifest), encoding="utf-8")
+    lod_service.enqueue_submission(STORE, manifest)
     return public_manifest(manifest), []
 
 
@@ -1214,6 +1218,7 @@ def submit_draft(transaction_id):
     }
     write_json(submission_dir / "manifest.json", manifest)
     (submission_dir / "receipt.txt").write_text(receipt_text(manifest), encoding="utf-8")
+    lod_service.enqueue_submission(STORE, manifest)
     shutil.rmtree(draft_dir)
     clear_active_basket(transaction_id)
     if report_source.exists():
@@ -1234,6 +1239,20 @@ class Handler(SimpleHTTPRequestHandler):
         self.send_response(status)
         self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Content-Length", str(len(body)))
+        self.send_header("Cache-Control", "no-store")
+        self.end_headers()
+        self.wfile.write(body)
+
+    def send_ld_json_file(self, path):
+        if not path or not path.exists() or not path.is_file():
+            self.send_error(HTTPStatus.NOT_FOUND)
+            return
+        body = path.read_bytes()
+        self.send_response(HTTPStatus.OK)
+        self.send_header("Content-Type", "application/ld+json; charset=utf-8")
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Last-Modified", formatdate(path.stat().st_mtime, usegmt=True))
+        self.send_header("X-Content-Type-Options", "nosniff")
         self.send_header("Cache-Control", "no-store")
         self.end_headers()
         self.wfile.write(body)
@@ -1322,6 +1341,20 @@ class Handler(SimpleHTTPRequestHandler):
             return
         if route == "/api/exploitations":
             self.send_json(list_exploitations())
+            return
+        if route == "/api/lod/status":
+            self.send_json(lod_service.publication_status(STORE))
+            return
+        if route == "/api/lod/catalog.jsonld":
+            self.send_ld_json_file(lod_service.publication_path(STORE, "catalog"))
+            return
+        if route.startswith("/api/lod/reports/") and route.endswith(".jsonld"):
+            report_id = route.removeprefix("/api/lod/reports/").removesuffix(".jsonld")
+            self.send_ld_json_file(lod_service.publication_path(STORE, "report", report_id))
+            return
+        if route.startswith("/api/lod/exploitations/") and route.endswith(".jsonld"):
+            exploitation_id = route.removeprefix("/api/lod/exploitations/").removesuffix(".jsonld")
+            self.send_ld_json_file(lod_service.publication_path(STORE, "exploitation", exploitation_id))
             return
         if route.startswith("/api/submissions/"):
             parts = route.strip("/").split("/")
@@ -1415,6 +1448,13 @@ class Handler(SimpleHTTPRequestHandler):
                 self.send_json({"errors": errors}, HTTPStatus.UNPROCESSABLE_ENTITY)
                 return
             self.send_json(result, HTTPStatus.CREATED)
+            return
+        if route == "/api/lod/process":
+            reports = list_reports()
+            queued = lod_service.enqueue_missing_reports(STORE, reports)
+            result = lod_service.process_pending(STORE, reports, list_exploitations())
+            result["queuedMissingPublications"] = queued
+            self.send_json(result)
             return
         if route.startswith("/api/draft-submissions/") and route.endswith("/submit"):
             parts = route.strip("/").split("/")

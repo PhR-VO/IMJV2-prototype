@@ -1,0 +1,133 @@
+{
+  "@context": {
+    "dcterms": "http://purl.org/dc/terms/",
+    "imjv": "https://data.omgeving.vlaanderen.be/def/imjv#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "https://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "contentHash": "imjv:contentHash",
+    "effectiveFrom": "imjv:effectiveFrom",
+    "exploitatie": {
+      "@id": "imjv:exploitatie",
+      "@type": "@id"
+    },
+    "heeftObject": {
+      "@id": "imjv:heeftObject",
+      "@type": "@id"
+    },
+    "heeftToestand": {
+      "@id": "imjv:heeftToestand",
+      "@type": "@id"
+    },
+    "isIngetrokken": "imjv:isIngetrokken",
+    "isVervangen": "imjv:isVervangen",
+    "naceBelCode": "imjv:naceBelCode",
+    "relatie": {
+      "@id": "imjv:relatie",
+      "@type": "@id"
+    },
+    "status": "imjv:status"
+  },
+  "@graph": [
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260623125721-2835F527",
+      "@type": "imjv:Exploitatietoestand",
+      "dcterms:identifier": "REPORT-MJV2-20260623125721-2835F527",
+      "dcterms:title": "Exploitatietoestand d.d. 12-6-2026",
+      "effectiveFrom": "2026-06-12",
+      "dcterms:issued": "2026-06-23T10:58:59.745207+00:00",
+      "dcterms:modified": "2026-06-23T10:58:59.745256+00:00",
+      "contentHash": "4bb2b664d9a3623ef34df2469fdfa28973600b02136dba04a89c08b8c383fe4a",
+      "status": "actueel",
+      "isVervangen": false,
+      "isIngetrokken": false,
+      "exploitatie": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatie/RTUI",
+      "heeftObject": [
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/RTUI/OBJ-01"
+        },
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/RTUI/OBJ-02"
+        },
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/RTUI/OBJ-03"
+        }
+      ],
+      "prov:wasGeneratedBy": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260623125721-2835F527"
+      },
+      "prov:wasRevisionOf": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260622111030-F99447F3"
+      }
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatie/RTUI",
+      "@type": "imjv:Exploitatie",
+      "dcterms:identifier": "RTUI",
+      "dcterms:title": "Windmolenpark 1",
+      "naceBelCode": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/nace-bel/567890"
+      },
+      "locn:address": {
+        "@type": "locn:Address",
+        "schema:addressCountry": "België"
+      },
+      "schema:geo": {
+        "@type": "schema:GeoCoordinates",
+        "schema:additionalProperty": [
+          {
+            "@type": "schema:PropertyValue",
+            "schema:name": "Lambert 2008 X",
+            "schema:value": 6789
+          },
+          {
+            "@type": "schema:PropertyValue",
+            "schema:name": "Lambert 2008 Y",
+            "schema:value": 6789
+          }
+        ]
+      },
+      "heeftToestand": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260623125721-2835F527"
+      }
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260623125721-2835F527",
+      "@type": "imjv:Indiening",
+      "dcterms:identifier": "MJV2-20260623125721-2835F527",
+      "dcterms:issued": "2026-06-23T10:58:59.745207+00:00",
+      "prov:generated": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260623125721-2835F527"
+      },
+      "contentHash": "4bb2b664d9a3623ef34df2469fdfa28973600b02136dba04a89c08b8c383fe4a"
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/RTUI/OBJ-01",
+      "@type": "imjv:Exploitatieobject",
+      "dcterms:identifier": "OBJ-01",
+      "dcterms:title": "Nieuw object",
+      "imjv:objecttype": "Emissiepunt water",
+      "status": "In gebruik",
+      "relatie": []
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/RTUI/OBJ-02",
+      "@type": "imjv:Exploitatieobject",
+      "dcterms:identifier": "OBJ-02",
+      "dcterms:title": "Nieuw object",
+      "imjv:objecttype": "Productielijn",
+      "status": "Gepland",
+      "relatie": []
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/RTUI/OBJ-03",
+      "@type": "imjv:Exploitatieobject",
+      "dcterms:identifier": "OBJ-03",
+      "dcterms:title": "Nieuw object",
+      "imjv:objecttype": "Emissiepunt lucht",
+      "status": "In gebruik",
+      "relatie": []
+    }
+  ]
+}

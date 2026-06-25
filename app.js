@@ -26,7 +26,8 @@ let reportDisplayMode = "timeline";
 let showReplacedReports = false;
 let activeExploitationId = null;
 let currentView = "exploitations";
-const routedViews = new Set(["exploitations", "editor", "submit", "submissions", "reports"]);
+let lodStatus = null;
+const routedViews = new Set(["exploitations", "editor", "submit", "submissions", "reports", "lod"]);
 let applyingRoute = false;
 let exploitationMap = null;
 let exploitationMapMarkers = null;
@@ -38,10 +39,12 @@ const els = {
   tabEditor: document.querySelector("#tab-editor"),
   tabSubmit: document.querySelector("#tab-submit"),
   tabSubmissions: document.querySelector("#tab-submissions"),
+  tabLod: document.querySelector("#tab-lod"),
   tabReports: document.querySelector("#tab-reports"),
   editorView: document.querySelector("#editor-view"),
   submitView: document.querySelector("#submit-view"),
   submissionsView: document.querySelector("#submissions-view"),
+  lodView: document.querySelector("#lod-view"),
   reportsView: document.querySelector("#reports-view"),
   exploitationsView: document.querySelector("#exploitations-view"),
   exploitationItems: document.querySelector("#exploitation-items"),
@@ -95,6 +98,10 @@ const els = {
   detailReceiptDownload: document.querySelector("#detail-receipt-download"),
   receiptDocumentSection: document.querySelector("#receipt-document-section"),
   receiptDocumentDescription: document.querySelector("#receipt-document-description"),
+  lodProcessButton: document.querySelector("#lod-process-button"),
+  lodStatusSummary: document.querySelector("#lod-status-summary"),
+  lodPublicationItems: document.querySelector("#lod-publication-items"),
+  lodCatalogLink: document.querySelector("#lod-catalog-link"),
   editorObjectList: document.querySelector("#editor-object-list"),
   editorHeadingTitle: document.querySelector("#editor-heading-title"),
   editorHeadingDescription: document.querySelector("#editor-heading-description"),
@@ -172,12 +179,13 @@ async function init() {
   renderPreviewTable();
   bindEvents();
   try {
-    [currentDraft, submissions, editor, reports, exploitations] = await Promise.all([
+    [currentDraft, submissions, editor, reports, exploitations, lodStatus] = await Promise.all([
       request(`${API}/current`),
       request(`${API}/submissions`),
       request(`${API}/editor`),
       request(`${API}/reports`),
       request(`${API}/exploitations`),
+      request(`${API}/lod/status`),
     ]);
     syncPreviewRows();
     selectedItem = submissions[0] || currentDraft;
@@ -218,6 +226,8 @@ function bindEvents() {
   });
   els.tabSubmit.addEventListener("click", () => showView("submit"));
   els.tabSubmissions.addEventListener("click", () => showView("submissions"));
+  els.tabLod.addEventListener("click", () => showView("lod"));
+  els.lodProcessButton.addEventListener("click", processLodJobs);
   els.newExploitationButton.addEventListener("click", () => {
     els.exploitationRegistration.hidden = false;
   });
@@ -716,7 +726,24 @@ function renderAll() {
   renderBasket();
   renderSubmissionList();
   renderSubmissionDetail();
+  renderLod();
   renderReports();
+}
+
+async function processLodJobs() {
+  els.lodProcessButton.disabled = true;
+  els.lodProcessButton.textContent = "Wordt verwerkt...";
+  try {
+    const result = await request(`${API}/lod/process`, { method: "POST" });
+    lodStatus = result.status;
+    reports = await request(`${API}/reports`);
+    renderLod();
+  } catch (error) {
+    showServerError(error);
+  } finally {
+    els.lodProcessButton.disabled = false;
+    els.lodProcessButton.textContent = "Verwerk LOD-jobs";
+  }
 }
 
 function renderExploitations() {
@@ -1739,6 +1766,77 @@ function renderReceipt(item) {
     .join("");
 }
 
+function renderLod() {
+  const jobs = lodStatus?.jobs || {};
+  const publications = lodStatus?.publications || {};
+  els.lodStatusSummary.innerHTML = [
+    ["Wachtend", String(jobs.queued || 0)],
+    ["In verwerking", String(jobs.processing || 0)],
+    ["Verwerkt", String(jobs.done || 0)],
+    ["Mislukt", String(jobs.failed || 0)],
+    ["Catalogus", publications.catalogAvailable ? "Beschikbaar" : "Nog niet gepubliceerd"],
+  ].map(propertyMarkup).join("");
+  els.lodCatalogLink.hidden = !publications.catalogAvailable;
+
+  const publishedReportIds = new Set(publications.reports || []);
+  const publishedExploitationIds = new Set(publications.exploitations || []);
+  const groups = reports
+    .filter((report) => report.reportId)
+    .reduce((result, report) => {
+      const key = report.exploitatieId || report.exploitatie || "zonder-id";
+      if (!result.has(key)) result.set(key, []);
+      result.get(key).push(report);
+      return result;
+    }, new Map());
+  const publicationRows = [...groups.entries()]
+    .sort((a, b) => String(a[1][0]?.exploitatie || a[0]).localeCompare(String(b[1][0]?.exploitatie || b[0])))
+    .map(([exploitationId, groupReports]) => {
+      const newest = groupReports[0] || {};
+      const publishedExploitation = publishedExploitationIds.has(exploitationId);
+      const exploitationHref = `${API}/lod/exploitations/${encodeURIComponent(exploitationId)}.jsonld`;
+      const publishedCount = groupReports.filter((report) => publishedReportIds.has(report.reportId)).length;
+      const stateRows = groupReports
+        .map((report) => {
+          const published = publishedReportIds.has(report.reportId);
+          const href = `${API}/lod/reports/${encodeURIComponent(report.reportId)}.jsonld`;
+          return `
+            <div class="lod-state-row">
+              <span>
+                <strong>${escapeHtml(formatDateOnly(report.effectiveFrom))}</strong>
+                <small>${escapeHtml(report.reportId)} · ${escapeHtml(lodReportStatus(report))}</small>
+              </span>
+              ${published
+                ? `<a class="secondary" href="${href}" target="_blank" rel="noopener">Toestand JSON-LD</a>`
+                : '<span class="status">In wachtrij</span>'}
+            </div>`;
+        })
+        .join("");
+      return `
+        <details class="lod-publication-row" open>
+          <summary>
+            <span>
+              <strong>${escapeHtml(newest.exploitatie || "Exploitatie")}</strong>
+              <small>${escapeHtml(exploitationId)} · ${publishedCount}/${groupReports.length} toestandversies gepubliceerd</small>
+            </span>
+            ${publishedExploitation
+              ? `<a class="secondary" href="${exploitationHref}" target="_blank" rel="noopener">Exploitatie JSON-LD</a>`
+              : '<span class="status">In wachtrij</span>'}
+          </summary>
+          <div class="lod-state-list">${stateRows}</div>
+        </details>`;
+    });
+  els.lodPublicationItems.innerHTML = publicationRows.join("")
+    || "<p>Nog geen exploitaties beschikbaar voor LOD-publicatie.</p>";
+}
+
+function lodReportStatus(report) {
+  if (report.withdrawnByTransactionId) return "ingetrokken";
+  if (report.replacedByReportId) return "vervangen";
+  if (report.replacesReportId) return "correctie";
+  if (report.basedOnReportId) return "nieuwe toestand";
+  return "actueel";
+}
+
 function receiptUrl(item, download = true) {
   const suffix = download ? "/download" : "";
   return `${API}/submissions/${encodeURIComponent(item.transactionId)}/receipt${suffix}`;
@@ -1857,6 +1955,7 @@ async function showView(view, { replaceRoute = false, skipReload = false } = {})
   const showExploitations = view === "exploitations";
   const showEditor = view === "editor";
   const showSubmissions = view === "submissions";
+  const showLod = view === "lod";
   const showSubmit = view === "submit";
   const showReports = view === "reports";
   currentView = view;
@@ -1869,12 +1968,14 @@ async function showView(view, { replaceRoute = false, skipReload = false } = {})
   els.editorView.hidden = !showEditor;
   els.submitView.hidden = !showSubmit;
   els.submissionsView.hidden = !showSubmissions;
+  els.lodView.hidden = !showLod;
   els.reportsView.hidden = !showReports && !showEditor;
   els.mainNavigation.hidden = showEditor;
   els.tabExploitations.classList.toggle("active", showExploitations);
   els.tabEditor?.classList.toggle("active", showEditor);
   els.tabSubmit.classList.toggle("active", showSubmit);
   els.tabSubmissions.classList.toggle("active", showSubmissions);
+  els.tabLod.classList.toggle("active", showLod);
   els.tabReports?.classList.toggle("active", showReports);
   renderAll();
   if (showExploitations && exploitationMap) {
@@ -1909,6 +2010,13 @@ async function reloadSourceData(view) {
     selectedItem = selectedItem?.status === "Nog niet ingediend" ? currentDraft : (
       submissions.find((item) => item.transactionId === selectedItem?.transactionId) || submissions[0] || currentDraft
     );
+    return;
+  }
+  if (view === "lod") {
+    [lodStatus, reports] = await Promise.all([
+      request(`${API}/lod/status`),
+      request(`${API}/reports`),
+    ]);
     return;
   }
   if (view === "reports") {

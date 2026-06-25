@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>IMJV2 Prototype - Indienen</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="styles.css?v=20260624-map-1" />
+    <link rel="stylesheet" href="styles.css?v=20260625-contact-context-type-1" />
   </head>
   <body>
     <header class="topbar">
@@ -28,6 +28,7 @@
         <button class="tab active" id="tab-exploitations" type="button" aria-controls="exploitations-view">Mijn exploitaties</button>
         <button class="tab tab-actions-start" id="tab-submit" type="button" aria-controls="submit-view">Indienbalie</button>
         <button class="tab" id="tab-submissions" type="button" aria-controls="submissions-view">Mijn indieningen</button>
+        <button class="tab" id="tab-lod" type="button" aria-controls="lod-view">LOD-publicatie</button>
       </nav>
 
       <section id="exploitations-view">
@@ -373,6 +374,32 @@
         </section>
       </section>
 
+      <section id="lod-view" hidden>
+        <section class="lod-layout">
+          <article class="panel lod-status-panel">
+            <div class="panel-head">
+              <div>
+                <h2>Linked Open Data-publicatie</h2>
+                <p>Asynchrone projectie van ontvangen exploitatietoestanden naar JSON-LD.</p>
+              </div>
+              <button class="primary" id="lod-process-button" type="button">Verwerk LOD-jobs</button>
+            </div>
+            <dl class="properties lod-status-summary" id="lod-status-summary"></dl>
+          </article>
+
+          <article class="panel lod-publications-panel">
+            <div class="panel-head">
+              <div>
+                <h2>Publicaties per exploitatie</h2>
+                <p>Elke exploitatie groepeert de achteraf opgebouwde JSON-LD-toestandversies.</p>
+              </div>
+              <a class="ghost" id="lod-catalog-link" href="/api/lod/catalog.jsonld" target="_blank" rel="noopener">Catalogus</a>
+            </div>
+            <div class="lod-publication-items" id="lod-publication-items"></div>
+          </article>
+        </section>
+      </section>
+
       <section id="reports-view" hidden>
         <div class="reports-context-toolbar" id="reports-context-toolbar">
           <article class="exploitation-card reports-exploitation-context" id="reports-exploitation-context">
@@ -496,6 +523,6 @@
 
     <script src="https://unpkg.com/proj4@2.11.0/dist/proj4.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="app.js?v=20260624-map-1"></script>
+    <script src="app.js?v=20260625-lod-1"></script>
   </body>
 </html>

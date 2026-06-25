@@ -5,7 +5,7 @@
   "displayName": "Exploitatietoestand d.d. 16-6-2026",
   "fileName": "structurele-gegevens-imjv2.ods",
   "fileSize": 1362,
-  "contentHash": "e062c0a067dc4ed32a5ea85f72dcf21ddf181549f12b57e887fb4df441a6d0a4",
+  "contentHash": "669b4a7adca70a3dfd2a8f9e256b6b8409dc19b9b5abc26478eaea2346e762ca",
   "exploitatie": "Strandpaviljoen",
   "exploitatieId": "789U",
   "naceBelCode": "45678",
@@ -23,5 +23,5 @@
     "reportDraft": "draft-reports/RPT-20260622172357-C4431780/report.json",
     "schema": "draft-submissions/MJV2-20260623081204-17389D23/original/exploitatieschema.svg"
   },
-  "reportUpdatedAt": "2026-06-23T13:02:17.982540+00:00"
+  "reportUpdatedAt": "2026-06-25T08:20:36.858602+00:00"
 }

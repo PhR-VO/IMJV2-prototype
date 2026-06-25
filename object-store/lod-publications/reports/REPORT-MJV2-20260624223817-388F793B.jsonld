@@ -1,0 +1,129 @@
+{
+  "@context": {
+    "dcterms": "http://purl.org/dc/terms/",
+    "imjv": "https://data.omgeving.vlaanderen.be/def/imjv#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "https://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "contentHash": "imjv:contentHash",
+    "effectiveFrom": "imjv:effectiveFrom",
+    "exploitatie": {
+      "@id": "imjv:exploitatie",
+      "@type": "@id"
+    },
+    "heeftObject": {
+      "@id": "imjv:heeftObject",
+      "@type": "@id"
+    },
+    "heeftToestand": {
+      "@id": "imjv:heeftToestand",
+      "@type": "@id"
+    },
+    "isIngetrokken": "imjv:isIngetrokken",
+    "isVervangen": "imjv:isVervangen",
+    "naceBelCode": "imjv:naceBelCode",
+    "relatie": {
+      "@id": "imjv:relatie",
+      "@type": "@id"
+    },
+    "status": "imjv:status"
+  },
+  "@graph": [
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260624223817-388F793B",
+      "@type": "imjv:Exploitatietoestand",
+      "dcterms:identifier": "REPORT-MJV2-20260624223817-388F793B",
+      "dcterms:title": "Exploitatietoestand d.d. 3-6-2026",
+      "effectiveFrom": "2026-06-03",
+      "dcterms:issued": "2026-06-24T20:40:00.615811+00:00",
+      "dcterms:modified": "2026-06-24T20:40:00.615849+00:00",
+      "contentHash": "d70c3af63cafb7e74814a80a55ccee0fc1cd08524d5ed1fdd6a9938a8916a1b2",
+      "status": "actueel",
+      "isVervangen": false,
+      "isIngetrokken": false,
+      "exploitatie": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatie/EXP-PHR1",
+      "heeftObject": [
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/EXP-PHR1/OBJ-01"
+        },
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/EXP-PHR1/OBJ-02"
+        }
+      ],
+      "prov:wasGeneratedBy": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260624223817-388F793B"
+      },
+      "prov:wasRevisionOf": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260620130329-7DD06513"
+      }
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatie/EXP-PHR1",
+      "@type": "imjv:Exploitatie",
+      "dcterms:identifier": "EXP-PHR1",
+      "dcterms:title": "Boterfabriek",
+      "naceBelCode": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/nace-bel/345"
+      },
+      "locn:address": {
+        "@type": "locn:Address",
+        "locn:thoroughfare": "Botermarkt",
+        "locn:locatorDesignator": "1",
+        "locn:postCode": "9000",
+        "locn:postName": "Gent",
+        "schema:addressCountry": "België"
+      },
+      "schema:geo": {
+        "@type": "schema:GeoCoordinates",
+        "schema:additionalProperty": [
+          {
+            "@type": "schema:PropertyValue",
+            "schema:name": "Lambert 2008 X",
+            "schema:value": 593600
+          },
+          {
+            "@type": "schema:PropertyValue",
+            "schema:name": "Lambert 2008 Y",
+            "schema:value": 681900
+          }
+        ]
+      },
+      "heeftToestand": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260624223817-388F793B"
+      }
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260624223817-388F793B",
+      "@type": "imjv:Indiening",
+      "dcterms:identifier": "MJV2-20260624223817-388F793B",
+      "dcterms:issued": "2026-06-24T20:40:00.615811+00:00",
+      "prov:generated": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260624223817-388F793B"
+      },
+      "contentHash": "d70c3af63cafb7e74814a80a55ccee0fc1cd08524d5ed1fdd6a9938a8916a1b2"
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/EXP-PHR1/OBJ-01",
+      "@type": "imjv:Exploitatieobject",
+      "dcterms:identifier": "OBJ-01",
+      "dcterms:title": "Botervat",
+      "imjv:objecttype": "Productielijn",
+      "status": "In gebruik",
+      "relatie": []
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/EXP-PHR1/OBJ-02",
+      "@type": "imjv:Exploitatieobject",
+      "dcterms:identifier": "OBJ-02",
+      "dcterms:title": "Heater",
+      "imjv:objecttype": "Stookinstallatie",
+      "status": "Gepland",
+      "relatie": [
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/EXP-PHR1/OBJ-01"
+        }
+      ]
+    }
+  ]
+}

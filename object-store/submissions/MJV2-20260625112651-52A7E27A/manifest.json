@@ -1,0 +1,28 @@
+{
+  "transactionId": "MJV2-20260625112651-52A7E27A",
+  "reportDraftId": "RPT-20260625100820-613EEDA2",
+  "status": "Ontvangen",
+  "displayName": "Toestand in opmaak",
+  "fileName": "structurele-gegevens-imjv2.ods",
+  "fileSize": 1277,
+  "contentHash": "98108bb224fda0ee5c6e93cd24d37d5dd960bedcb2eaf6b4c587d2a2be2e29d9",
+  "exploitatie": "Houtzagerij",
+  "exploitatieId": "XCV",
+  "naceBelCode": "",
+  "submittedBy": "Emiel Jeurens namens Demo Exploitatie NV",
+  "submitterName": "Emiel Jeurens",
+  "organizationName": "Demo Exploitatie NV",
+  "summary": "Structurele toestand met 1 objecten",
+  "createdAt": "2026-06-25T09:26:51.585783+00:00",
+  "submittedAt": "2026-06-25T09:27:07.706677+00:00",
+  "receivedAt": "2026-06-25T09:27:07.706686+00:00",
+  "receiptAvailable": true,
+  "storage": {
+    "original": "submissions/MJV2-20260625112651-52A7E27A/original/structurele-gegevens-imjv2.ods",
+    "manifest": "submissions/MJV2-20260625112651-52A7E27A/manifest.json",
+    "receipt": "submissions/MJV2-20260625112651-52A7E27A/receipt.txt",
+    "reportSnapshot": "submissions/MJV2-20260625112651-52A7E27A/payload/exploitatietoestand.json",
+    "schema": "submissions/MJV2-20260625112651-52A7E27A/original/exploitatieschema.svg"
+  },
+  "reportUpdatedAt": "2026-06-25T09:26:51.598054+00:00"
+}

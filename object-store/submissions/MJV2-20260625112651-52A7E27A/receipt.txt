@@ -1,0 +1,23 @@
+ONTVANGSTBEWIJS IMJV2
+
+Transactie-ID: MJV2-20260625112651-52A7E27A
+Status: Ontvangen
+Bestand: Toestand in opmaak
+Content hash: sha256:98108bb224fda0ee5c6e93cd24d37d5dd960bedcb2eaf6b4c587d2a2be2e29d9
+Exploitatie: Houtzagerij
+Ingediend door: Emiel Jeurens namens Demo Exploitatie NV
+Tijdstip indiening: 2026-06-25T09:27:07.706677+00:00
+Tijdstip ontvangst: 2026-06-25T09:27:07.706686+00:00
+Kanaal: IMJV2 loket prototype
+
+Inhoud:
+- Naam exploitatie: Houtzagerij
+- Exploitatie-ID: XCV
+- Ingangsdatum: 2027-01-01
+- NACE-BEL-code: —
+- Adres: —
+- Lambert 2008 X-Y: — - —
+- Aantal rapporteringsplichtige onderdelen: 1
+  - Stookinstallatie: Nieuw object (OBJ-01) · In gebruik
+
+Dit ontvangstbewijs bevestigt dat het hierboven genoemde geheel werd ontvangen.

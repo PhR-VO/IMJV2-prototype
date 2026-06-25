@@ -217,6 +217,80 @@ h2 {
   align-items: start;
 }
 
+.lod-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.35fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.lod-status-panel .panel-head,
+.lod-publications-panel .panel-head {
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.lod-status-panel .panel-head p,
+.lod-publications-panel .panel-head p {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.lod-status-summary {
+  margin-top: 16px;
+}
+
+.lod-publication-items {
+  display: grid;
+  gap: 10px;
+}
+
+.lod-publication-row {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--vl-color--background-subtle);
+}
+
+.lod-publication-row summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.lod-publication-row summary::marker {
+  color: var(--muted);
+}
+
+.lod-publication-row span,
+.lod-state-row span {
+  display: grid;
+  gap: 3px;
+}
+
+.lod-publication-row small,
+.lod-state-row small {
+  color: var(--muted);
+}
+
+.lod-state-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.lod-state-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-left: 20px;
+}
+
 .submit-panel-wrap {
   display: flex;
   justify-content: center;
@@ -593,7 +667,7 @@ a.secondary {
   display: grid;
   place-items: center;
   padding: 22px;
-  z-index: 20;
+  z-index: 2000;
 }
 
 .modal-backdrop[hidden] {
@@ -717,7 +791,7 @@ table {
 
 .exploitation-layout {
   display: grid;
-  grid-template-columns: minmax(240px, 1fr) minmax(0, 3fr);
+  grid-template-columns: minmax(300px, 1fr) minmax(0, 2fr);
   gap: 20px;
   align-items: start;
 }
@@ -814,11 +888,18 @@ table {
   width: 100%;
   display: block;
   align-items: start;
-  padding: 13px 15px;
+  padding: 10px 15px;
   text-align: left;
   color: var(--text);
+  font-family: system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
   background: transparent;
   border: 0;
+}
+
+.exploitation-card strong {
+  font-weight: 650;
 }
 
 .exploitation-card strong,
@@ -840,7 +921,7 @@ table {
   display: block;
   margin-top: 4px;
   color: var(--muted);
-  font-size: 0.88rem;
+  font-size: 0.875rem;
 }
 
 .exploitation-card-main .unsaved-changes-label {
@@ -929,6 +1010,8 @@ table {
 }
 
 .reports-contact-context {
+  font-family: system-ui, sans-serif;
+  font-size: 0.875rem;
   box-shadow: none;
 }
 
@@ -939,7 +1022,7 @@ table {
 
 .reports-contact-context h2 {
   margin-bottom: 6px;
-  font-size: 1rem;
+  font-size: 0.875rem;
 }
 
 .reports-contact-context p {
@@ -1705,6 +1788,7 @@ th {
 
   .layout,
   .submissions-layout,
+  .lod-layout,
   .editor-layout,
   .exploitation-layout,
   .reports-layout,

@@ -1,0 +1,101 @@
+{
+  "@context": {
+    "dcterms": "http://purl.org/dc/terms/",
+    "imjv": "https://data.omgeving.vlaanderen.be/def/imjv#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "https://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "contentHash": "imjv:contentHash",
+    "effectiveFrom": "imjv:effectiveFrom",
+    "exploitatie": {
+      "@id": "imjv:exploitatie",
+      "@type": "@id"
+    },
+    "heeftObject": {
+      "@id": "imjv:heeftObject",
+      "@type": "@id"
+    },
+    "heeftToestand": {
+      "@id": "imjv:heeftToestand",
+      "@type": "@id"
+    },
+    "isIngetrokken": "imjv:isIngetrokken",
+    "isVervangen": "imjv:isVervangen",
+    "naceBelCode": "imjv:naceBelCode",
+    "relatie": {
+      "@id": "imjv:relatie",
+      "@type": "@id"
+    },
+    "status": "imjv:status"
+  },
+  "@graph": [
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260625112651-52A7E27A",
+      "@type": "imjv:Exploitatietoestand",
+      "dcterms:identifier": "REPORT-MJV2-20260625112651-52A7E27A",
+      "dcterms:title": "Toestand in opmaak",
+      "effectiveFrom": "2027-01-01",
+      "dcterms:issued": "2026-06-25T09:27:07.706677+00:00",
+      "dcterms:modified": "2026-06-25T09:27:07.706686+00:00",
+      "contentHash": "98108bb224fda0ee5c6e93cd24d37d5dd960bedcb2eaf6b4c587d2a2be2e29d9",
+      "status": "actueel",
+      "isVervangen": false,
+      "isIngetrokken": false,
+      "exploitatie": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatie/XCV",
+      "heeftObject": [
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/XCV/OBJ-01"
+        }
+      ],
+      "prov:wasGeneratedBy": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260625112651-52A7E27A"
+      }
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatie/XCV",
+      "@type": "imjv:Exploitatie",
+      "dcterms:identifier": "XCV",
+      "dcterms:title": "Houtzagerij",
+      "locn:address": {
+        "@type": "locn:Address",
+        "schema:addressCountry": "België"
+      },
+      "schema:geo": {
+        "@type": "schema:GeoCoordinates",
+        "schema:additionalProperty": [
+          {
+            "@type": "schema:PropertyValue",
+            "schema:name": "Lambert 2008 X"
+          },
+          {
+            "@type": "schema:PropertyValue",
+            "schema:name": "Lambert 2008 Y"
+          }
+        ]
+      },
+      "heeftToestand": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260625112651-52A7E27A"
+      }
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260625112651-52A7E27A",
+      "@type": "imjv:Indiening",
+      "dcterms:identifier": "MJV2-20260625112651-52A7E27A",
+      "dcterms:issued": "2026-06-25T09:27:07.706677+00:00",
+      "prov:generated": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260625112651-52A7E27A"
+      },
+      "contentHash": "98108bb224fda0ee5c6e93cd24d37d5dd960bedcb2eaf6b4c587d2a2be2e29d9"
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/XCV/OBJ-01",
+      "@type": "imjv:Exploitatieobject",
+      "dcterms:identifier": "OBJ-01",
+      "dcterms:title": "Nieuw object",
+      "imjv:objecttype": "Stookinstallatie",
+      "status": "In gebruik",
+      "relatie": []
+    }
+  ]
+}

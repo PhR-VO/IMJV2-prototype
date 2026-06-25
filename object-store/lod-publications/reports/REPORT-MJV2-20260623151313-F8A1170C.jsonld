@@ -1,0 +1,122 @@
+{
+  "@context": {
+    "dcterms": "http://purl.org/dc/terms/",
+    "imjv": "https://data.omgeving.vlaanderen.be/def/imjv#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "https://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "contentHash": "imjv:contentHash",
+    "effectiveFrom": "imjv:effectiveFrom",
+    "exploitatie": {
+      "@id": "imjv:exploitatie",
+      "@type": "@id"
+    },
+    "heeftObject": {
+      "@id": "imjv:heeftObject",
+      "@type": "@id"
+    },
+    "heeftToestand": {
+      "@id": "imjv:heeftToestand",
+      "@type": "@id"
+    },
+    "isIngetrokken": "imjv:isIngetrokken",
+    "isVervangen": "imjv:isVervangen",
+    "naceBelCode": "imjv:naceBelCode",
+    "relatie": {
+      "@id": "imjv:relatie",
+      "@type": "@id"
+    },
+    "status": "imjv:status"
+  },
+  "@graph": [
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260623151313-F8A1170C",
+      "@type": "imjv:Exploitatietoestand",
+      "dcterms:identifier": "REPORT-MJV2-20260623151313-F8A1170C",
+      "dcterms:title": "Toestand in opmaak",
+      "effectiveFrom": "2027-11-12",
+      "dcterms:issued": "2026-06-23T13:13:16.016121+00:00",
+      "dcterms:modified": "2026-06-23T13:13:16.016137+00:00",
+      "contentHash": "d04cd6b7170cff1fd193aa096fd1d35c04d1b40369e6d2d71f2ad607b80a3c96",
+      "status": "ingetrokken",
+      "isVervangen": false,
+      "isIngetrokken": true,
+      "exploitatie": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatie/IUHS",
+      "heeftObject": [
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/IUHS/OBJ-01"
+        },
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/IUHS/OBJ-02"
+        }
+      ],
+      "prov:wasGeneratedBy": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260623151313-F8A1170C"
+      },
+      "prov:wasRevisionOf": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260623151231-73C73DF4"
+      }
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatie/IUHS",
+      "@type": "imjv:Exploitatie",
+      "dcterms:identifier": "IUHS",
+      "dcterms:title": "Academisch Ziekenhuis",
+      "locn:address": {
+        "@type": "locn:Address",
+        "locn:thoroughfare": "Herestraat",
+        "locn:locatorDesignator": "49",
+        "locn:postCode": "3000",
+        "locn:postName": "Leuven",
+        "schema:addressCountry": "België"
+      },
+      "schema:geo": {
+        "@type": "schema:GeoCoordinates",
+        "schema:additionalProperty": [
+          {
+            "@type": "schema:PropertyValue",
+            "schema:name": "Lambert 2008 X",
+            "schema:value": 673500
+          },
+          {
+            "@type": "schema:PropertyValue",
+            "schema:name": "Lambert 2008 Y",
+            "schema:value": 681900
+          }
+        ]
+      },
+      "heeftToestand": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260623151313-F8A1170C"
+      }
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260623151313-F8A1170C",
+      "@type": "imjv:Indiening",
+      "dcterms:identifier": "MJV2-20260623151313-F8A1170C",
+      "dcterms:issued": "2026-06-23T13:13:16.016121+00:00",
+      "prov:generated": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260623151313-F8A1170C"
+      },
+      "contentHash": "d04cd6b7170cff1fd193aa096fd1d35c04d1b40369e6d2d71f2ad607b80a3c96"
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/IUHS/OBJ-01",
+      "@type": "imjv:Exploitatieobject",
+      "dcterms:identifier": "OBJ-01",
+      "dcterms:title": "Nieuw object",
+      "imjv:objecttype": "Productielijn",
+      "status": "Gepland",
+      "relatie": []
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/IUHS/OBJ-02",
+      "@type": "imjv:Exploitatieobject",
+      "dcterms:identifier": "OBJ-02",
+      "dcterms:title": "Nieuw object",
+      "imjv:objecttype": "Emissiepunt lucht",
+      "status": "In gebruik",
+      "relatie": []
+    }
+  ]
+}

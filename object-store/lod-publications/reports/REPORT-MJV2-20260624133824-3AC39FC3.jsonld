@@ -1,0 +1,120 @@
+{
+  "@context": {
+    "dcterms": "http://purl.org/dc/terms/",
+    "imjv": "https://data.omgeving.vlaanderen.be/def/imjv#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "https://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "contentHash": "imjv:contentHash",
+    "effectiveFrom": "imjv:effectiveFrom",
+    "exploitatie": {
+      "@id": "imjv:exploitatie",
+      "@type": "@id"
+    },
+    "heeftObject": {
+      "@id": "imjv:heeftObject",
+      "@type": "@id"
+    },
+    "heeftToestand": {
+      "@id": "imjv:heeftToestand",
+      "@type": "@id"
+    },
+    "isIngetrokken": "imjv:isIngetrokken",
+    "isVervangen": "imjv:isVervangen",
+    "naceBelCode": "imjv:naceBelCode",
+    "relatie": {
+      "@id": "imjv:relatie",
+      "@type": "@id"
+    },
+    "status": "imjv:status"
+  },
+  "@graph": [
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260624133824-3AC39FC3",
+      "@type": "imjv:Exploitatietoestand",
+      "dcterms:identifier": "REPORT-MJV2-20260624133824-3AC39FC3",
+      "dcterms:title": "Toestand in opmaak",
+      "effectiveFrom": "2027-01-01",
+      "dcterms:issued": "2026-06-24T11:43:43.769930+00:00",
+      "dcterms:modified": "2026-06-24T11:43:43.769946+00:00",
+      "contentHash": "26f87f6c5ad285fc636b56c2767029af477130540c73b4e9ff72de0b48b89aff",
+      "status": "vervangen",
+      "isVervangen": true,
+      "isIngetrokken": false,
+      "exploitatie": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatie/9876",
+      "heeftObject": [
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/9876/OBJ-01"
+        },
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/9876/OBJ-02"
+        }
+      ],
+      "prov:wasGeneratedBy": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260624133824-3AC39FC3"
+      }
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatie/9876",
+      "@type": "imjv:Exploitatie",
+      "dcterms:identifier": "9876",
+      "dcterms:title": "Pizzeria",
+      "locn:address": {
+        "@type": "locn:Address",
+        "locn:thoroughfare": "Straat",
+        "locn:locatorDesignator": "1",
+        "locn:postName": "Brussel",
+        "schema:addressCountry": "België"
+      },
+      "schema:geo": {
+        "@type": "schema:GeoCoordinates",
+        "schema:additionalProperty": [
+          {
+            "@type": "schema:PropertyValue",
+            "schema:name": "Lambert 2008 X"
+          },
+          {
+            "@type": "schema:PropertyValue",
+            "schema:name": "Lambert 2008 Y"
+          }
+        ]
+      },
+      "heeftToestand": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260624133824-3AC39FC3"
+      }
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260624133824-3AC39FC3",
+      "@type": "imjv:Indiening",
+      "dcterms:identifier": "MJV2-20260624133824-3AC39FC3",
+      "dcterms:issued": "2026-06-24T11:43:43.769930+00:00",
+      "prov:generated": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260624133824-3AC39FC3"
+      },
+      "contentHash": "26f87f6c5ad285fc636b56c2767029af477130540c73b4e9ff72de0b48b89aff"
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/9876/OBJ-01",
+      "@type": "imjv:Exploitatieobject",
+      "dcterms:identifier": "OBJ-01",
+      "dcterms:title": "Uitlaat pizza oven",
+      "imjv:objecttype": "Emissiepunt lucht",
+      "status": "In gebruik",
+      "relatie": []
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/9876/OBJ-02",
+      "@type": "imjv:Exploitatieobject",
+      "dcterms:identifier": "OBJ-02",
+      "dcterms:title": "Nieuw Pizza oven",
+      "imjv:objecttype": "Productielijn",
+      "status": "In gebruik",
+      "relatie": [
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/9876/OBJ-01"
+        }
+      ]
+    }
+  ]
+}

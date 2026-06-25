@@ -1,0 +1,94 @@
+{
+  "@context": {
+    "dcterms": "http://purl.org/dc/terms/",
+    "imjv": "https://data.omgeving.vlaanderen.be/def/imjv#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "https://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "contentHash": "imjv:contentHash",
+    "effectiveFrom": "imjv:effectiveFrom",
+    "exploitatie": {
+      "@id": "imjv:exploitatie",
+      "@type": "@id"
+    },
+    "heeftObject": {
+      "@id": "imjv:heeftObject",
+      "@type": "@id"
+    },
+    "heeftToestand": {
+      "@id": "imjv:heeftToestand",
+      "@type": "@id"
+    },
+    "isIngetrokken": "imjv:isIngetrokken",
+    "isVervangen": "imjv:isVervangen",
+    "naceBelCode": "imjv:naceBelCode",
+    "relatie": {
+      "@id": "imjv:relatie",
+      "@type": "@id"
+    },
+    "status": "imjv:status"
+  },
+  "@graph": [
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260624173511-001B380C",
+      "@type": "imjv:Exploitatietoestand",
+      "dcterms:identifier": "REPORT-MJV2-20260624173511-001B380C",
+      "dcterms:title": "Toestand in opmaak",
+      "effectiveFrom": "2027-01-01",
+      "dcterms:issued": "2026-06-24T15:35:15.418273+00:00",
+      "dcterms:modified": "2026-06-24T15:35:15.418288+00:00",
+      "contentHash": "d05a9011e873e705404502273ec623461968ddbdeaaf1121758f9009433816f2",
+      "status": "actueel",
+      "isVervangen": false,
+      "isIngetrokken": false,
+      "exploitatie": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatie/TYUG",
+      "heeftObject": [],
+      "prov:wasGeneratedBy": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260624173511-001B380C"
+      }
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatie/TYUG",
+      "@type": "imjv:Exploitatie",
+      "dcterms:identifier": "TYUG",
+      "dcterms:title": "Cementfabriek",
+      "locn:address": {
+        "@type": "locn:Address",
+        "locn:thoroughfare": "Scheldelaan",
+        "locn:locatorDesignator": "420",
+        "locn:postCode": "2040",
+        "locn:postName": "Antwerpen",
+        "schema:addressCountry": "België"
+      },
+      "schema:geo": {
+        "@type": "schema:GeoCoordinates",
+        "schema:additionalProperty": [
+          {
+            "@type": "schema:PropertyValue",
+            "schema:name": "Lambert 2008 X",
+            "schema:value": 647800
+          },
+          {
+            "@type": "schema:PropertyValue",
+            "schema:name": "Lambert 2008 Y",
+            "schema:value": 724300
+          }
+        ]
+      },
+      "heeftToestand": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260624173511-001B380C"
+      }
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260624173511-001B380C",
+      "@type": "imjv:Indiening",
+      "dcterms:identifier": "MJV2-20260624173511-001B380C",
+      "dcterms:issued": "2026-06-24T15:35:15.418273+00:00",
+      "prov:generated": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260624173511-001B380C"
+      },
+      "contentHash": "d05a9011e873e705404502273ec623461968ddbdeaaf1121758f9009433816f2"
+    }
+  ]
+}

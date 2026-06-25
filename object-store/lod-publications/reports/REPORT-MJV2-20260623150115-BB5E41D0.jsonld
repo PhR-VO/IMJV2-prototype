@@ -1,0 +1,111 @@
+{
+  "@context": {
+    "dcterms": "http://purl.org/dc/terms/",
+    "imjv": "https://data.omgeving.vlaanderen.be/def/imjv#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "https://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "contentHash": "imjv:contentHash",
+    "effectiveFrom": "imjv:effectiveFrom",
+    "exploitatie": {
+      "@id": "imjv:exploitatie",
+      "@type": "@id"
+    },
+    "heeftObject": {
+      "@id": "imjv:heeftObject",
+      "@type": "@id"
+    },
+    "heeftToestand": {
+      "@id": "imjv:heeftToestand",
+      "@type": "@id"
+    },
+    "isIngetrokken": "imjv:isIngetrokken",
+    "isVervangen": "imjv:isVervangen",
+    "naceBelCode": "imjv:naceBelCode",
+    "relatie": {
+      "@id": "imjv:relatie",
+      "@type": "@id"
+    },
+    "status": "imjv:status"
+  },
+  "@graph": [
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260623150115-BB5E41D0",
+      "@type": "imjv:Exploitatietoestand",
+      "dcterms:identifier": "REPORT-MJV2-20260623150115-BB5E41D0",
+      "dcterms:title": "Toestand in opmaak",
+      "effectiveFrom": "2027-01-30",
+      "dcterms:issued": "2026-06-23T13:01:17.495317+00:00",
+      "dcterms:modified": "2026-06-23T13:01:17.495346+00:00",
+      "contentHash": "cf2ba0746f5d1ad0502f52f38fc7aeb563987aa9533d9082c6a750af394e37e9",
+      "status": "actueel",
+      "isVervangen": false,
+      "isIngetrokken": false,
+      "exploitatie": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatie/DFG",
+      "heeftObject": [
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DFG/OBJ-01"
+        }
+      ],
+      "prov:wasGeneratedBy": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260623150115-BB5E41D0"
+      },
+      "prov:wasRevisionOf": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260623145613-74276D30"
+      }
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatie/DFG",
+      "@type": "imjv:Exploitatie",
+      "dcterms:identifier": "DFG",
+      "dcterms:title": "Herman Terilinck",
+      "locn:address": {
+        "@type": "locn:Address",
+        "locn:thoroughfare": "Grote Markt",
+        "locn:locatorDesignator": "21",
+        "locn:postCode": "2800",
+        "locn:postName": "Mechelen",
+        "schema:addressCountry": "België"
+      },
+      "schema:geo": {
+        "@type": "schema:GeoCoordinates",
+        "schema:additionalProperty": [
+          {
+            "@type": "schema:PropertyValue",
+            "schema:name": "Lambert 2008 X",
+            "schema:value": 660900
+          },
+          {
+            "@type": "schema:PropertyValue",
+            "schema:name": "Lambert 2008 Y",
+            "schema:value": 695800
+          }
+        ]
+      },
+      "heeftToestand": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260623150115-BB5E41D0"
+      }
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260623150115-BB5E41D0",
+      "@type": "imjv:Indiening",
+      "dcterms:identifier": "MJV2-20260623150115-BB5E41D0",
+      "dcterms:issued": "2026-06-23T13:01:17.495317+00:00",
+      "prov:generated": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260623150115-BB5E41D0"
+      },
+      "contentHash": "cf2ba0746f5d1ad0502f52f38fc7aeb563987aa9533d9082c6a750af394e37e9"
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DFG/OBJ-01",
+      "@type": "imjv:Exploitatieobject",
+      "dcterms:identifier": "OBJ-01",
+      "dcterms:title": "Nieuw object",
+      "imjv:objecttype": "Stookinstallatie",
+      "status": "In gebruik",
+      "dcterms:description": "Veel vieze rook",
+      "relatie": []
+    }
+  ]
+}

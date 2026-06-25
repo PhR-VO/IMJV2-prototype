@@ -1,0 +1,93 @@
+{
+  "@context": {
+    "dcterms": "http://purl.org/dc/terms/",
+    "imjv": "https://data.omgeving.vlaanderen.be/def/imjv#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "https://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "contentHash": "imjv:contentHash",
+    "effectiveFrom": "imjv:effectiveFrom",
+    "exploitatie": {
+      "@id": "imjv:exploitatie",
+      "@type": "@id"
+    },
+    "heeftObject": {
+      "@id": "imjv:heeftObject",
+      "@type": "@id"
+    },
+    "heeftToestand": {
+      "@id": "imjv:heeftToestand",
+      "@type": "@id"
+    },
+    "isIngetrokken": "imjv:isIngetrokken",
+    "isVervangen": "imjv:isVervangen",
+    "naceBelCode": "imjv:naceBelCode",
+    "relatie": {
+      "@id": "imjv:relatie",
+      "@type": "@id"
+    },
+    "status": "imjv:status"
+  },
+  "@graph": [
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260620171312-94AEA1BB",
+      "@type": "imjv:Exploitatietoestand",
+      "dcterms:identifier": "REPORT-MJV2-20260620171312-94AEA1BB",
+      "dcterms:title": "Exploitatietoestand d.d. 24-6-2026",
+      "effectiveFrom": "2026-06-24",
+      "dcterms:issued": "2026-06-21T21:51:20.027453+00:00",
+      "dcterms:modified": "2026-06-21T21:51:20.027483+00:00",
+      "contentHash": "81242e8d21d339f6de6f3bb460b9b1170c8257b007f59b58fee14cf29d639d24",
+      "status": "vervangen",
+      "isVervangen": true,
+      "isIngetrokken": false,
+      "exploitatie": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatie/OIJDKJH",
+      "heeftObject": [],
+      "prov:wasGeneratedBy": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260620171312-94AEA1BB"
+      }
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatie/OIJDKJH",
+      "@type": "imjv:Exploitatie",
+      "dcterms:identifier": "OIJDKJH",
+      "dcterms:title": "hjko",
+      "naceBelCode": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/nace-bel/oiuhgf"
+      },
+      "locn:address": {
+        "@type": "locn:Address",
+        "schema:addressCountry": "België"
+      },
+      "schema:geo": {
+        "@type": "schema:GeoCoordinates",
+        "schema:additionalProperty": [
+          {
+            "@type": "schema:PropertyValue",
+            "schema:name": "Lambert 2008 X",
+            "schema:value": 1
+          },
+          {
+            "@type": "schema:PropertyValue",
+            "schema:name": "Lambert 2008 Y",
+            "schema:value": 1
+          }
+        ]
+      },
+      "heeftToestand": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260620171312-94AEA1BB"
+      }
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260620171312-94AEA1BB",
+      "@type": "imjv:Indiening",
+      "dcterms:identifier": "MJV2-20260620171312-94AEA1BB",
+      "dcterms:issued": "2026-06-21T21:51:20.027453+00:00",
+      "prov:generated": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260620171312-94AEA1BB"
+      },
+      "contentHash": "81242e8d21d339f6de6f3bb460b9b1170c8257b007f59b58fee14cf29d639d24"
+    }
+  ]
+}

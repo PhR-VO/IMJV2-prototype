@@ -1,0 +1,10 @@
+{
+  "jobId": "LOD-20260625093359-4B00FA3E",
+  "jobType": "publish-lod",
+  "transactionId": "MJV2-20260622011848-09538D4A",
+  "reportId": "REPORT-MJV2-20260622011848-09538D4A",
+  "submissionType": "report",
+  "queuedAt": "2026-06-25T07:33:59.113790+00:00",
+  "queuedReason": "missing-publication",
+  "processedAt": "2026-06-25T07:33:59.138714+00:00"
+}

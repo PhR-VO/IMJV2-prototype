@@ -1,0 +1,97 @@
+{
+  "@context": {
+    "dcterms": "http://purl.org/dc/terms/",
+    "imjv": "https://data.omgeving.vlaanderen.be/def/imjv#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "https://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "contentHash": "imjv:contentHash",
+    "effectiveFrom": "imjv:effectiveFrom",
+    "exploitatie": {
+      "@id": "imjv:exploitatie",
+      "@type": "@id"
+    },
+    "heeftObject": {
+      "@id": "imjv:heeftObject",
+      "@type": "@id"
+    },
+    "heeftToestand": {
+      "@id": "imjv:heeftToestand",
+      "@type": "@id"
+    },
+    "isIngetrokken": "imjv:isIngetrokken",
+    "isVervangen": "imjv:isVervangen",
+    "naceBelCode": "imjv:naceBelCode",
+    "relatie": {
+      "@id": "imjv:relatie",
+      "@type": "@id"
+    },
+    "status": "imjv:status"
+  },
+  "@graph": [
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260622011848-09538D4A",
+      "@type": "imjv:Exploitatietoestand",
+      "dcterms:identifier": "REPORT-MJV2-20260622011848-09538D4A",
+      "dcterms:title": "Exploitatietoestand d.d. 17-6-2026",
+      "effectiveFrom": "2026-06-17",
+      "dcterms:issued": "2026-06-21T23:23:32.488958+00:00",
+      "dcterms:modified": "2026-06-21T23:23:32.489000+00:00",
+      "contentHash": "b50c55d68cff5d4aa2719d0e0b135de4b1d72f5638d4f2ea8d12f873258b288d",
+      "status": "vervangen",
+      "isVervangen": true,
+      "isIngetrokken": false,
+      "exploitatie": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatie/GLA1",
+      "heeftObject": [],
+      "prov:wasGeneratedBy": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260622011848-09538D4A"
+      }
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatie/GLA1",
+      "@type": "imjv:Exploitatie",
+      "dcterms:identifier": "GLA1",
+      "dcterms:title": "Glasfariek",
+      "naceBelCode": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/nace-bel/9209"
+      },
+      "locn:address": {
+        "@type": "locn:Address",
+        "locn:thoroughfare": "Kanaalkade",
+        "locn:locatorDesignator": "1",
+        "locn:postCode": "1000",
+        "locn:postName": "Genk",
+        "schema:addressCountry": "België"
+      },
+      "schema:geo": {
+        "@type": "schema:GeoCoordinates",
+        "schema:additionalProperty": [
+          {
+            "@type": "schema:PropertyValue",
+            "schema:name": "Lambert 2008 X",
+            "schema:value": 987
+          },
+          {
+            "@type": "schema:PropertyValue",
+            "schema:name": "Lambert 2008 Y",
+            "schema:value": 987
+          }
+        ]
+      },
+      "heeftToestand": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260622011848-09538D4A"
+      }
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260622011848-09538D4A",
+      "@type": "imjv:Indiening",
+      "dcterms:identifier": "MJV2-20260622011848-09538D4A",
+      "dcterms:issued": "2026-06-21T23:23:32.488958+00:00",
+      "prov:generated": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260622011848-09538D4A"
+      },
+      "contentHash": "b50c55d68cff5d4aa2719d0e0b135de4b1d72f5638d4f2ea8d12f873258b288d"
+    }
+  ]
+}

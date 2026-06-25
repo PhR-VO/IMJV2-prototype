@@ -1,0 +1,275 @@
+{
+  "@context": {
+    "dcterms": "http://purl.org/dc/terms/",
+    "imjv": "https://data.omgeving.vlaanderen.be/def/imjv#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "https://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "contentHash": "imjv:contentHash",
+    "effectiveFrom": "imjv:effectiveFrom",
+    "exploitatie": {
+      "@id": "imjv:exploitatie",
+      "@type": "@id"
+    },
+    "heeftObject": {
+      "@id": "imjv:heeftObject",
+      "@type": "@id"
+    },
+    "heeftToestand": {
+      "@id": "imjv:heeftToestand",
+      "@type": "@id"
+    },
+    "isIngetrokken": "imjv:isIngetrokken",
+    "isVervangen": "imjv:isVervangen",
+    "naceBelCode": "imjv:naceBelCode",
+    "relatie": {
+      "@id": "imjv:relatie",
+      "@type": "@id"
+    },
+    "status": "imjv:status"
+  },
+  "@graph": [
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260618091616-BFC60993",
+      "@type": "imjv:Exploitatietoestand",
+      "dcterms:identifier": "REPORT-MJV2-20260618091616-BFC60993",
+      "dcterms:title": "Exploitatietoestand d.d. 13-6-2027",
+      "effectiveFrom": "2027-06-13",
+      "dcterms:issued": "2027-06-13T09:15:00+01:00",
+      "dcterms:modified": "2027-06-13T09:15:01+01:00",
+      "contentHash": "c7aa5dd23184408da6de22d205e593bba3046b3496b6c8feaa77c38c195a1056",
+      "status": "actueel",
+      "isVervangen": false,
+      "isIngetrokken": false,
+      "exploitatie": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatie/DEMO-EXP-001",
+      "heeftObject": [
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/PL-01"
+        },
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/STK-01"
+        },
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/WZI-01"
+        },
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/GW-01"
+        },
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/EP-L-01"
+        },
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/EP-W-01"
+        },
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/STK-02"
+        },
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/EP-L-02"
+        },
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/PL-02"
+        }
+      ],
+      "prov:wasGeneratedBy": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260618091616-BFC60993"
+      }
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatie/DEMO-EXP-001",
+      "@type": "imjv:Exploitatie",
+      "dcterms:identifier": "DEMO-EXP-001",
+      "dcterms:title": "Demo Exploitatie NV",
+      "naceBelCode": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/nace-bel/23.990"
+      },
+      "locn:address": {
+        "@type": "locn:Address",
+        "locn:thoroughfare": "Zaha Hadidplein",
+        "locn:locatorDesignator": "1",
+        "locn:postCode": "2030",
+        "locn:postName": "Antwerpen",
+        "schema:addressCountry": "België"
+      },
+      "schema:geo": {
+        "@type": "schema:GeoCoordinates",
+        "schema:additionalProperty": [
+          {
+            "@type": "schema:PropertyValue",
+            "schema:name": "Lambert 2008 X",
+            "schema:value": 652224
+          },
+          {
+            "@type": "schema:PropertyValue",
+            "schema:name": "Lambert 2008 Y",
+            "schema:value": 717046
+          }
+        ]
+      },
+      "heeftToestand": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260618091616-BFC60993"
+      }
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260618091616-BFC60993",
+      "@type": "imjv:Indiening",
+      "dcterms:identifier": "MJV2-20260618091616-BFC60993",
+      "dcterms:issued": "2027-06-13T09:15:00+01:00",
+      "prov:generated": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260618091616-BFC60993"
+      },
+      "contentHash": "c7aa5dd23184408da6de22d205e593bba3046b3496b6c8feaa77c38c195a1056"
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/PL-01",
+      "@type": "imjv:Exploitatieobject",
+      "dcterms:identifier": "PL-01",
+      "dcterms:title": "Productielijn keramische granulaten",
+      "imjv:objecttype": "Productielijn",
+      "status": "In gebruik",
+      "dcterms:description": "Capaciteit: 120000 ton/jaar",
+      "relatie": [
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/STK-01"
+        },
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/WZI-01"
+        },
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/STK-02"
+        }
+      ]
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/STK-01",
+      "@type": "imjv:Exploitatieobject",
+      "dcterms:identifier": "STK-01",
+      "dcterms:title": "Stoomketel lijn 1",
+      "imjv:objecttype": "Stookinstallatie",
+      "status": "In gebruik",
+      "dcterms:description": "Thermisch vermogen: 48 MW; brandstof: aardgas",
+      "relatie": [
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/PL-01"
+        },
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/EP-L-01"
+        }
+      ]
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/WZI-01",
+      "@type": "imjv:Exploitatieobject",
+      "dcterms:identifier": "WZI-01",
+      "dcterms:title": "Fysico-chemische waterzuivering",
+      "imjv:objecttype": "Waterzuivering",
+      "status": "In gebruik",
+      "dcterms:description": "Neutralisatie + sedimentatie + zandfilter; capaciteit: 35 m3/u",
+      "relatie": [
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/PL-01"
+        },
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/EP-W-01"
+        },
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/PL-02"
+        }
+      ]
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/GW-01",
+      "@type": "imjv:Exploitatieobject",
+      "dcterms:identifier": "GW-01",
+      "dcterms:title": "Winning productieput noord",
+      "imjv:objecttype": "Grondwaterwinning",
+      "status": "In gebruik",
+      "dcterms:description": "Putdiepte: 82 m; vergund debiet: 180000 m3/jaar; watervoerende laag: HCOV 0600",
+      "relatie": [
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/PL-01"
+        }
+      ]
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/EP-L-01",
+      "@type": "imjv:Exploitatieobject",
+      "dcterms:identifier": "EP-L-01",
+      "dcterms:title": "Schoorsteen stoomketel",
+      "imjv:objecttype": "Emissiepunt lucht",
+      "status": "In gebruik",
+      "dcterms:description": "Hoogte: 32 m; diameter: 1.2 m; Lambert 2008: 156420, 207880",
+      "relatie": [
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/STK-01"
+        }
+      ]
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/EP-W-01",
+      "@type": "imjv:Exploitatieobject",
+      "dcterms:identifier": "EP-W-01",
+      "dcterms:title": "Lozingspunt effluent WZI",
+      "imjv:objecttype": "Emissiepunt water",
+      "status": "In gebruik",
+      "dcterms:description": "Lozend naar oppervlaktewater; Lambert 2008: 156385, 207842",
+      "relatie": [
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/WZI-01"
+        }
+      ]
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/STK-02",
+      "@type": "imjv:Exploitatieobject",
+      "dcterms:identifier": "STK-02",
+      "dcterms:title": "Droogoven lijn 2",
+      "imjv:objecttype": "Stookinstallatie",
+      "status": "In gebruik",
+      "dcterms:description": "Thermisch vermogen: 22 MW; brandstof: aardgas; ingebruikname: 20-03-2027",
+      "relatie": [
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/PL-01"
+        },
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/EP-L-02"
+        },
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/PL-02"
+        }
+      ]
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/EP-L-02",
+      "@type": "imjv:Exploitatieobject",
+      "dcterms:identifier": "EP-L-02",
+      "dcterms:title": "Schoorsteen droogoven lijn 2",
+      "imjv:objecttype": "Emissiepunt lucht",
+      "status": "In gebruik",
+      "dcterms:description": "Hoogte: 28 m; diameter: 0.9 m; Lambert 2008: 156448, 207862",
+      "relatie": [
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/STK-02"
+        }
+      ]
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/PL-02",
+      "@type": "imjv:Exploitatieobject",
+      "dcterms:identifier": "PL-02",
+      "dcterms:title": "Productielijn recyclaat",
+      "imjv:objecttype": "Productielijn",
+      "status": "In gebruik",
+      "dcterms:description": "Capaciteit: 45000 ton/jaar; verwerking van keramisch recyclaat",
+      "relatie": [
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/STK-02"
+        },
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/DEMO-EXP-001/WZI-01"
+        }
+      ]
+    }
+  ]
+}
