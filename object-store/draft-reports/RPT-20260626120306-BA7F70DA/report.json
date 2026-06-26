@@ -1,0 +1,61 @@
+{
+  "reportDraftId": "RPT-20260626120306-BA7F70DA",
+  "title": "Toestand in opmaak",
+  "exploitatie": "Jamfabriek",
+  "exploitatieId": "VBN",
+  "effectiveFrom": "",
+  "naceBelCode": "",
+  "location": {
+    "address": {
+      "street": "Hoogstraat",
+      "houseNumber": "20",
+      "postalCode": "1098",
+      "municipality": "Gent",
+      "country": "België"
+    },
+    "lambert2008": {
+      "x": 4567,
+      "y": 56789
+    }
+  },
+  "objects": [
+    {
+      "type": "Productielijn",
+      "code": "OBJ-01",
+      "name": "Jamproductie",
+      "status": "In gebruik",
+      "properties": "",
+      "relations": []
+    },
+    {
+      "type": "Grondwaterwinning",
+      "code": "OBJ-02",
+      "name": "Put",
+      "status": "In gebruik",
+      "properties": "",
+      "relations": [
+        "OBJ-02"
+      ]
+    },
+    {
+      "type": "Emissiepunt lucht",
+      "code": "OBJ-03",
+      "name": "schouw",
+      "status": "In gebruik",
+      "properties": "",
+      "relations": []
+    },
+    {
+      "type": "Productielijn",
+      "code": "OBJ-04",
+      "name": "2e jam pot",
+      "status": "In gebruik",
+      "properties": "",
+      "relations": []
+    }
+  ],
+  "updatedAt": "2026-06-26T10:05:46.616990+00:00",
+  "basedOnReportId": "REPORT-MJV2-20260626120110-648AAE71",
+  "basedOnTransactionId": "MJV2-20260626120110-648AAE71",
+  "changeType": "new-state"
+}

@@ -5,7 +5,7 @@
   "displayName": "Toestand in opmaak",
   "fileName": "structurele-gegevens-imjv2.ods",
   "fileSize": 1232,
-  "contentHash": "80a3670b935d78f80efe0967c8d69a9cfe16d01136530ca95da4e616fee21c0e",
+  "contentHash": "efddfc424f860ce37481821e2e3a960dec0b547ff3d47e1e6bf7b20f85c22a79",
   "exploitatie": "Tankstation",
   "exploitatieId": "IUHY",
   "naceBelCode": "",
@@ -23,5 +23,5 @@
     "reportDraft": "draft-reports/RPT-20260623130511-06C7DBFA/report.json",
     "schema": "draft-submissions/MJV2-20260623130511-40CE58CD/original/exploitatieschema.svg"
   },
-  "reportUpdatedAt": "2026-06-25T11:18:59.476068+00:00"
+  "reportUpdatedAt": "2026-06-25T12:13:38.497494+00:00"
 }

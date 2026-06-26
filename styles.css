@@ -275,6 +275,14 @@ h2 {
   color: var(--muted);
 }
 
+.lod-catalog-actions,
+.lod-link-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
 .lod-state-list {
   display: grid;
   gap: 8px;
@@ -1026,6 +1034,7 @@ table {
 }
 
 .reports-contact-context p {
+  font-size: 0.875rem;
   color: var(--muted);
 }
 

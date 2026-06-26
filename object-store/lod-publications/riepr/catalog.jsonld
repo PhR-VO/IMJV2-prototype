@@ -1,0 +1,465 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "geo": "http://www.opengis.net/ont/geosparql#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "adms": "http://www.w3.org/ns/adms#",
+    "dct": "http://purl.org/dc/terms/",
+    "locn": "http://www.w3.org/ns/locn#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "http://schema.org/",
+    "riepr": "https://data.riepr.omgeving.vlaanderen.be/ns/riepr#",
+    "meetpunt": "https://data.riepr.omgeving.vlaanderen.be/id/meetpunt/",
+    "emissiepunt": "https://data.riepr.omgeving.vlaanderen.be/id/emissiepunt/",
+    "activiteit": "https://data.riepr.omgeving.vlaanderen.be/id/activiteit/",
+    "procedure": "https://data.riepr.omgeving.vlaanderen.be/id/procedure/",
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "ssn": "http://www.w3.org/ns/ssn/",
+    "p-plan": "http://purl.org/net/p-plan#",
+    "concept": "https://data.riepr.omgeving.vlaanderen.be/id/concept/",
+    "apparaat": "https://data.riepr.omgeving.vlaanderen.be/id/apparaat/",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "localId": "riepr:localId",
+    "label": {
+      "@language": "nl",
+      "@id": "rdfs:label"
+    },
+    "comment": {
+      "@language": "nl",
+      "@id": "rdfs:comment"
+    },
+    "identifier": {
+      "@type": "@id",
+      "@id": "adms:identifier"
+    },
+    "atLocation": {
+      "@type": "@id",
+      "@id": "prov:atLocation"
+    },
+    "hadPrimarySource": {
+      "@type": "@id",
+      "@id": "prov:hadPrimarySource"
+    },
+    "wasAttributedTo": {
+      "@type": "@id",
+      "@id": "prov:wasAttributedTo"
+    },
+    "wasDerivedFrom": {
+      "@id": "prov:wasDerivedFrom",
+      "@type": "@id"
+    },
+    "wasRevisionOf": {
+      "@id": "prov:wasRevisionOf",
+      "@type": "@id"
+    },
+    "deployedOnPlatform": {
+      "@id": "ssn:deployedOnPlatform",
+      "@type": "@id"
+    },
+    "deployedSystem": {
+      "@id": "ssn:deployedSystem",
+      "@type": "@id"
+    },
+    "hasDeployment": {
+      "@id": "ssn:hasDeployment",
+      "@type": "@id"
+    },
+    "hasSubSystem": {
+      "@id": "ssn:hasSubSystem",
+      "@type": "@id"
+    },
+    "hasGeometry": {
+      "@type": "@id",
+      "@id": "geo:hasGeometry"
+    },
+    "hasSerialization": {
+      "@id": "geo:hasSerialization",
+      "@type": "geo:WKTLiteral"
+    },
+    "status": {
+      "@id": "adms:status",
+      "@type": "@id"
+    },
+    "issued": {
+      "@id": "dct:issued",
+      "@type": "xsd:date"
+    },
+    "created": {
+      "@id": "dct:created",
+      "@type": "xsd:dateTime"
+    },
+    "modified": {
+      "@id": "dct:modified",
+      "@type": "xsd:dateTime"
+    }
+  },
+  "id": "https://data.riepr.omgeving.vlaanderen.be/doc/imjv/catalog",
+  "type": "dct:Catalog",
+  "label": "IMJV2 RIEPR LOD-publicatiecatalogus",
+  "modified": "2026-06-26T10:11:42.408871+00:00",
+  "dct:hasPart": [
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260618163219-A2B68F96",
+      "type": "dct:Dataset",
+      "label": "Exploitatietoestand d.d. 26-11-2027",
+      "localId": "REPORT-MJV2-20260618163219-A2B68F96",
+      "issued": "2027-11-26",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260618163219-A2B68F96"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260623151313-F8A1170C",
+      "type": "dct:Dataset",
+      "label": "Toestand in opmaak",
+      "localId": "REPORT-MJV2-20260623151313-F8A1170C",
+      "issued": "2027-11-12",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260623151313-F8A1170C"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260618162358-8D58B739",
+      "type": "dct:Dataset",
+      "label": "Exploitatietoestand d.d. 6-9-2027",
+      "localId": "REPORT-MJV2-20260618162358-8D58B739",
+      "issued": "2027-09-06",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260618162358-8D58B739"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260624135523-C188968D",
+      "type": "dct:Dataset",
+      "label": "Toestand in opmaak",
+      "localId": "REPORT-MJV2-20260624135523-C188968D",
+      "issued": "2027-08-25",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260624135523-C188968D"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260624135627-BC8F9A0C",
+      "type": "dct:Dataset",
+      "label": "Toestand in opmaak",
+      "localId": "REPORT-MJV2-20260624135627-BC8F9A0C",
+      "issued": "2027-07-07",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260624135627-BC8F9A0C"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260618091616-BFC60993",
+      "type": "dct:Dataset",
+      "label": "Exploitatietoestand d.d. 13-6-2027",
+      "localId": "REPORT-MJV2-20260618091616-BFC60993",
+      "issued": "2027-06-13",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260618091616-BFC60993"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260624135256-0F03382B",
+      "type": "dct:Dataset",
+      "label": "Toestand in opmaak",
+      "localId": "REPORT-MJV2-20260624135256-0F03382B",
+      "issued": "2027-04-28",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260624135256-0F03382B"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260618085238-8562181D",
+      "type": "dct:Dataset",
+      "label": "Exploitatietoestand d.d. 20-3-2027",
+      "localId": "REPORT-MJV2-20260618085238-8562181D",
+      "issued": "2027-03-20",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260618085238-8562181D"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260623150115-BB5E41D0",
+      "type": "dct:Dataset",
+      "label": "Toestand in opmaak",
+      "localId": "REPORT-MJV2-20260623150115-BB5E41D0",
+      "issued": "2027-01-30",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260623150115-BB5E41D0"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260623145613-74276D30",
+      "type": "dct:Dataset",
+      "label": "Toestand in opmaak",
+      "localId": "REPORT-MJV2-20260623145613-74276D30",
+      "issued": "2027-01-28",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260623145613-74276D30"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260622164621-A99313AB",
+      "type": "dct:Dataset",
+      "label": "Toestand in opmaak",
+      "localId": "REPORT-MJV2-20260622164621-A99313AB",
+      "issued": "2027-01-28",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260622164621-A99313AB"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260623140051-51F02BC7",
+      "type": "dct:Dataset",
+      "label": "Toestand in opmaak",
+      "localId": "REPORT-MJV2-20260623140051-51F02BC7",
+      "issued": "2027-01-25",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260623140051-51F02BC7"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260618085207-38C89C43",
+      "type": "dct:Dataset",
+      "label": "Exploitatietoestand d.d. 1-1-2027",
+      "localId": "REPORT-MJV2-20260618085207-38C89C43",
+      "issued": "2027-01-01",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260618085207-38C89C43"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260625112651-52A7E27A",
+      "type": "dct:Dataset",
+      "label": "Toestand in opmaak",
+      "localId": "REPORT-MJV2-20260625112651-52A7E27A",
+      "issued": "2027-01-01",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260625112651-52A7E27A"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260624173511-001B380C",
+      "type": "dct:Dataset",
+      "label": "Toestand in opmaak",
+      "localId": "REPORT-MJV2-20260624173511-001B380C",
+      "issued": "2027-01-01",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260624173511-001B380C"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260624135005-F5F0FDFB",
+      "type": "dct:Dataset",
+      "label": "Toestand in opmaak",
+      "localId": "REPORT-MJV2-20260624135005-F5F0FDFB",
+      "issued": "2027-01-01",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260624135005-F5F0FDFB"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260624133824-3AC39FC3",
+      "type": "dct:Dataset",
+      "label": "Toestand in opmaak",
+      "localId": "REPORT-MJV2-20260624133824-3AC39FC3",
+      "issued": "2027-01-01",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260624133824-3AC39FC3"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260623124811-DC1A996B",
+      "type": "dct:Dataset",
+      "label": "Toestand in opmaak",
+      "localId": "REPORT-MJV2-20260623124811-DC1A996B",
+      "issued": "2027-01-01",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260623124811-DC1A996B"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260623081501-F57CA36D",
+      "type": "dct:Dataset",
+      "label": "Toestand in opmaak",
+      "localId": "REPORT-MJV2-20260623081501-F57CA36D",
+      "issued": "2027-01-01",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260623081501-F57CA36D"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260622013402-45DED532",
+      "type": "dct:Dataset",
+      "label": "Exploitatietoestand d.d. 24-6-2026",
+      "localId": "REPORT-MJV2-20260622013402-45DED532",
+      "issued": "2027-01-01",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260622013402-45DED532"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260619223506-FB9E0894",
+      "type": "dct:Dataset",
+      "label": "Exploitatietoestand d.d. 1-1-2027",
+      "localId": "REPORT-MJV2-20260619223506-FB9E0894",
+      "issued": "2027-01-01",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260619223506-FB9E0894"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260619223506-6B4ED1DC",
+      "type": "dct:Dataset",
+      "label": "Exploitatietoestand d.d. 1-1-2027",
+      "localId": "REPORT-MJV2-20260619223506-6B4ED1DC",
+      "issued": "2027-01-01",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260619223506-6B4ED1DC"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260618173845-92FB45A0",
+      "type": "dct:Dataset",
+      "label": "Exploitatietoestand d.d. 1-1-2027",
+      "localId": "REPORT-MJV2-20260618173845-92FB45A0",
+      "issued": "2027-01-01",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260618173845-92FB45A0"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260623151231-73C73DF4",
+      "type": "dct:Dataset",
+      "label": "Toestand in opmaak",
+      "localId": "REPORT-MJV2-20260623151231-73C73DF4",
+      "issued": "2026-11-12",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260623151231-73C73DF4"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260622012628-161F3606",
+      "type": "dct:Dataset",
+      "label": "Exploitatietoestand d.d. 24-6-2026",
+      "localId": "REPORT-MJV2-20260622012628-161F3606",
+      "issued": "2026-06-24",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260622012628-161F3606"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260620171312-94AEA1BB",
+      "type": "dct:Dataset",
+      "label": "Exploitatietoestand d.d. 24-6-2026",
+      "localId": "REPORT-MJV2-20260620171312-94AEA1BB",
+      "issued": "2026-06-24",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260620171312-94AEA1BB"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260626120110-648AAE71",
+      "type": "dct:Dataset",
+      "label": "Toestand in opmaak",
+      "localId": "REPORT-MJV2-20260626120110-648AAE71",
+      "issued": "2026-06-18",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260626120110-648AAE71"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260623130322-EB65CD3F",
+      "type": "dct:Dataset",
+      "label": "Exploitatietoestand d.d. 12-6-2026",
+      "localId": "REPORT-MJV2-20260623130322-EB65CD3F",
+      "issued": "2026-06-18",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260623130322-EB65CD3F"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260622012403-80FA5A6C",
+      "type": "dct:Dataset",
+      "label": "Exploitatietoestand d.d. 17-6-2026",
+      "localId": "REPORT-MJV2-20260622012403-80FA5A6C",
+      "issued": "2026-06-17",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260622012403-80FA5A6C"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260622011848-09538D4A",
+      "type": "dct:Dataset",
+      "label": "Exploitatietoestand d.d. 17-6-2026",
+      "localId": "REPORT-MJV2-20260622011848-09538D4A",
+      "issued": "2026-06-17",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260622011848-09538D4A"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260622111109-45FB0EAF",
+      "type": "dct:Dataset",
+      "label": "Exploitatietoestand d.d. 16-6-2026",
+      "localId": "REPORT-MJV2-20260622111109-45FB0EAF",
+      "issued": "2026-06-16",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260622111109-45FB0EAF"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260623125721-2835F527",
+      "type": "dct:Dataset",
+      "label": "Exploitatietoestand d.d. 12-6-2026",
+      "localId": "REPORT-MJV2-20260623125721-2835F527",
+      "issued": "2026-06-12",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260623125721-2835F527"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260622111030-F99447F3",
+      "type": "dct:Dataset",
+      "label": "Exploitatietoestand d.d. 12-6-2026",
+      "localId": "REPORT-MJV2-20260622111030-F99447F3",
+      "issued": "2026-06-12",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260622111030-F99447F3"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260626115732-DD03B6CD",
+      "type": "dct:Dataset",
+      "label": "Toestand in opmaak",
+      "localId": "REPORT-MJV2-20260626115732-DD03B6CD",
+      "issued": "2026-06-09",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260626115732-DD03B6CD"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260624223817-388F793B",
+      "type": "dct:Dataset",
+      "label": "Exploitatietoestand d.d. 3-6-2026",
+      "localId": "REPORT-MJV2-20260624223817-388F793B",
+      "issued": "2026-06-03",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260624223817-388F793B"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260620130329-7DD06513",
+      "type": "dct:Dataset",
+      "label": "Exploitatietoestand d.d. 3-6-2026",
+      "localId": "REPORT-MJV2-20260620130329-7DD06513",
+      "issued": "2026-06-03",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260620130329-7DD06513"
+      }
+    }
+  ]
+}

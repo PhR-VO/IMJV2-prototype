@@ -1348,6 +1348,17 @@ class Handler(SimpleHTTPRequestHandler):
         if route == "/api/lod/catalog.jsonld":
             self.send_ld_json_file(lod_service.publication_path(STORE, "catalog"))
             return
+        if route == "/api/lod/riepr/catalog.jsonld":
+            self.send_ld_json_file(lod_service.publication_path(STORE, "catalog", profile="riepr"))
+            return
+        if route.startswith("/api/lod/riepr/reports/") and route.endswith(".jsonld"):
+            report_id = route.removeprefix("/api/lod/riepr/reports/").removesuffix(".jsonld")
+            self.send_ld_json_file(lod_service.publication_path(STORE, "report", report_id, profile="riepr"))
+            return
+        if route.startswith("/api/lod/riepr/exploitations/") and route.endswith(".jsonld"):
+            exploitation_id = route.removeprefix("/api/lod/riepr/exploitations/").removesuffix(".jsonld")
+            self.send_ld_json_file(lod_service.publication_path(STORE, "exploitation", exploitation_id, profile="riepr"))
+            return
         if route.startswith("/api/lod/reports/") and route.endswith(".jsonld"):
             report_id = route.removeprefix("/api/lod/reports/").removesuffix(".jsonld")
             self.send_ld_json_file(lod_service.publication_path(STORE, "report", report_id))

@@ -102,6 +102,7 @@ const els = {
   lodStatusSummary: document.querySelector("#lod-status-summary"),
   lodPublicationItems: document.querySelector("#lod-publication-items"),
   lodCatalogLink: document.querySelector("#lod-catalog-link"),
+  lodRieprCatalogLink: document.querySelector("#lod-riepr-catalog-link"),
   editorObjectList: document.querySelector("#editor-object-list"),
   editorHeadingTitle: document.querySelector("#editor-heading-title"),
   editorHeadingDescription: document.querySelector("#editor-heading-description"),
@@ -938,7 +939,9 @@ function renderReports() {
     ? "Annuleren en verwijderen"
     : "Toestand verwijderen";
   els.reportsExploitationName.textContent = exploitationContext?.exploitatie || "Exploitatie";
-  els.reportsExploitationId.textContent = exploitationContext?.exploitatieId || "";
+  els.reportsExploitationId.textContent = exploitationContext?.exploitatieId
+    ? `Referentie: ${exploitationContext.exploitatieId}`
+    : "";
   const contextAddress = exploitationContext?.location?.address || {};
   const contextStreet = [contextAddress.street, contextAddress.houseNumber].filter(Boolean).join(" ");
   const contextMunicipality = [contextAddress.postalCode, contextAddress.municipality].filter(Boolean).join(" ");
@@ -1113,9 +1116,10 @@ function renderReplacementNotices(report, draftSelected) {
       </div>`);
   }
   if (!draftSelected && report.replacesReportId) {
+    const replacementVerb = report.replacedByReportId || report.withdrawnByTransactionId ? "verving" : "vervangt";
     notices.push(`
       <div class="replacement-notice">
-        <span>Deze toestand vervangt een eerdere geregistreerde toestand.</span>
+        <span>Deze toestand ${replacementVerb} een eerdere geregistreerde toestand.</span>
         <button class="text-link" type="button" data-related-report-id="${escapeHtml(report.replacesReportId)}">Vervangen toestand bekijken</button>
       </div>`);
   }
@@ -1774,12 +1778,16 @@ function renderLod() {
     ["In verwerking", String(jobs.processing || 0)],
     ["Verwerkt", String(jobs.done || 0)],
     ["Mislukt", String(jobs.failed || 0)],
-    ["Catalogus", publications.catalogAvailable ? "Beschikbaar" : "Nog niet gepubliceerd"],
+    ["IMJV-catalogus", publications.catalogAvailable ? "Beschikbaar" : "Nog niet gepubliceerd"],
+    ["RIEPR-catalogus", publications.riepr?.catalogAvailable ? "Beschikbaar" : "Nog niet gepubliceerd"],
   ].map(propertyMarkup).join("");
   els.lodCatalogLink.hidden = !publications.catalogAvailable;
+  els.lodRieprCatalogLink.hidden = !publications.riepr?.catalogAvailable;
 
   const publishedReportIds = new Set(publications.reports || []);
   const publishedExploitationIds = new Set(publications.exploitations || []);
+  const publishedRieprReportIds = new Set(publications.riepr?.reports || []);
+  const publishedRieprExploitationIds = new Set(publications.riepr?.exploitations || []);
   const groups = reports
     .filter((report) => report.reportId)
     .reduce((result, report) => {
@@ -1793,21 +1801,31 @@ function renderLod() {
     .map(([exploitationId, groupReports]) => {
       const newest = groupReports[0] || {};
       const publishedExploitation = publishedExploitationIds.has(exploitationId);
+      const publishedRieprExploitation = publishedRieprExploitationIds.has(exploitationId);
       const exploitationHref = `${API}/lod/exploitations/${encodeURIComponent(exploitationId)}.jsonld`;
+      const rieprExploitationHref = `${API}/lod/riepr/exploitations/${encodeURIComponent(exploitationId)}.jsonld`;
       const publishedCount = groupReports.filter((report) => publishedReportIds.has(report.reportId)).length;
+      const publishedRieprCount = groupReports.filter((report) => publishedRieprReportIds.has(report.reportId)).length;
       const stateRows = groupReports
         .map((report) => {
           const published = publishedReportIds.has(report.reportId);
+          const publishedRiepr = publishedRieprReportIds.has(report.reportId);
           const href = `${API}/lod/reports/${encodeURIComponent(report.reportId)}.jsonld`;
+          const rieprHref = `${API}/lod/riepr/reports/${encodeURIComponent(report.reportId)}.jsonld`;
           return `
             <div class="lod-state-row">
               <span>
                 <strong>${escapeHtml(formatDateOnly(report.effectiveFrom))}</strong>
                 <small>${escapeHtml(report.reportId)} · ${escapeHtml(lodReportStatus(report))}</small>
               </span>
-              ${published
-                ? `<a class="secondary" href="${href}" target="_blank" rel="noopener">Toestand JSON-LD</a>`
-                : '<span class="status">In wachtrij</span>'}
+              <span class="lod-link-actions">
+                ${published
+                  ? `<a class="secondary" href="${href}" target="_blank" rel="noopener">IMJV JSON-LD</a>`
+                  : '<span class="status">IMJV in wachtrij</span>'}
+                ${publishedRiepr
+                  ? `<a class="secondary" href="${rieprHref}" target="_blank" rel="noopener">RIEPR JSON-LD</a>`
+                  : '<span class="status">RIEPR in wachtrij</span>'}
+              </span>
             </div>`;
         })
         .join("");
@@ -1816,11 +1834,16 @@ function renderLod() {
           <summary>
             <span>
               <strong>${escapeHtml(newest.exploitatie || "Exploitatie")}</strong>
-              <small>${escapeHtml(exploitationId)} · ${publishedCount}/${groupReports.length} toestandversies gepubliceerd</small>
+              <small>${escapeHtml(exploitationId)} · IMJV ${publishedCount}/${groupReports.length} · RIEPR ${publishedRieprCount}/${groupReports.length}</small>
             </span>
-            ${publishedExploitation
-              ? `<a class="secondary" href="${exploitationHref}" target="_blank" rel="noopener">Exploitatie JSON-LD</a>`
-              : '<span class="status">In wachtrij</span>'}
+            <span class="lod-link-actions">
+              ${publishedExploitation
+                ? `<a class="secondary" href="${exploitationHref}" target="_blank" rel="noopener">IMJV exploitatie</a>`
+                : '<span class="status">IMJV in wachtrij</span>'}
+              ${publishedRieprExploitation
+                ? `<a class="secondary" href="${rieprExploitationHref}" target="_blank" rel="noopener">RIEPR exploitatie</a>`
+                : '<span class="status">RIEPR in wachtrij</span>'}
+            </span>
           </summary>
           <div class="lod-state-list">${stateRows}</div>
         </details>`;

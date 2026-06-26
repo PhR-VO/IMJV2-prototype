@@ -1,0 +1,452 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "geo": "http://www.opengis.net/ont/geosparql#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "adms": "http://www.w3.org/ns/adms#",
+    "dct": "http://purl.org/dc/terms/",
+    "locn": "http://www.w3.org/ns/locn#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "http://schema.org/",
+    "riepr": "https://data.riepr.omgeving.vlaanderen.be/ns/riepr#",
+    "meetpunt": "https://data.riepr.omgeving.vlaanderen.be/id/meetpunt/",
+    "emissiepunt": "https://data.riepr.omgeving.vlaanderen.be/id/emissiepunt/",
+    "activiteit": "https://data.riepr.omgeving.vlaanderen.be/id/activiteit/",
+    "procedure": "https://data.riepr.omgeving.vlaanderen.be/id/procedure/",
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "ssn": "http://www.w3.org/ns/ssn/",
+    "p-plan": "http://purl.org/net/p-plan#",
+    "concept": "https://data.riepr.omgeving.vlaanderen.be/id/concept/",
+    "apparaat": "https://data.riepr.omgeving.vlaanderen.be/id/apparaat/",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "localId": "riepr:localId",
+    "label": {
+      "@language": "nl",
+      "@id": "rdfs:label"
+    },
+    "comment": {
+      "@language": "nl",
+      "@id": "rdfs:comment"
+    },
+    "identifier": {
+      "@type": "@id",
+      "@id": "adms:identifier"
+    },
+    "atLocation": {
+      "@type": "@id",
+      "@id": "prov:atLocation"
+    },
+    "hadPrimarySource": {
+      "@type": "@id",
+      "@id": "prov:hadPrimarySource"
+    },
+    "wasAttributedTo": {
+      "@type": "@id",
+      "@id": "prov:wasAttributedTo"
+    },
+    "wasDerivedFrom": {
+      "@id": "prov:wasDerivedFrom",
+      "@type": "@id"
+    },
+    "wasRevisionOf": {
+      "@id": "prov:wasRevisionOf",
+      "@type": "@id"
+    },
+    "deployedOnPlatform": {
+      "@id": "ssn:deployedOnPlatform",
+      "@type": "@id"
+    },
+    "deployedSystem": {
+      "@id": "ssn:deployedSystem",
+      "@type": "@id"
+    },
+    "hasDeployment": {
+      "@id": "ssn:hasDeployment",
+      "@type": "@id"
+    },
+    "hasSubSystem": {
+      "@id": "ssn:hasSubSystem",
+      "@type": "@id"
+    },
+    "hasGeometry": {
+      "@type": "@id",
+      "@id": "geo:hasGeometry"
+    },
+    "hasSerialization": {
+      "@id": "geo:hasSerialization",
+      "@type": "geo:WKTLiteral"
+    },
+    "status": {
+      "@id": "adms:status",
+      "@type": "@id"
+    },
+    "issued": {
+      "@id": "dct:issued",
+      "@type": "xsd:date"
+    },
+    "created": {
+      "@id": "dct:created",
+      "@type": "xsd:dateTime"
+    },
+    "modified": {
+      "@id": "dct:modified",
+      "@type": "xsd:dateTime"
+    }
+  },
+  "@graph": [
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260618091616-BFC60993",
+      "type": "riepr:Aangifte",
+      "localId": "REPORT-MJV2-20260618091616-BFC60993",
+      "label": "Exploitatietoestand d.d. 13-6-2027",
+      "issued": "2027-06-13",
+      "created": "2027-06-13T09:15:00+01:00",
+      "modified": "2027-06-13T09:15:01+01:00",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260618091616-BFC60993"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/exploitatie/DEMO-EXP-001/2027-06-13",
+      "type": "riepr:Exploitatie",
+      "localId": "DEMO-EXP-001",
+      "label": "Demo Exploitatie NV",
+      "issued": "2027-06-13",
+      "created": "2027-06-13T09:15:00+01:00",
+      "modified": "2027-06-13T09:15:01+01:00",
+      "status": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/concept/status/in_gebruik"
+      },
+      "deployedOnPlatform": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/exploitatielocatie/DEMO-EXP-001/2027-06-13"
+      },
+      "deployedSystem": [
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/PL-01"
+        },
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/STK-01"
+        },
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/WZI-01"
+        },
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/GW-01"
+        },
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/EP-L-01"
+        },
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/EP-W-01"
+        },
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/STK-02"
+        },
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/EP-L-02"
+        },
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/PL-02"
+        }
+      ],
+      "riepr:aangifte": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260618091616-BFC60993"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/exploitatielocatie/DEMO-EXP-001/2027-06-13",
+      "type": [
+        "riepr:Exploitatielocatie",
+        "geo:Feature",
+        "sosa:Platform"
+      ],
+      "localId": "DEMO-EXP-001",
+      "label": "Demo Exploitatie NV",
+      "issued": "2027-06-13",
+      "created": "2027-06-13T09:15:00+01:00",
+      "modified": "2027-06-13T09:15:01+01:00",
+      "locn:address": {
+        "type": "locn:Address",
+        "locn:thoroughfare": "Zaha Hadidplein",
+        "locn:locatorDesignator": "1",
+        "locn:postCode": "2030",
+        "locn:postName": "Antwerpen",
+        "schema:addressCountry": "België"
+      },
+      "hasGeometry": {
+        "id": "https://data.riepr.omgeving.vlaanderen.be/id/exploitatielocatie/DEMO-EXP-001/2027-06-13/geometrie",
+        "type": "geo:Geometry",
+        "hasSerialization": "<http://www.opengis.net/def/crs/EPSG/0/3812> POINT(652224 717046)"
+      },
+      "ssn:inDeployment": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/exploitatie/DEMO-EXP-001/2027-06-13"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/transactie/MJV2-20260618091616-BFC60993",
+      "type": "riepr:Transactie",
+      "localId": "MJV2-20260618091616-BFC60993",
+      "label": "Indiening MJV2-20260618091616-BFC60993",
+      "created": "2027-06-13T09:15:00+01:00",
+      "modified": "2027-06-13T09:15:01+01:00",
+      "prov:generated": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260618091616-BFC60993"
+      },
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260618091616-BFC60993"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/PL-01",
+      "type": [
+        "riepr:Proces",
+        "ssn:System"
+      ],
+      "localId": "PL-01",
+      "label": "Productielijn keramische granulaten",
+      "comment": "Capaciteit: 120000 ton/jaar",
+      "issued": "2027-06-13",
+      "created": "2027-06-13T09:15:00+01:00",
+      "modified": "2027-06-13T09:15:01+01:00",
+      "status": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/concept/status/in_gebruik"
+      },
+      "hasDeployment": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/exploitatie/DEMO-EXP-001/2027-06-13"
+      },
+      "hasSubSystem": [
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/STK-01"
+        },
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/WZI-01"
+        },
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/STK-02"
+        }
+      ],
+      "dct:type": "Productielijn"
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/STK-01",
+      "type": [
+        "riepr:Installatie",
+        "ssn:System"
+      ],
+      "localId": "STK-01",
+      "label": "Stoomketel lijn 1",
+      "comment": "Thermisch vermogen: 48 MW; brandstof: aardgas",
+      "issued": "2027-06-13",
+      "created": "2027-06-13T09:15:00+01:00",
+      "modified": "2027-06-13T09:15:01+01:00",
+      "status": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/concept/status/in_gebruik"
+      },
+      "hasDeployment": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/exploitatie/DEMO-EXP-001/2027-06-13"
+      },
+      "hasSubSystem": [
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/PL-01"
+        },
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/EP-L-01"
+        }
+      ],
+      "dct:type": "Stookinstallatie"
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/WZI-01",
+      "type": [
+        "riepr:Installatie",
+        "ssn:System"
+      ],
+      "localId": "WZI-01",
+      "label": "Fysico-chemische waterzuivering",
+      "comment": "Neutralisatie + sedimentatie + zandfilter; capaciteit: 35 m3/u",
+      "issued": "2027-06-13",
+      "created": "2027-06-13T09:15:00+01:00",
+      "modified": "2027-06-13T09:15:01+01:00",
+      "status": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/concept/status/in_gebruik"
+      },
+      "hasDeployment": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/exploitatie/DEMO-EXP-001/2027-06-13"
+      },
+      "hasSubSystem": [
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/PL-01"
+        },
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/EP-W-01"
+        },
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/PL-02"
+        }
+      ],
+      "dct:type": "Waterzuivering"
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/GW-01",
+      "type": [
+        "riepr:Onttrekkingspunt",
+        "ssn:System"
+      ],
+      "localId": "GW-01",
+      "label": "Winning productieput noord",
+      "comment": "Putdiepte: 82 m; vergund debiet: 180000 m3/jaar; watervoerende laag: HCOV 0600",
+      "issued": "2027-06-13",
+      "created": "2027-06-13T09:15:00+01:00",
+      "modified": "2027-06-13T09:15:01+01:00",
+      "status": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/concept/status/in_gebruik"
+      },
+      "hasDeployment": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/exploitatie/DEMO-EXP-001/2027-06-13"
+      },
+      "hasSubSystem": [
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/PL-01"
+        }
+      ],
+      "dct:type": "Grondwaterwinning"
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/EP-L-01",
+      "type": [
+        "riepr:Emissiepunt",
+        "ssn:System"
+      ],
+      "localId": "EP-L-01",
+      "label": "Schoorsteen stoomketel",
+      "comment": "Hoogte: 32 m; diameter: 1.2 m; Lambert 2008: 156420, 207880",
+      "issued": "2027-06-13",
+      "created": "2027-06-13T09:15:00+01:00",
+      "modified": "2027-06-13T09:15:01+01:00",
+      "status": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/concept/status/in_gebruik"
+      },
+      "hasDeployment": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/exploitatie/DEMO-EXP-001/2027-06-13"
+      },
+      "hasSubSystem": [
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/STK-01"
+        }
+      ],
+      "dct:type": "Emissiepunt lucht"
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/EP-W-01",
+      "type": [
+        "riepr:Emissiepunt",
+        "ssn:System"
+      ],
+      "localId": "EP-W-01",
+      "label": "Lozingspunt effluent WZI",
+      "comment": "Lozend naar oppervlaktewater; Lambert 2008: 156385, 207842",
+      "issued": "2027-06-13",
+      "created": "2027-06-13T09:15:00+01:00",
+      "modified": "2027-06-13T09:15:01+01:00",
+      "status": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/concept/status/in_gebruik"
+      },
+      "hasDeployment": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/exploitatie/DEMO-EXP-001/2027-06-13"
+      },
+      "hasSubSystem": [
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/WZI-01"
+        }
+      ],
+      "dct:type": "Emissiepunt water"
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/STK-02",
+      "type": [
+        "riepr:Installatie",
+        "ssn:System"
+      ],
+      "localId": "STK-02",
+      "label": "Droogoven lijn 2",
+      "comment": "Thermisch vermogen: 22 MW; brandstof: aardgas; ingebruikname: 20-03-2027",
+      "issued": "2027-06-13",
+      "created": "2027-06-13T09:15:00+01:00",
+      "modified": "2027-06-13T09:15:01+01:00",
+      "status": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/concept/status/in_gebruik"
+      },
+      "hasDeployment": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/exploitatie/DEMO-EXP-001/2027-06-13"
+      },
+      "hasSubSystem": [
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/PL-01"
+        },
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/EP-L-02"
+        },
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/PL-02"
+        }
+      ],
+      "dct:type": "Stookinstallatie"
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/EP-L-02",
+      "type": [
+        "riepr:Emissiepunt",
+        "ssn:System"
+      ],
+      "localId": "EP-L-02",
+      "label": "Schoorsteen droogoven lijn 2",
+      "comment": "Hoogte: 28 m; diameter: 0.9 m; Lambert 2008: 156448, 207862",
+      "issued": "2027-06-13",
+      "created": "2027-06-13T09:15:00+01:00",
+      "modified": "2027-06-13T09:15:01+01:00",
+      "status": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/concept/status/in_gebruik"
+      },
+      "hasDeployment": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/exploitatie/DEMO-EXP-001/2027-06-13"
+      },
+      "hasSubSystem": [
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/STK-02"
+        }
+      ],
+      "dct:type": "Emissiepunt lucht"
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/PL-02",
+      "type": [
+        "riepr:Proces",
+        "ssn:System"
+      ],
+      "localId": "PL-02",
+      "label": "Productielijn recyclaat",
+      "comment": "Capaciteit: 45000 ton/jaar; verwerking van keramisch recyclaat",
+      "issued": "2027-06-13",
+      "created": "2027-06-13T09:15:00+01:00",
+      "modified": "2027-06-13T09:15:01+01:00",
+      "status": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/concept/status/in_gebruik"
+      },
+      "hasDeployment": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/exploitatie/DEMO-EXP-001/2027-06-13"
+      },
+      "hasSubSystem": [
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/STK-02"
+        },
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/DEMO-EXP-001/WZI-01"
+        }
+      ],
+      "dct:type": "Productielijn"
+    }
+  ]
+}

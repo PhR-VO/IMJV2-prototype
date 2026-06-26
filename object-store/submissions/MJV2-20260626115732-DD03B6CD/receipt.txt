@@ -1,0 +1,24 @@
+ONTVANGSTBEWIJS IMJV2
+
+Transactie-ID: MJV2-20260626115732-DD03B6CD
+Status: Ontvangen
+Bestand: Toestand in opmaak
+Content hash: sha256:2ea9bf07899b35f5ac903e18a51bfd58cb577da1a7cac77624eb2b07c85b1a08
+Exploitatie: Jamfabriek
+Ingediend door: Emiel Jeurens namens Demo Exploitatie NV
+Tijdstip indiening: 2026-06-26T09:58:22.377530+00:00
+Tijdstip ontvangst: 2026-06-26T09:58:22.377551+00:00
+Kanaal: IMJV2 loket prototype
+
+Inhoud:
+- Naam exploitatie: Jamfabriek
+- Exploitatie-ID: VBN
+- Ingangsdatum: 2026-06-09
+- NACE-BEL-code: —
+- Adres: Hoogstraat 20, 1098 Gent
+- Lambert 2008 X-Y: 4567 - 56789
+- Aantal rapporteringsplichtige onderdelen: 2
+  - Productielijn: Jamproductie (OBJ-01) · In gebruik
+  - Grondwaterwinning: Put (OBJ-02) · In gebruik
+
+Dit ontvangstbewijs bevestigt dat het hierboven genoemde geheel werd ontvangen.

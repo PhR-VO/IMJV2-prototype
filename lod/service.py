@@ -6,6 +6,7 @@ from pathlib import Path
 
 
 PUBLIC_BASE_URI = "https://data.omgeving.vlaanderen.be"
+RIEPR_BASE_URI = "https://data.riepr.omgeving.vlaanderen.be"
 LOD_CONTEXT = {
     "dcterms": "http://purl.org/dc/terms/",
     "imjv": f"{PUBLIC_BASE_URI}/def/imjv#",
@@ -23,6 +24,50 @@ LOD_CONTEXT = {
     "naceBelCode": "imjv:naceBelCode",
     "relatie": {"@id": "imjv:relatie", "@type": "@id"},
     "status": "imjv:status",
+}
+
+RIEPR_CONTEXT = {
+    "id": "@id",
+    "type": "@type",
+    "geo": "http://www.opengis.net/ont/geosparql#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "adms": "http://www.w3.org/ns/adms#",
+    "dct": "http://purl.org/dc/terms/",
+    "locn": "http://www.w3.org/ns/locn#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "http://schema.org/",
+    "riepr": f"{RIEPR_BASE_URI}/ns/riepr#",
+    "meetpunt": f"{RIEPR_BASE_URI}/id/meetpunt/",
+    "emissiepunt": f"{RIEPR_BASE_URI}/id/emissiepunt/",
+    "activiteit": f"{RIEPR_BASE_URI}/id/activiteit/",
+    "procedure": f"{RIEPR_BASE_URI}/id/procedure/",
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "ssn": "http://www.w3.org/ns/ssn/",
+    "p-plan": "http://purl.org/net/p-plan#",
+    "concept": f"{RIEPR_BASE_URI}/id/concept/",
+    "apparaat": f"{RIEPR_BASE_URI}/id/apparaat/",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "localId": "riepr:localId",
+    "label": {"@language": "nl", "@id": "rdfs:label"},
+    "comment": {"@language": "nl", "@id": "rdfs:comment"},
+    "identifier": {"@type": "@id", "@id": "adms:identifier"},
+    "atLocation": {"@type": "@id", "@id": "prov:atLocation"},
+    "hadPrimarySource": {"@type": "@id", "@id": "prov:hadPrimarySource"},
+    "wasAttributedTo": {"@type": "@id", "@id": "prov:wasAttributedTo"},
+    "wasDerivedFrom": {"@id": "prov:wasDerivedFrom", "@type": "@id"},
+    "wasRevisionOf": {"@id": "prov:wasRevisionOf", "@type": "@id"},
+    "deployedOnPlatform": {"@id": "ssn:deployedOnPlatform", "@type": "@id"},
+    "deployedSystem": {"@id": "ssn:deployedSystem", "@type": "@id"},
+    "hasDeployment": {"@id": "ssn:hasDeployment", "@type": "@id"},
+    "hasSubSystem": {"@id": "ssn:hasSubSystem", "@type": "@id"},
+    "hasGeometry": {"@type": "@id", "@id": "geo:hasGeometry"},
+    "hasSerialization": {"@id": "geo:hasSerialization", "@type": "geo:WKTLiteral"},
+    "status": {"@id": "adms:status", "@type": "@id"},
+    "issued": {"@id": "dct:issued", "@type": "xsd:date"},
+    "created": {"@id": "dct:created", "@type": "xsd:dateTime"},
+    "modified": {"@id": "dct:modified", "@type": "xsd:dateTime"},
 }
 
 
@@ -49,6 +94,8 @@ def ensure_lod_store(store):
         "lod-jobs/failed",
         "lod-publications/reports",
         "lod-publications/exploitations",
+        "lod-publications/riepr/reports",
+        "lod-publications/riepr/exploitations",
     ]:
         (store / relative).mkdir(parents=True, exist_ok=True)
 
@@ -69,6 +116,30 @@ def object_uri(report, item):
 
 def submission_uri(transaction_id):
     return f"{PUBLIC_BASE_URI}/id/imjv/indiening/{transaction_id}"
+
+
+def riepr_report_uri(report_id):
+    return f"{RIEPR_BASE_URI}/id/aangifte/{report_id}"
+
+
+def riepr_exploitation_uri(exploitation_id, effective_from=None):
+    suffix = f"/{effective_from}" if effective_from else ""
+    return f"{RIEPR_BASE_URI}/id/exploitatie/{exploitation_id}{suffix}"
+
+
+def riepr_location_uri(exploitation_id, effective_from=None):
+    suffix = f"/{effective_from}" if effective_from else ""
+    return f"{RIEPR_BASE_URI}/id/exploitatielocatie/{exploitation_id}{suffix}"
+
+
+def riepr_object_uri(report, item):
+    exploitation_id = report.get("exploitatieId") or "onbekend"
+    code = item.get("code") or "zonder-code"
+    return f"{RIEPR_BASE_URI}/id/object/{exploitation_id}/{code}"
+
+
+def riepr_transaction_uri(transaction_id):
+    return f"{RIEPR_BASE_URI}/id/transactie/{transaction_id}"
 
 
 def nace_uri(code):
@@ -110,7 +181,8 @@ def enqueue_missing_reports(store, reports):
         transaction_id = report.get("transactionId")
         if not report_id or not transaction_id:
             continue
-        if publication_path(store, "report", report_id).exists() or report_id in queued_report_ids:
+        if (publication_path(store, "report", report_id).exists()
+                and publication_path(store, "report", report_id, profile="riepr").exists()) or report_id in queued_report_ids:
             continue
         job_id = f"LOD-{datetime.now().strftime('%Y%m%d%H%M%S')}-{uuid.uuid4().hex[:8].upper()}"
         job = {
@@ -255,6 +327,183 @@ def catalog_to_jsonld(reports, generated_at=None):
     })
 
 
+def riepr_status_uri(report):
+    if report.get("withdrawnByTransactionId"):
+        return f"{RIEPR_BASE_URI}/id/concept/status/ingetrokken"
+    if report.get("replacedByReportId"):
+        return f"{RIEPR_BASE_URI}/id/concept/status/vervangen"
+    return f"{RIEPR_BASE_URI}/id/concept/status/in_gebruik"
+
+
+def riepr_object_type(item):
+    item_type = str(item.get("type") or "").lower()
+    if "emissiepunt" in item_type:
+        return "riepr:Emissiepunt"
+    if "grondwater" in item_type or "onttrek" in item_type:
+        return "riepr:Onttrekkingspunt"
+    if "productielijn" in item_type or "proces" in item_type:
+        return "riepr:Proces"
+    return "riepr:Installatie"
+
+
+def lambert_wkt(location):
+    coordinates = (location or {}).get("lambert2008") or {}
+    x = coordinates.get("x")
+    y = coordinates.get("y")
+    if x is None or y is None:
+        return None
+    return f"<http://www.opengis.net/def/crs/EPSG/0/3812> POINT({x} {y})"
+
+
+def riepr_report_to_jsonld(report):
+    effective_from = report.get("effectiveFrom")
+    created = report.get("submittedAt") or report.get("receivedAt")
+    modified = report.get("receivedAt") or report.get("submittedAt")
+    exploitation_id = report.get("exploitatieId")
+    exploitation_ref = riepr_exploitation_uri(exploitation_id, effective_from)
+    location_ref = riepr_location_uri(exploitation_id, effective_from)
+    transaction_ref = riepr_transaction_uri(report.get("transactionId"))
+    objects = report.get("objects") or []
+    object_by_code = {item.get("code"): item for item in objects if item.get("code")}
+    object_nodes = []
+    object_refs = []
+    for item in objects:
+        item_ref = riepr_object_uri(report, item)
+        object_refs.append(compact_ref(item_ref))
+        relation_refs = []
+        for related_code in item.get("relations") or []:
+            related = object_by_code.get(related_code)
+            if related:
+                relation_refs.append(compact_ref(riepr_object_uri(report, related)))
+        object_nodes.append({
+            "id": item_ref,
+            "type": [riepr_object_type(item), "ssn:System"],
+            "localId": item.get("code"),
+            "label": item.get("name"),
+            "comment": item.get("properties"),
+            "issued": effective_from,
+            "created": created,
+            "modified": modified,
+            "status": compact_ref(riepr_status_uri(report)),
+            "hasDeployment": compact_ref(exploitation_ref),
+            "hasSubSystem": relation_refs,
+            "dct:type": item.get("type"),
+        })
+
+    location = report.get("location") or {}
+    address = location.get("address") or {}
+    graph = [
+        {
+            "id": riepr_report_uri(report["reportId"]),
+            "type": "riepr:Aangifte",
+            "localId": report.get("reportId"),
+            "label": report.get("title"),
+            "issued": effective_from,
+            "created": created,
+            "modified": modified,
+            "hadPrimarySource": compact_ref(submission_uri(report.get("transactionId"))),
+            "wasDerivedFrom": compact_ref(riepr_report_uri(report.get("basedOnReportId"))) if report.get("basedOnReportId") else None,
+            "wasRevisionOf": compact_ref(riepr_report_uri(report.get("replacesReportId"))) if report.get("replacesReportId") else None,
+        },
+        {
+            "id": exploitation_ref,
+            "type": "riepr:Exploitatie",
+            "localId": exploitation_id,
+            "label": report.get("exploitatie"),
+            "issued": effective_from,
+            "created": created,
+            "modified": modified,
+            "status": compact_ref(riepr_status_uri(report)),
+            "deployedOnPlatform": compact_ref(location_ref),
+            "deployedSystem": object_refs,
+            "riepr:aangifte": compact_ref(riepr_report_uri(report["reportId"])),
+        },
+        {
+            "id": location_ref,
+            "type": ["riepr:Exploitatielocatie", "geo:Feature", "sosa:Platform"],
+            "localId": exploitation_id,
+            "label": report.get("exploitatie"),
+            "issued": effective_from,
+            "created": created,
+            "modified": modified,
+            "locn:address": {
+                "type": "locn:Address",
+                "locn:thoroughfare": address.get("street"),
+                "locn:locatorDesignator": address.get("houseNumber"),
+                "locn:postCode": address.get("postalCode"),
+                "locn:postName": address.get("municipality"),
+                "schema:addressCountry": address.get("country"),
+            },
+            "hasGeometry": {
+                "id": f"{location_ref}/geometrie",
+                "type": "geo:Geometry",
+                "hasSerialization": lambert_wkt(location),
+            } if lambert_wkt(location) else None,
+            "ssn:inDeployment": compact_ref(exploitation_ref),
+        },
+        {
+            "id": transaction_ref,
+            "type": "riepr:Transactie",
+            "localId": report.get("transactionId"),
+            "label": f"Indiening {report.get('transactionId')}",
+            "created": created,
+            "modified": modified,
+            "prov:generated": compact_ref(riepr_report_uri(report["reportId"])),
+            "hadPrimarySource": compact_ref(submission_uri(report.get("transactionId"))),
+        },
+        *object_nodes,
+    ]
+    return strip_empty({"@context": RIEPR_CONTEXT, "@graph": graph})
+
+
+def riepr_exploitation_to_jsonld(exploitation, reports):
+    exploitation_id = exploitation.get("exploitatieId")
+    related_reports = [
+        report for report in reports
+        if report.get("exploitatieId") == exploitation_id and report.get("reportId")
+    ]
+    systems = []
+    for report in related_reports:
+        for item in report.get("objects") or []:
+            systems.append(compact_ref(riepr_object_uri(report, item)))
+    latest = related_reports[0] if related_reports else {}
+    return strip_empty({
+        "@context": RIEPR_CONTEXT,
+        "id": riepr_exploitation_uri(exploitation_id),
+        "type": "riepr:Exploitatie",
+        "localId": exploitation_id,
+        "label": exploitation.get("exploitatie"),
+        "issued": latest.get("effectiveFrom"),
+        "created": latest.get("submittedAt"),
+        "modified": latest.get("receivedAt"),
+        "status": compact_ref(riepr_status_uri(latest)) if latest else None,
+        "deployedSystem": systems,
+        "wasDerivedFrom": [compact_ref(riepr_report_uri(report["reportId"])) for report in related_reports],
+    })
+
+
+def riepr_catalog_to_jsonld(reports, generated_at=None):
+    return strip_empty({
+        "@context": RIEPR_CONTEXT,
+        "id": f"{RIEPR_BASE_URI}/doc/imjv/catalog",
+        "type": "dct:Catalog",
+        "label": "IMJV2 RIEPR LOD-publicatiecatalogus",
+        "modified": generated_at or now_iso(),
+        "dct:hasPart": [
+            {
+                "id": riepr_report_uri(report["reportId"]),
+                "type": "dct:Dataset",
+                "label": report.get("title"),
+                "localId": report.get("reportId"),
+                "issued": report.get("effectiveFrom"),
+                "hadPrimarySource": compact_ref(submission_uri(report.get("transactionId"))),
+            }
+            for report in reports
+            if report.get("reportId")
+        ],
+    })
+
+
 def report_status(report):
     if report.get("withdrawnByTransactionId"):
         return "ingetrokken"
@@ -316,6 +565,10 @@ def process_pending(store, reports, exploitations):
 
 def publish_report(store, report):
     write_json(store / "lod-publications" / "reports" / f"{report['reportId']}.jsonld", report_to_jsonld(report))
+    write_json(
+        store / "lod-publications" / "riepr" / "reports" / f"{report['reportId']}.jsonld",
+        riepr_report_to_jsonld(report),
+    )
 
 
 def publish_exploitation(store, exploitation, reports):
@@ -325,10 +578,15 @@ def publish_exploitation(store, exploitation, reports):
             store / "lod-publications" / "exploitations" / f"{exploitation_id}.jsonld",
             exploitation_to_jsonld(exploitation, reports),
         )
+        write_json(
+            store / "lod-publications" / "riepr" / "exploitations" / f"{exploitation_id}.jsonld",
+            riepr_exploitation_to_jsonld(exploitation, reports),
+        )
 
 
 def publish_catalog(store, reports):
     write_json(store / "lod-publications" / "catalog.jsonld", catalog_to_jsonld(reports))
+    write_json(store / "lod-publications" / "riepr" / "catalog.jsonld", riepr_catalog_to_jsonld(reports))
 
 
 def publication_status(store):
@@ -346,6 +604,11 @@ def publication_status(store):
             "reports": sorted(path.stem for path in (publications_root / "reports").glob("*.jsonld")),
             "exploitations": sorted(path.stem for path in (publications_root / "exploitations").glob("*.jsonld")),
             "catalogAvailable": (publications_root / "catalog.jsonld").exists(),
+            "riepr": {
+                "reports": sorted(path.stem for path in (publications_root / "riepr" / "reports").glob("*.jsonld")),
+                "exploitations": sorted(path.stem for path in (publications_root / "riepr" / "exploitations").glob("*.jsonld")),
+                "catalogAvailable": (publications_root / "riepr" / "catalog.jsonld").exists(),
+            },
         },
     }
 
@@ -354,8 +617,10 @@ def count_json(path):
     return len(list(path.glob("*.json")))
 
 
-def publication_path(store, kind, identifier=None):
+def publication_path(store, kind, identifier=None, profile="imjv"):
     root = store / "lod-publications"
+    if profile == "riepr":
+        root = root / "riepr"
     if kind == "catalog":
         return root / "catalog.jsonld"
     if kind == "report":

@@ -1,0 +1,138 @@
+{
+  "@context": {
+    "dcterms": "http://purl.org/dc/terms/",
+    "imjv": "https://data.omgeving.vlaanderen.be/def/imjv#",
+    "locn": "http://www.w3.org/ns/locn#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "https://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "contentHash": "imjv:contentHash",
+    "effectiveFrom": "imjv:effectiveFrom",
+    "exploitatie": {
+      "@id": "imjv:exploitatie",
+      "@type": "@id"
+    },
+    "heeftObject": {
+      "@id": "imjv:heeftObject",
+      "@type": "@id"
+    },
+    "heeftToestand": {
+      "@id": "imjv:heeftToestand",
+      "@type": "@id"
+    },
+    "isIngetrokken": "imjv:isIngetrokken",
+    "isVervangen": "imjv:isVervangen",
+    "naceBelCode": "imjv:naceBelCode",
+    "relatie": {
+      "@id": "imjv:relatie",
+      "@type": "@id"
+    },
+    "status": "imjv:status"
+  },
+  "@graph": [
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260626120110-648AAE71",
+      "@type": "imjv:Exploitatietoestand",
+      "dcterms:identifier": "REPORT-MJV2-20260626120110-648AAE71",
+      "dcterms:title": "Toestand in opmaak",
+      "effectiveFrom": "2026-06-18",
+      "dcterms:issued": "2026-06-26T10:01:12.843744+00:00",
+      "dcterms:modified": "2026-06-26T10:01:12.843761+00:00",
+      "contentHash": "af2db5fb170c8542238bc16f0ca32910697f653aa5760968c3d57bbe2e12ddee",
+      "status": "actueel",
+      "isVervangen": false,
+      "isIngetrokken": false,
+      "exploitatie": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatie/VBN",
+      "heeftObject": [
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/VBN/OBJ-01"
+        },
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/VBN/OBJ-02"
+        },
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/VBN/OBJ-03"
+        }
+      ],
+      "prov:wasGeneratedBy": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260626120110-648AAE71"
+      },
+      "prov:wasRevisionOf": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260626115732-DD03B6CD"
+      }
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatie/VBN",
+      "@type": "imjv:Exploitatie",
+      "dcterms:identifier": "VBN",
+      "dcterms:title": "Jamfabriek",
+      "locn:address": {
+        "@type": "locn:Address",
+        "locn:thoroughfare": "Hoogstraat",
+        "locn:locatorDesignator": "20",
+        "locn:postCode": "1098",
+        "locn:postName": "Gent",
+        "schema:addressCountry": "België"
+      },
+      "schema:geo": {
+        "@type": "schema:GeoCoordinates",
+        "schema:additionalProperty": [
+          {
+            "@type": "schema:PropertyValue",
+            "schema:name": "Lambert 2008 X",
+            "schema:value": 4567
+          },
+          {
+            "@type": "schema:PropertyValue",
+            "schema:name": "Lambert 2008 Y",
+            "schema:value": 56789
+          }
+        ]
+      },
+      "heeftToestand": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260626120110-648AAE71"
+      }
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260626120110-648AAE71",
+      "@type": "imjv:Indiening",
+      "dcterms:identifier": "MJV2-20260626120110-648AAE71",
+      "dcterms:issued": "2026-06-26T10:01:12.843744+00:00",
+      "prov:generated": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260626120110-648AAE71"
+      },
+      "contentHash": "af2db5fb170c8542238bc16f0ca32910697f653aa5760968c3d57bbe2e12ddee"
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/VBN/OBJ-01",
+      "@type": "imjv:Exploitatieobject",
+      "dcterms:identifier": "OBJ-01",
+      "dcterms:title": "Jamproductie",
+      "imjv:objecttype": "Productielijn",
+      "status": "In gebruik",
+      "relatie": []
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/VBN/OBJ-02",
+      "@type": "imjv:Exploitatieobject",
+      "dcterms:identifier": "OBJ-02",
+      "dcterms:title": "Put",
+      "imjv:objecttype": "Grondwaterwinning",
+      "status": "In gebruik",
+      "relatie": [
+        {
+          "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/VBN/OBJ-02"
+        }
+      ]
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/object/VBN/OBJ-03",
+      "@type": "imjv:Exploitatieobject",
+      "dcterms:identifier": "OBJ-03",
+      "dcterms:title": "schouw",
+      "imjv:objecttype": "Emissiepunt lucht",
+      "status": "In gebruik",
+      "relatie": []
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "geo": "http://www.opengis.net/ont/geosparql#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "adms": "http://www.w3.org/ns/adms#",
+    "dct": "http://purl.org/dc/terms/",
+    "locn": "http://www.w3.org/ns/locn#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "prov": "http://www.w3.org/ns/prov#",
+    "schema": "http://schema.org/",
+    "riepr": "https://data.riepr.omgeving.vlaanderen.be/ns/riepr#",
+    "meetpunt": "https://data.riepr.omgeving.vlaanderen.be/id/meetpunt/",
+    "emissiepunt": "https://data.riepr.omgeving.vlaanderen.be/id/emissiepunt/",
+    "activiteit": "https://data.riepr.omgeving.vlaanderen.be/id/activiteit/",
+    "procedure": "https://data.riepr.omgeving.vlaanderen.be/id/procedure/",
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "ssn": "http://www.w3.org/ns/ssn/",
+    "p-plan": "http://purl.org/net/p-plan#",
+    "concept": "https://data.riepr.omgeving.vlaanderen.be/id/concept/",
+    "apparaat": "https://data.riepr.omgeving.vlaanderen.be/id/apparaat/",
+    "qudt": "http://qudt.org/schema/qudt/",
+    "localId": "riepr:localId",
+    "label": {
+      "@language": "nl",
+      "@id": "rdfs:label"
+    },
+    "comment": {
+      "@language": "nl",
+      "@id": "rdfs:comment"
+    },
+    "identifier": {
+      "@type": "@id",
+      "@id": "adms:identifier"
+    },
+    "atLocation": {
+      "@type": "@id",
+      "@id": "prov:atLocation"
+    },
+    "hadPrimarySource": {
+      "@type": "@id",
+      "@id": "prov:hadPrimarySource"
+    },
+    "wasAttributedTo": {
+      "@type": "@id",
+      "@id": "prov:wasAttributedTo"
+    },
+    "wasDerivedFrom": {
+      "@id": "prov:wasDerivedFrom",
+      "@type": "@id"
+    },
+    "wasRevisionOf": {
+      "@id": "prov:wasRevisionOf",
+      "@type": "@id"
+    },
+    "deployedOnPlatform": {
+      "@id": "ssn:deployedOnPlatform",
+      "@type": "@id"
+    },
+    "deployedSystem": {
+      "@id": "ssn:deployedSystem",
+      "@type": "@id"
+    },
+    "hasDeployment": {
+      "@id": "ssn:hasDeployment",
+      "@type": "@id"
+    },
+    "hasSubSystem": {
+      "@id": "ssn:hasSubSystem",
+      "@type": "@id"
+    },
+    "hasGeometry": {
+      "@type": "@id",
+      "@id": "geo:hasGeometry"
+    },
+    "hasSerialization": {
+      "@id": "geo:hasSerialization",
+      "@type": "geo:WKTLiteral"
+    },
+    "status": {
+      "@id": "adms:status",
+      "@type": "@id"
+    },
+    "issued": {
+      "@id": "dct:issued",
+      "@type": "xsd:date"
+    },
+    "created": {
+      "@id": "dct:created",
+      "@type": "xsd:dateTime"
+    },
+    "modified": {
+      "@id": "dct:modified",
+      "@type": "xsd:dateTime"
+    }
+  },
+  "@graph": [
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260623151313-F8A1170C",
+      "type": "riepr:Aangifte",
+      "localId": "REPORT-MJV2-20260623151313-F8A1170C",
+      "label": "Toestand in opmaak",
+      "issued": "2027-11-12",
+      "created": "2026-06-23T13:13:16.016121+00:00",
+      "modified": "2026-06-23T13:13:16.016137+00:00",
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260623151313-F8A1170C"
+      },
+      "wasRevisionOf": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260623151231-73C73DF4"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/exploitatie/IUHS/2027-11-12",
+      "type": "riepr:Exploitatie",
+      "localId": "IUHS",
+      "label": "Academisch Ziekenhuis",
+      "issued": "2027-11-12",
+      "created": "2026-06-23T13:13:16.016121+00:00",
+      "modified": "2026-06-23T13:13:16.016137+00:00",
+      "status": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/concept/status/ingetrokken"
+      },
+      "deployedOnPlatform": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/exploitatielocatie/IUHS/2027-11-12"
+      },
+      "deployedSystem": [
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/IUHS/OBJ-01"
+        },
+        {
+          "@id": "https://data.riepr.omgeving.vlaanderen.be/id/object/IUHS/OBJ-02"
+        }
+      ],
+      "riepr:aangifte": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260623151313-F8A1170C"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/exploitatielocatie/IUHS/2027-11-12",
+      "type": [
+        "riepr:Exploitatielocatie",
+        "geo:Feature",
+        "sosa:Platform"
+      ],
+      "localId": "IUHS",
+      "label": "Academisch Ziekenhuis",
+      "issued": "2027-11-12",
+      "created": "2026-06-23T13:13:16.016121+00:00",
+      "modified": "2026-06-23T13:13:16.016137+00:00",
+      "locn:address": {
+        "type": "locn:Address",
+        "locn:thoroughfare": "Herestraat",
+        "locn:locatorDesignator": "49",
+        "locn:postCode": "3000",
+        "locn:postName": "Leuven",
+        "schema:addressCountry": "België"
+      },
+      "hasGeometry": {
+        "id": "https://data.riepr.omgeving.vlaanderen.be/id/exploitatielocatie/IUHS/2027-11-12/geometrie",
+        "type": "geo:Geometry",
+        "hasSerialization": "<http://www.opengis.net/def/crs/EPSG/0/3812> POINT(673500 681900)"
+      },
+      "ssn:inDeployment": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/exploitatie/IUHS/2027-11-12"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/transactie/MJV2-20260623151313-F8A1170C",
+      "type": "riepr:Transactie",
+      "localId": "MJV2-20260623151313-F8A1170C",
+      "label": "Indiening MJV2-20260623151313-F8A1170C",
+      "created": "2026-06-23T13:13:16.016121+00:00",
+      "modified": "2026-06-23T13:13:16.016137+00:00",
+      "prov:generated": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/aangifte/REPORT-MJV2-20260623151313-F8A1170C"
+      },
+      "hadPrimarySource": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260623151313-F8A1170C"
+      }
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/object/IUHS/OBJ-01",
+      "type": [
+        "riepr:Proces",
+        "ssn:System"
+      ],
+      "localId": "OBJ-01",
+      "label": "Nieuw object",
+      "issued": "2027-11-12",
+      "created": "2026-06-23T13:13:16.016121+00:00",
+      "modified": "2026-06-23T13:13:16.016137+00:00",
+      "status": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/concept/status/ingetrokken"
+      },
+      "hasDeployment": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/exploitatie/IUHS/2027-11-12"
+      },
+      "hasSubSystem": [],
+      "dct:type": "Productielijn"
+    },
+    {
+      "id": "https://data.riepr.omgeving.vlaanderen.be/id/object/IUHS/OBJ-02",
+      "type": [
+        "riepr:Emissiepunt",
+        "ssn:System"
+      ],
+      "localId": "OBJ-02",
+      "label": "Nieuw object",
+      "issued": "2027-11-12",
+      "created": "2026-06-23T13:13:16.016121+00:00",
+      "modified": "2026-06-23T13:13:16.016137+00:00",
+      "status": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/concept/status/ingetrokken"
+      },
+      "hasDeployment": {
+        "@id": "https://data.riepr.omgeving.vlaanderen.be/id/exploitatie/IUHS/2027-11-12"
+      },
+      "hasSubSystem": [],
+      "dct:type": "Emissiepunt lucht"
+    }
+  ]
+}

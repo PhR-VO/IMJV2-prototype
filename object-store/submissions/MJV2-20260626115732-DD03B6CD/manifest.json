@@ -1,0 +1,28 @@
+{
+  "transactionId": "MJV2-20260626115732-DD03B6CD",
+  "reportDraftId": "RPT-20260626115416-6AEEE068",
+  "status": "Ontvangen",
+  "displayName": "Toestand in opmaak",
+  "fileName": "structurele-gegevens-imjv2.ods",
+  "fileSize": 1322,
+  "contentHash": "2ea9bf07899b35f5ac903e18a51bfd58cb577da1a7cac77624eb2b07c85b1a08",
+  "exploitatie": "Jamfabriek",
+  "exploitatieId": "VBN",
+  "naceBelCode": "",
+  "submittedBy": "Emiel Jeurens namens Demo Exploitatie NV",
+  "submitterName": "Emiel Jeurens",
+  "organizationName": "Demo Exploitatie NV",
+  "summary": "Structurele toestand met 2 objecten",
+  "createdAt": "2026-06-26T09:57:32.541467+00:00",
+  "submittedAt": "2026-06-26T09:58:22.377530+00:00",
+  "receivedAt": "2026-06-26T09:58:22.377551+00:00",
+  "receiptAvailable": true,
+  "storage": {
+    "original": "submissions/MJV2-20260626115732-DD03B6CD/original/structurele-gegevens-imjv2.ods",
+    "manifest": "submissions/MJV2-20260626115732-DD03B6CD/manifest.json",
+    "receipt": "submissions/MJV2-20260626115732-DD03B6CD/receipt.txt",
+    "reportSnapshot": "submissions/MJV2-20260626115732-DD03B6CD/payload/exploitatietoestand.json",
+    "schema": "submissions/MJV2-20260626115732-DD03B6CD/original/exploitatieschema.svg"
+  },
+  "reportUpdatedAt": "2026-06-26T09:57:32.549943+00:00"
+}

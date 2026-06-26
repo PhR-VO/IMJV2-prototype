@@ -32,7 +32,7 @@
   "@id": "https://data.omgeving.vlaanderen.be/doc/imjv/catalog",
   "@type": "dcterms:Catalog",
   "dcterms:title": "IMJV2 LOD-publicatiecatalogus",
-  "dcterms:modified": "2026-06-25T09:28:08.730307+00:00",
+  "dcterms:modified": "2026-06-26T10:11:42.408200+00:00",
   "dcterms:hasPart": [
     {
       "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260618163219-A2B68F96",
@@ -295,6 +295,16 @@
       }
     },
     {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260626120110-648AAE71",
+      "@type": "dcterms:Dataset",
+      "dcterms:title": "Toestand in opmaak",
+      "dcterms:identifier": "REPORT-MJV2-20260626120110-648AAE71",
+      "dcterms:issued": "2026-06-26T10:01:12.843744+00:00",
+      "dcterms:source": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260626120110-648AAE71"
+      }
+    },
+    {
       "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260623130322-EB65CD3F",
       "@type": "dcterms:Dataset",
       "dcterms:title": "Exploitatietoestand d.d. 12-6-2026",
@@ -352,6 +362,16 @@
       "dcterms:issued": "2026-06-23T10:38:28.499465+00:00",
       "dcterms:source": {
         "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260622111030-F99447F3"
+      }
+    },
+    {
+      "@id": "https://data.omgeving.vlaanderen.be/id/imjv/exploitatietoestand/REPORT-MJV2-20260626115732-DD03B6CD",
+      "@type": "dcterms:Dataset",
+      "dcterms:title": "Toestand in opmaak",
+      "dcterms:identifier": "REPORT-MJV2-20260626115732-DD03B6CD",
+      "dcterms:issued": "2026-06-26T09:58:22.377530+00:00",
+      "dcterms:source": {
+        "@id": "https://data.omgeving.vlaanderen.be/id/imjv/indiening/MJV2-20260626115732-DD03B6CD"
       }
     },
     {
